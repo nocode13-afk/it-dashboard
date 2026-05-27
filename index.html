@@ -394,14 +394,13 @@
       <select id="filter-status"   onchange="applyFilters()"><option value="">All statuses</option></select>
       <select id="filter-assignee" onchange="applyFilters()"><option value="">All assignees</option></select>
       <select id="filter-priority" onchange="applyFilters()"><option value="">All projects</option></select>
-      <select id="filter-type"     onchange="applyFilters()"><option value="">All reporters</option></select>
       <div class="match-badge"><span id="match-count">0</span> issues</div>
     </div>
 
     <!-- Table -->
     <div class="table-card">
       <div class="table-top">
-        <div class="card-title">Issue list</div>
+        <div class="card-title">Issues</div>
         <span class="table-range" id="table-range"></span>
       </div>
       <div class="table-wrap">
@@ -602,7 +601,6 @@ function buildFilters() {
   };
   pop('filter-status',   cols.status,      'statuses');
   pop('filter-priority', cols.projectName, 'projects');
-  pop('filter-type',     cols.reporter,    'reporters');
 
   // Assignee filter: pool resolved values from all three merged source fields
   const assigneeSel = document.getElementById('filter-assignee');
@@ -619,13 +617,11 @@ function applyFilters() {
   const status   = document.getElementById('filter-status').value;
   const assignee = document.getElementById('filter-assignee').value;
   const project  = document.getElementById('filter-priority').value;
-  const reporter = document.getElementById('filter-type').value;
 
   filtered = allRows.filter(r => {
     if (status   && (r[cols.status]      ||'').trim() !== status)          return false;
     if (assignee && resolveAssignee(r, cols) !== assignee)                 return false;
     if (project  && (r[cols.projectName] ||'').trim() !== project)         return false;
-    if (reporter && (r[cols.reporter]    ||'').trim() !== reporter)        return false;
     if (search) { const h = Object.values(r).join(' ').toLowerCase(); if (!h.includes(search)) return false; }
     return true;
   });
@@ -670,22 +666,36 @@ function issueUrl(key) {
 
 
 // Columns in order:
-// Issue Key | Project Name | Status | Summary | Project | Reporter |
+// Issue # | Project Name | Status | Summary | Project |
 // Business Owner | Assignee (merged: Assignee → Analysis Owner → BA Assignee)
 
 const TABLE_SPEC = [
-  { key:'key',           label:'Issue Key',      render:'key' },
+  { key:'key',           label:'Issue #',        render:'key' },
   { key:'projectName',   label:'Project name',   render:'plain' },
   { key:'status',        label:'Status',         render:'status' },
   { key:'summary',       label:'Summary',        render:'plain' },
   { key:'project',       label:'Project',        render:'plain' },
-  { key:'reporter',      label:'Reporter',       render:'plain' },
-  { key:'businessOwner', label:'Business owner', render:'plain' },
+  { key:'businessOwner', label:'Business owner', render:'businessOwner' },
   { key:'assignee',      label:'Assignee',       render:'assignee' }, // merged column
 ];
 
 
-function scls(s) {
+// ── BUSINESS OWNER LOGIC ─────────────────────────────────────────────────
+// Falls back to Reporter if Business Owner is empty.
+// Normalises known username formats.
+const BUSINESS_OWNER_MAP = {
+  'robert.gordon': 'Robert Gordon',
+};
+
+function resolveBusinessOwner(r, cols) {
+  let val = (r[cols.businessOwner] || '').trim();
+  if (!val && cols.reporter) val = (r[cols.reporter] || '').trim();
+  if (!val) return '';
+  const lower = val.toLowerCase();
+  return BUSINESS_OWNER_MAP[lower] || val;
+}
+
+
   const v=(s||'').toLowerCase();
   if (v.includes('progress')||v.includes('doing')) return 's-inprogress';
   if (['done','closed','resolved','complete','completed'].some(x=>v.includes(x))) return 's-done';
@@ -736,6 +746,10 @@ function renderTable() {
       }
       if (spec.render === 'assignee') {
         const val = resolveAssignee(r, cols);
+        return `<td title="${val}">${val||'—'}</td>`;
+      }
+      if (spec.render === 'businessOwner') {
+        const val = resolveBusinessOwner(r, cols);
         return `<td title="${val}">${val||'—'}</td>`;
       }
       const val = (r[cols[spec.key]]||'').trim();
