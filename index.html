@@ -655,7 +655,7 @@ function detectCols(headers) {
     type:          exact('issue type')                        || find('issue type','issuetype'),
     resolved:      exact('resolved')                          || find('resolved date','resolution date','closed'),
     releaseNotes:  null, // always read from synthetic 'Release Notes' key written by parser
-    comment:       exact('comment')                           || find('comment'),
+    comment:       null, // always read from synthetic 'Comment' key written by parser
   };
 }
 
@@ -738,6 +738,13 @@ function parseFullCSV(text) {
 
     if (latestComment.text)     row['Comment']       = latestComment.text;
     if (latestReleaseNote.text) row['Release Notes']  = latestReleaseNote.text;
+    // DEBUG
+    if (row['Issue key'] === 'CXMIS-46') {
+      console.log('CXMIS-46 commentEntries count:', commentEntries.length);
+      console.log('CXMIS-46 commentEntries:', JSON.stringify(commentEntries));
+      console.log('CXMIS-46 Comment:', row['Comment']);
+      console.log('CXMIS-46 Release Notes:', row['Release Notes']);
+    }
 
 
 
@@ -1094,8 +1101,9 @@ function renderTable() {
         return `<td title="${val}">${val||'--'}</td>`;
       }
       if (spec.render === 'comment') {
-        const raw = r[cols.comment] || r['Comment'] || '';
-        const val = extractText(raw).trim();
+        // Always read from synthetic key written by parser -- never from cols.comment
+        // which may resolve to an unrelated field like 'Custom field (Flag - Comment Added)'
+        const val = (r['Comment'] || '').trim();
         return `<td title="${val}" style="font-size:12px;${val?'':'color:var(--text-muted)'}">${val||'--'}</td>`;
       }
       if (spec.render === 'resolved') {
