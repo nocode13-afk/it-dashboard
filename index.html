@@ -511,6 +511,31 @@ function toggleTheme() {
 let allRows = [], filtered = [];
 let sortCol = null, sortDir = 1;
 
+// -- ADF TEXT EXTRACTOR ---------------------------------------------------
+// Jira API v3 returns rich text fields as Atlassian Document Format (ADF)
+// JSON objects. This recursively extracts plain text from them.
+// If the value is already a plain string, it is returned as-is.
+function extractText(val) {
+  if (!val) return '';
+  if (typeof val === 'string') {
+    // Check if it looks like serialized ADF ("[object Object]" or JSON string)
+    if (val === '[object Object]') return '';
+    try {
+      const parsed = JSON.parse(val);
+      return extractText(parsed);
+    } catch(e) {
+      return val.trim();
+    }
+  }
+  if (typeof val === 'object') {
+    // ADF node: recurse into content array
+    if (Array.isArray(val)) return val.map(extractText).filter(Boolean).join(' ');
+    if (val.text) return val.text;
+    if (val.content) return extractText(val.content);
+  }
+  return String(val).trim();
+}
+
 const TABLE_SPEC = [
   { key:'key',           label:'Issue #',        render:'key' },
   { key:'status',        label:'Status',         render:'status' },
@@ -644,7 +669,64 @@ function parseFullCSV(text) {
     if (!line) continue;
     const vals = parseCSVLine(line);
     const row = {};
-    headers.forEach((h, j) => { row[h] = vals[j] !== undefined ? vals[j] : ''; });
+    // Collect all Comment column values before processing
+    const commentEntries = [];
+    headers.forEach((h, j) => {
+      const v = vals[j] !== undefined ? vals[j] : '';
+      if (h.toLowerCase().trim() === 'comment') {
+        if (v.trim()) commentEntries.push(v.trim());
+      } else {
+        // Non-comment column -- keep first non-empty for duplicate headers
+        if (!(h in row) || (row[h] === '' && v !== '')) {
+          row[h] = v;
+        }
+      }
+    });
+
+    // Each comment entry is formatted as: "date;userId;text"
+    // Parse all entries, then pick the latest [Comment] and latest [Release Notes]
+    let latestComment     = { date: null, text: '' };
+    let latestReleaseNote = { date: null, text: '' };
+
+    commentEntries.forEach(entry => {
+      // Split on semicolon -- format is "date;userId;text" (text may contain semicolons)
+      const parts = entry.split(';');
+      if (parts.length < 3) return;
+      const dateStr = parts[0].trim();
+      const text    = parts.slice(2).join(';').trim();
+      if (!text) return;
+
+      // Parse the Jira date format: "17/Jun/26 4:31 PM"
+      const entryDate = new Date(dateStr.replace(/(\d+)\/(\w+)\/(\d+)/, '$1 $2 20$3'));
+
+      const isReleaseNote = /^\[release notes?\]/i.test(text);
+      const isComment     = /^\[comment\]/i.test(text);
+
+      if (isReleaseNote) {
+        const clean = text.replace(/^\[release notes?\]\s*/i, '').trim();
+        if (!latestReleaseNote.date || entryDate >= latestReleaseNote.date) {
+          latestReleaseNote = { date: entryDate, text: clean };
+        }
+      } else if (isComment) {
+        const clean = text.replace(/^\[comment\]\s*/i, '').trim();
+        if (!latestComment.date || entryDate >= latestComment.date) {
+          latestComment = { date: entryDate, text: clean };
+        }
+      }
+    });
+
+    if (latestComment.text)     row['Comment']       = latestComment.text;
+    if (latestReleaseNote.text) row['Release Notes']  = latestReleaseNote.text;
+
+    // DEBUG -- remove after fixing
+    if (row['Issue key'] === 'CXMIS-46') {
+      console.log('CXMIS-46 commentEntries:', JSON.stringify(commentEntries));
+      console.log('CXMIS-46 latestComment:', JSON.stringify(latestComment));
+      console.log('CXMIS-46 latestReleaseNote:', JSON.stringify(latestReleaseNote));
+      console.log('CXMIS-46 row Comment:', row['Comment']);
+      console.log('CXMIS-46 row Release Notes:', row['Release Notes']);
+    }
+
     rows.push(row);
   }
   return rows;
@@ -996,7 +1078,8 @@ function renderTable() {
         return `<td title="${val}">${val||'--'}</td>`;
       }
       if (spec.render === 'comment') {
-        const val = (r[cols.comment] || r['Comment'] || '').trim();
+        const raw = r[cols.comment] || r['Comment'] || '';
+        const val = extractText(raw).trim();
         return `<td title="${val}" style="font-size:12px;${val?'':'color:var(--text-muted)'}">${val||'--'}</td>`;
       }
       if (spec.render === 'resolved') {
@@ -1015,7 +1098,9 @@ function renderTable() {
       // cols mapping may be null for extracted fields -- try direct field name too
       const FIELD_MAP = { releaseNotes: 'Release Notes', comment: 'Comment' };
       const fieldName = cols[spec.key] || FIELD_MAP[spec.key] || spec.key;
-      const val = (r[fieldName] || '').trim();
+      const raw = r[fieldName] || '';
+      // Use extractText for rich text fields that may come back as ADF objects
+      const val = (spec.key === 'releaseNotes') ? extractText(raw).trim() : (typeof raw === 'string' ? raw.trim() : String(raw).trim());
       return `<td title="${val}">${val||'--'}</td>`;
     }).join('') + '</tr>';
   }).join('');
