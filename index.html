@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Dashboard — NiCE</title>
+<style>
+  /* ── NiCE BRAND TOKENS ── */
+  :root {
+    --nice-blue:      #3694fc;
+    --nice-charcoal:  #21212b;
+    --nice-warm-white:#f2f0eb;
+    --nice-white:     #ffffff;
+
+    /* Secondary palette */
+    --sec-lime:    #82ed87;
+    --sec-cobalt:  #2f33f5;
+    --sec-emerald: #00e3a1;
+    --sec-purple:  #872bff;
+    --sec-teal:    #36ebd1;
+    --sec-coral:   #ff5b8a;
+    --sec-pink:    #ff88e0;
+    --sec-blue:    #3694fc;
+
+    /* Tints */
+    --sec-lime-t:   #ccf2c7;
+    --sec-cobalt-t: #abadf9;
+    --sec-emerald-t:#9cedd1;
+    --sec-purple-t: #ad7dfc;
+    --sec-teal-t:   #abf7f2;
+    --sec-coral-t:  #f3b1c4;
+    --sec-blue-t:   #94c2fa;
+    --sec-pink-t:   #f6c5ed;
+
+    --font: 'Be Vietnam Pro', Arial, sans-serif;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+
+    /* Theme surface tokens — nice.com palette */
+    --bg-page:      #f2f0eb;
+    --bg-card:      #ffffff;
+    --bg-card2:     #ffffff;
+    --bg-topbar:    #ffffff;
+    --bg-statusbar: #21212b;
+    --text-primary: #21212b;
+    --text-muted:   rgba(26,26,46,0.5);
+    --border-card:  rgba(26,26,46,0.08);
+    --border-input: rgba(26,26,46,0.15);
+    --thead-bg:     #ffffff;
+    --row-hover:    rgba(54,148,252,0.04);
+    --topbar-border:rgba(26,26,46,0.08);
+    --topbar-divider:rgba(26,26,46,0.15);
+    --topbar-title: #21212b;
+  }
+
+  /* ── DARK THEME ── */
+  [data-theme="dark"] {
+    --bg-page:      #13131a;
+    --bg-card:      #1e1e2e;
+    --bg-card2:     #252535;
+    --bg-topbar:    #1e1e2e;
+    --bg-statusbar: #0e0e18;
+    --text-primary: #e8e8f0;
+    --text-muted:   rgba(232,232,240,0.45);
+    --border-card:  rgba(255,255,255,0.07);
+    --border-input: rgba(255,255,255,0.12);
+    --thead-bg:     #252535;
+    --row-hover:    rgba(54,148,252,0.08);
+    --topbar-border:rgba(255,255,255,0.07);
+    --topbar-divider:rgba(255,255,255,0.15);
+    --topbar-title: #ffffff;
+    --nice-warm-white: #1e1e2e;
+    --nice-white:   #1e1e2e;
+    --nice-charcoal:#e8e8f0;
+  }
+  [data-theme="dark"] select,
+  [data-theme="dark"] .search-wrap input {
+    background: #252535;
+    box-shadow: none;
+  }
+  [data-theme="dark"] .match-badge {
+    background: #252535;
+    border-color: rgba(255,255,255,0.12);
+    color: #e8e8f0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg-page);
+    color: var(--text-primary);
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 400;
+    min-height: 100vh;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--bg-topbar);
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--topbar-border);
+    transition: background 0.2s;
+  }
+  .topbar-left { display: flex; align-items: center; gap: 16px; }
+
+  /* Logo letterform colour adapts to theme */
+  .nice-logo .logo-letter { fill: var(--nice-charcoal); }
+  [data-theme="dark"] .nice-logo .logo-letter { fill: #ffffff; }
+  [data-theme="dark"] #last-updated-time { color: var(--nice-blue) !important; }
+
+  .topbar-divider {
+    width: 1px; height: 28px;
+    background: var(--topbar-divider);
+  }
+  .topbar-title {
+    color: var(--topbar-title);
+    font-size: 14px; font-weight: 400;
+  }
+
+
+
+  /* ── FILTERS (inline, below KPIs) ── */
+  .filters-inline {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-card);
+    padding: 14px 20px;
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.4s ease both;
+  }
+  .subbar-label {
+    font-size: 11px; font-weight: 600;
+    color: #21212b;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-right: 4px;
+  }
+
+  select {
+    background: #ffffff;
+    color: var(--text-primary);
+    border: 1.5px solid var(--border-input);
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 12px; font-weight: 500;
+    font-family: var(--font);
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s;
+    box-shadow: 0 1px 3px rgba(26,26,46,0.06);
+  }
+  select:focus { border-color: var(--nice-blue); }
+
+  .search-wrap { position: relative; }
+  .search-wrap input {
+    background: #ffffff;
+    color: var(--text-primary);
+    border: 1.5px solid var(--border-input);
+    padding: 6px 12px 6px 32px;
+    border-radius: 50px;
+    font-size: 12px; font-weight: 400;
+    font-family: var(--font);
+    width: 200px; outline: none;
+    transition: border-color 0.15s;
+    box-shadow: 0 1px 3px rgba(26,26,46,0.06);
+  }
+  .search-wrap input:focus { border-color: var(--nice-blue); }
+  .search-icon {
+    position: absolute; left: 11px; top: 50%; transform: translateY(-50%);
+    color: rgba(33,33,43,0.35); pointer-events: none;
+  }
+  .match-badge {
+    margin-left: auto;
+    background: #ffffff;
+    color: var(--text-primary);
+    border: 1.5px solid var(--border-input);
+    font-size: 11px; font-weight: 600;
+    padding: 4px 12px; border-radius: 50px;
+  }
+
+  /* ── MAIN ── */
+  .main { padding: 28px 32px; background: var(--bg-page); }
+
+  /* ── METRIC CARDS (matched to IT-CXMIS-Dashboard) ── */
+  .metrics-row {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px;
+    animation: fadeUp 0.4s ease both;
+  }
+  .metric-card {
+    flex: 1; min-width: 80px; max-width: 120px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-md);
+    padding: 13px 15px;
+    position: relative; overflow: hidden;
+    cursor: default;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .metric-card:hover { }
+  .mc-bar {
+    position: absolute; bottom: 0; left: 0; height: 3px;
+    transition: width 0.9s 0.1s cubic-bezier(.4,0,.2,1);
+  }
+  .mc-val {
+    font-size: 1.65rem; font-weight: 700; line-height: 1; margin-bottom: 4px;
+  }
+  .mc-lbl {
+    font-size: 0.69rem; font-weight: 500;
+    color: #21212b; line-height: 1.2;
+  }
+
+  /* remove old KPI styles */
+  .kpi-row { display: none; }
+
+  /* ── TABLE ── */
+  .table-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-card);
+    overflow: hidden;
+    margin-bottom: 8px;
+    animation: fadeUp 0.4s ease both;
+  }
+  .table-top {
+    padding: 18px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--border-card);
+  }
+  .table-top .card-title { margin-bottom: 0; }
+  .table-range { font-size: 11px; color: rgba(33,33,43,0.4); font-weight: 400; }
+
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 1580px; }
+  thead { position: sticky; top: 0; background: var(--thead-bg); z-index: 2; }
+  th {
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 10px; font-weight: 600;
+    color: rgba(33,33,43,0.45);
+    text-transform: uppercase; letter-spacing: 0.7px;
+    white-space: nowrap; cursor: pointer;
+    transition: color 0.15s;
+    user-select: none;
+    border-bottom: 1px solid var(--border-card);
+  }
+  th:hover { color: var(--nice-charcoal); }
+  td {
+    padding: 11px 20px;
+    border-top: 1px solid rgba(33,33,43,0.05);
+    font-size: 13px; font-weight: 400;
+    overflow: hidden; text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* All columns explicitly sized — table-layout:fixed requires this */
+  th:nth-child(1), td:nth-child(1) { width: 130px; }
+  th:nth-child(2), td:nth-child(2) { width: 160px; }
+  th:nth-child(3), td:nth-child(3) { width: 280px; white-space: normal; word-break: break-word; }
+  th:nth-child(4), td:nth-child(4) { width: 220px; white-space: normal; word-break: break-word; }
+  th:nth-child(5), td:nth-child(5) { width: 100px; }
+  th:nth-child(6), td:nth-child(6) { width: 180px; }
+  th:nth-child(7), td:nth-child(7) { width: 160px; }
+  th:nth-child(8), td:nth-child(8) { width: 110px; }
+  th:nth-child(9), td:nth-child(9) { width: 220px; white-space: normal; word-break: break-word; }
+
+  tr:hover td { background: var(--row-hover); }
+
+  /* ── BADGES ── */
+  .badge {
+    display: inline-flex; align-items: center;
+    padding: 3px 10px; border-radius: 50px;
+    font-size: 11px; font-weight: 500;
+    white-space: nowrap;
+  }
+  /* Status colours matched to IT-CXMIS-Dashboard */
+  .s-todo       { background: rgba(148,194,250,0.14); color: #94c2fa; }   /* Open/Qualified */
+  .s-inprogress { background: rgba(54,235,209,0.12);  color: #36ebd1; }   /* In Development */
+  .s-done       { background: rgba(130,237,135,0.12); color: #82ed87; }   /* Done */
+  .s-blocked    { background: rgba(255,91,138,0.12);  color: #ff5b8a; }   /* Blocked */
+  .s-review     { background: rgba(255,136,224,0.12); color: #ff88e0; }   /* UAT */
+  .s-default    { background: rgba(144,152,181,0.14); color: #9098b5; }   /* Other */
+
+  .p-highest, .p-critical { background: rgba(255,91,138,0.12); color: #c4004d; }
+  .p-high     { background: rgba(255,91,138,0.08);  color: #c44500; }
+  .p-medium   { background: rgba(54,148,252,0.10);  color: #1a6ed4; }
+  .p-low      { background: rgba(0,227,161,0.12);   color: #007a59; }
+  .p-lowest   { background: rgba(33,33,43,0.06);    color: rgba(33,33,43,0.45); }
+  .p-default  { background: rgba(33,33,43,0.06);    color: rgba(33,33,43,0.45); }
+
+  .key-text {
+    font-size: 12px; font-weight: 500;
+    color: var(--nice-blue);
+    font-variant-numeric: tabular-nums;
+  }
+  .key-link {
+    font-size: 12px; font-weight: 500;
+    color: var(--nice-blue);
+    font-variant-numeric: tabular-nums;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  .key-link:hover { opacity: 0.7; text-decoration: underline; }
+  .key-link::after { content: none; }
+
+  /* ── PAGINATION ── */
+  .table-footer {
+    padding: 10px 24px;
+    border-top: 1px solid var(--border-card);
+    font-size: 11px; color: var(--text-muted);
+  }
+
+  .proj-it     { color: #3694fc; }
+  .proj-cxmis  { color: #872bff; }
+  .proj-cxscoe { color: #36ebd1; }
+
+  .empty-state {
+    text-align: center;
+    padding: 80px 40px;
+    background: var(--nice-white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-card);
+  }
+  .empty-icon { width: 56px; height: 56px; margin: 0 auto 20px; opacity: 0.2; }
+  .empty-state h2 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+  .empty-state p { font-size: 14px; font-weight: 300; line-height: 1.6; color: rgba(33,33,43,0.55); }
+  .empty-state strong { font-weight: 500; color: var(--nice-charcoal); }
+
+  /* ── STATUS ROW ── */
+  .status-row {
+    padding: 10px 32px;
+    background: var(--bg-statusbar);
+    font-size: 11px; color: rgba(255,255,255,0.7);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .status-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.25); display: inline-block; }
+
+  /* ── SCROLL ── */
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(33,33,43,0.15); border-radius: 3px; }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(10px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .kpi:nth-child(2) { animation-delay:.05s }
+  .kpi:nth-child(3) { animation-delay:.10s }
+  .kpi:nth-child(4) { animation-delay:.15s }
+  .kpi:nth-child(5) { animation-delay:.20s }
+
+  @media (max-width: 600px) {
+    .topbar, .main, .status-row { padding-left: 16px; padding-right: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="nice-logo">
+      <svg width="77" height="28" viewBox="0 0 77 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_2138_1905)">
+          <path d="M28.2377 0.00601412C26.2735 -0.114702 24.655 1.46171 24.779 3.3749C24.881 4.95232 26.1954 6.23252 27.8149 6.33193C29.7791 6.45265 31.3976 4.87624 31.2737 2.96305C31.1716 1.38562 29.8572 0.105427 28.2377 0.00601412Z" fill="#3694FD"/>
+          <path d="M21.1265 1.99121H15.891C15.7181 1.99121 15.5785 2.12714 15.5785 2.29554V17.2491C15.5785 17.3526 15.4379 17.3901 15.3848 17.2998L6.32285 2.14236C6.26661 2.04903 6.16454 1.99121 6.0531 1.99121H0.312445C0.139559 1.99121 0 2.12714 0 2.29554V27.1224C0 27.2908 0.139559 27.4268 0.312445 27.4268H5.54798C5.72087 27.4268 5.86043 27.2908 5.86043 27.1224V12.2287C5.86043 12.1253 6.00103 12.0877 6.05414 12.178L15.1151 27.2766C15.1713 27.37 15.2734 27.4278 15.3848 27.4278H21.1265C21.2994 27.4278 21.4389 27.2918 21.4389 27.1234V2.29554C21.4389 2.12714 21.2994 1.99121 21.1265 1.99121Z" class="logo-letter" fill="#21212B"/>
+          <path d="M30.3457 8.00273C29.6135 8.15591 28.8356 8.23909 28.0263 8.23909C27.2171 8.23909 26.4391 8.15591 25.7069 8.00273C25.5122 7.96215 25.3299 8.1062 25.3299 8.29995V27.1225C25.3299 27.2909 25.4695 27.4268 25.6424 27.4268H30.4103C30.5832 27.4268 30.7227 27.2909 30.7227 27.1225V8.29995C30.7227 8.1062 30.5394 7.96215 30.3457 8.00273Z" class="logo-letter" fill="#21212B"/>
+          <path d="M76.6876 22.7696H65.7874C65.7301 22.7696 65.6832 22.7239 65.6832 22.6681V17.1395C65.6832 17.0837 65.7301 17.0381 65.7874 17.0381H74.6837C74.8566 17.0381 74.9962 16.9022 74.9962 16.7338V12.6852C74.9962 12.5168 74.8566 12.3809 74.6837 12.3809H65.7874C65.7301 12.3809 65.6832 12.3352 65.6832 12.2795V6.75087C65.6832 6.69507 65.7301 6.64943 65.7874 6.64943H76.6876C76.8604 6.64943 77 6.51349 77 6.3451V2.29554C77 2.12714 76.8604 1.99121 76.6876 1.99121H60.1363C59.9634 1.99121 59.8239 2.12714 59.8239 2.29554V27.1224C59.8239 27.2908 59.9634 27.4268 60.1363 27.4268H76.6876C76.8604 27.4268 77 27.2908 77 27.1224V23.0739C77 22.9055 76.8604 22.7696 76.6876 22.7696Z" class="logo-letter" fill="#21212B"/>
+          <path d="M56.1818 18.003H50.6473C50.4974 18.003 50.3672 18.1064 50.3401 18.2495C50.0839 19.622 49.6017 20.7175 48.8935 21.5331C48.0967 22.4532 46.9678 22.9127 45.5087 22.9127C44.3859 22.9127 43.4205 22.579 42.6123 21.9095C41.8041 21.241 41.1813 20.2976 40.7428 19.0793C40.3054 17.8609 40.0857 16.4164 40.0857 14.7446C40.0857 13.1206 40.2929 11.6882 40.7085 10.4455C41.124 9.20388 41.7406 8.23714 42.5613 7.54429C43.3809 6.85144 44.3745 6.50553 45.542 6.50553C46.8668 6.50553 47.9447 6.93564 48.7748 7.79485C49.5028 8.54856 50.0058 9.55893 50.2859 10.8249C50.3162 10.9639 50.4443 11.0623 50.5901 11.0623H56.1037C56.2995 11.0623 56.4463 10.8888 56.4109 10.7012C55.8621 7.78065 54.7372 5.52154 53.0344 3.92586C51.2493 2.25409 48.7518 1.41821 45.5409 1.41821C43.2059 1.41821 41.174 1.96803 39.4451 3.06563C37.7163 4.16425 36.3853 5.71123 35.4542 7.70457C34.5221 9.69892 34.0565 12.0453 34.0565 14.7436C34.0565 17.442 34.545 19.9202 35.5219 21.8902C36.4988 23.8602 37.8454 25.3717 39.5639 26.4216C41.2813 27.4726 43.2403 27.998 45.441 27.998C47.5739 27.998 49.4038 27.6044 50.9306 26.8162C52.4574 26.028 53.6926 24.8878 54.6352 23.3946C55.5194 21.9957 56.137 20.3168 56.488 18.36C56.5213 18.1724 56.3755 18.0009 56.1807 18.0009L56.1818 18.003Z" class="logo-letter" fill="#21212B"/>
+        </g>
+        <defs>
+          <clipPath id="clip0_2138_1905"><rect width="77" height="28" fill="white"/></clipPath>
+        </defs>
+      </svg>
+    </div>
+    <div class="topbar-divider"></div>
+    <div class="topbar-title">IT Dashboard</div>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center">
+    <button id="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;background:transparent;border:1.5px solid var(--border-input);border-radius:50%;cursor:pointer;transition:all 0.15s;color:var(--text-primary)" onmouseover="this.style.borderColor='var(--nice-blue)';this.style.color='var(--nice-blue)'" onmouseout="this.style.borderColor='var(--border-input)';this.style.color='var(--text-primary)'">
+      <svg id="theme-icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg id="theme-icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <button onclick="refreshData()" title="Refresh data from GitHub" style="display:flex;align-items:center;gap:7px;background:var(--nice-blue);color:#fff;border:none;cursor:pointer;padding:9px 18px;border-radius:50px;font-size:13px;font-weight:500;font-family:var(--font);transition:opacity 0.15s;white-space:nowrap" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+      Refresh
+    </button>
+  </div>
+</div>
+
+<!-- STATUS / LOAD INFO -->
+<div class="status-row" id="status-row">
+  <span class="status-dot"></span>
+  <span id="load-label">No data loaded — upload a Jira CSV export to begin</span>
+  <span style="flex:1"></span>
+  <div id="last-updated-wrap" style="display:none;align-items:center;gap:6px;font-size:11px;font-weight:500;color:rgba(255,255,255,0.7)">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    <span style="color:rgba(255,255,255,0.4);font-weight:400">Last updated:</span>
+    <span id="last-updated-time" style="color:var(--nice-blue);font-weight:600"></span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main" id="main-content">
+  <!-- Empty state -->
+  <div class="empty-state" id="empty-state">
+    <svg class="empty-icon" viewBox="0 0 56 56" fill="none" stroke="#21212b" stroke-width="1.5">
+      <rect x="8" y="8" width="40" height="40" rx="6"/>
+      <path d="M16 28h24M16 20h24M16 36h14"/>
+    </svg>
+    <h2>No data loaded</h2>
+    <p>The dashboard is fetching data from GitHub.<br>If this persists, If this persists, check the GitHub URL or click <strong>Refresh</strong>.</p>
+  </div>
+
+  <!-- Dashboard (hidden until data loaded) -->
+  <div id="dashboard" style="display:none">
+
+    <!-- Metric cards: projects row + status row -->
+    <div class="metrics-row" id="metrics-row-proj"></div>
+    <div class="metrics-row" id="metrics-row-status"></div>
+
+    <!-- FILTERS -->
+    <div class="filters-inline" id="filters-bar" style="display:none">
+      <span class="subbar-label">Filter</span>
+      <div class="search-wrap">
+        <svg class="search-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search" placeholder="Search issues…" oninput="applyFilters()">
+      </div>
+      <select id="filter-status"   onchange="applyFilters()"><option value="">All statuses</option></select>
+      <select id="filter-assignee" onchange="applyFilters()"><option value="">All assignees</option></select>
+      <select id="filter-priority" onchange="applyFilters()"><option value="">All projects</option></select>
+      <select id="filter-bizowner" onchange="applyFilters()"><option value="">All business owners</option></select>
+      <div style="display:flex;align-items:center;gap:6px;margin-left:4px">
+        <span style="font-size:11px;font-weight:500;color:rgba(33,33,43,0.5);white-space:nowrap">Done:</span>
+        <select id="done-window-sel" onchange="applyFilters()" style="min-width:110px">
+          <option value="0">Select months</option>
+          <option value="1" selected>Last Month</option>
+          <option value="3">3 months</option>
+          <option value="6">6 months</option>
+          <option value="12">12 months</option>
+          <option value="99">All time</option>
+        </select>
+      </div>
+      <div class="match-badge"><span id="match-count">0</span> issues</div>
+      <button onclick="resetFilters()" style="display:flex;align-items:center;gap:5px;background:transparent;border:1.5px solid rgba(33,33,43,0.15);color:rgba(33,33,43,0.5);font-family:var(--font);font-size:11px;font-weight:500;padding:5px 12px;border-radius:50px;cursor:pointer;transition:all 0.15s;white-space:nowrap" onmouseover="this.style.borderColor='var(--nice-blue)';this.style.color='var(--nice-blue)'" onmouseout="this.style.borderColor='rgba(33,33,43,0.15)';this.style.color='rgba(33,33,43,0.5)'">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        Reset
+      </button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-card">
+      <div class="table-top">
+        <div class="card-title"></div>
+        <span class="table-range" id="table-range"></span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr id="table-head"></tr></thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+      <div class="table-footer">
+        <span id="table-range"></span>
+      </div>
+    </div>
+
+  </div><!-- /dashboard -->
+</div><!-- /main -->
+
+<script>
+// ── THEME TOGGLE ──────────────────────────────────────────────────────────
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.getElementById('theme-icon-sun').style.display  = isDark ? 'none' : 'block';
+  document.getElementById('theme-icon-moon').style.display = isDark ? 'block' : 'none';
+  try { localStorage.setItem('it-dashboard-theme', isDark ? 'light' : 'dark'); } catch(e) {}
+}
+
+// Restore saved theme on load
+(function() {
+  try {
+    const saved = localStorage.getItem('it-dashboard-theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      // Icons updated after DOM ready
+      document.addEventListener('DOMContentLoaded', function() {
+        const sun  = document.getElementById('theme-icon-sun');
+        const moon = document.getElementById('theme-icon-moon');
+        if (sun)  sun.style.display  = 'block';
+        if (moon) moon.style.display = 'none';
+      });
+    }
+  } catch(e) {}
+})();
+
+
+let allRows = [], filtered = [];
+let sortCol = null, sortDir = 1;
+
+const TABLE_SPEC = [
+  { key:'key',           label:'Issue #',        render:'key' },
+  { key:'status',        label:'Status',         render:'status' },
+  { key:'summary',       label:'Summary',        render:'plain' },
+  { key:'comment',       label:'Comments',       render:'comment' },
+  { key:'project',       label:'Project',        render:'plain' },
+  { key:'businessOwner', label:'Business owner', render:'businessOwner' },
+  { key:'assignee',      label:'Assignee',       render:'assignee' },
+  { key:'resolved',      label:'Closed',         render:'resolved' },
+  { key:'releaseNotes',  label:'Release Notes',  render:'plain' },
+];
+
+// ── BUSINESS OWNER LOGIC ─────────────────────────────────────────────────
+// Falls back to Reporter if Business Owner is empty.
+// Normalises known username formats.
+const BUSINESS_OWNER_MAP = {
+  'robert.gordon': 'Robert Gordon',
+};
+
+function resolveBusinessOwner(r, cols) {
+  let val = (r[cols.businessOwner] || '').trim();
+  if (!val && cols.reporter) val = (r[cols.reporter] || '').trim();
+  if (!val) return '';
+  const lower = val.toLowerCase();
+  return BUSINESS_OWNER_MAP[lower] || val;
+}
+
+
+
+// Default sort by Issue # on load
+function defaultSort(cols) {
+  if (!sortCol && cols.key) { sortCol = cols.key; sortDir = 1; }
+}
+
+function issueKeySort(a, b, col, dir) {
+  // Sort like IT-123 numerically: compare prefix then number
+  const parse = v => { const m = (v||'').match(/^([A-Z]+)-(\d+)$/i); return m ? [m[1].toUpperCase(), parseInt(m[2])] : [v||'', 0]; };
+  const [ap, an] = parse(a[col]); const [bp, bn] = parse(b[col]);
+  if (ap !== bp) return ap < bp ? -dir : ap > bp ? dir : 0;
+  return (an - bn) * dir;
+}
+
+// ── NAME NORMALISATION ────────────────────────────────────────────────────
+// Add any additional name mappings here as needed.
+const NAME_MAP = {
+  'jonathan.jensen': 'Jonathan Jensen',
+};
+
+// Names to exclude entirely from the dashboard (case-insensitive, checked
+// against the raw value before and after normalisation).
+const EXCLUDED_NAMES = [
+  'rahul bias',
+];
+
+function normaliseName(raw) {
+  const v = (raw || '').trim();
+  if (!v) return '';
+  const lower = v.toLowerCase();
+  if (NAME_MAP[lower]) return NAME_MAP[lower];
+  return v;
+}
+
+function isExcluded(raw) {
+  const v = normaliseName(raw).toLowerCase();
+  return EXCLUDED_NAMES.some(x => v === x || raw.trim().toLowerCase() === x);
+}
+
+// ── MERGED ASSIGNEE LOGIC ─────────────────────────────────────────────────
+// Falls back: Assignee → Analysis Owner → BA Assignee
+// Skips any value that matches the exclusion list.
+function resolveAssignee(r, cols) {
+  const candidates = [
+    r[cols.assignee]      || '',
+    r[cols.analysisOwner] || '',
+    r[cols.baAssignee]    || '',
+  ];
+  for (const c of candidates) {
+    const v = c.trim();
+    if (v && !isExcluded(v)) return normaliseName(v);
+  }
+  return '';
+}
+
+
+// ── COLUMN DETECTION ──────────────────────────────────────────────────────
+// Finds the actual CSV header that best matches each logical column.
+function detectCols(headers) {
+  const h = headers.map(x => x.toLowerCase().trim());
+  const exact = (needle) => {
+    const i = h.findIndex(x => x === needle.toLowerCase().trim());
+    return i >= 0 ? headers[i] : null;
+  };
+  const find = (...opts) => {
+    for (const o of opts) {
+      const i = h.findIndex(x => x.includes(o.toLowerCase()));
+      if (i >= 0) return headers[i];
+    }
+    return null;
+  };
+  return {
+    key:           exact('issue key')                          || find('issue key','key'),
+    url:           exact('url')                                || find('issue url','link','url'),
+    projectName:   exact('project name')                      || find('project name'),
+    status:        exact('status')                            || find('status'),
+    summary:       exact('summary')                           || find('summary','title'),
+    project:       exact('project')                           || find('project'),
+    reporter:      exact('reporter')                          || find('reporter'),
+    businessOwner: exact('custom field (business owner)')     || find('business owner'),
+    assignee:      exact('assignee')                          || find('assignee'),
+    analysisOwner: exact('custom field (analysis owner)')     || find('analysis owner'),
+    baAssignee:    exact('ba assignee')                       || find('ba assignee'),
+    // kept for charts / age bars only (not shown in table)
+    created:       exact('created')                           || find('created'),
+    updated:       exact('updated')                           || find('updated'),
+    priority:      exact('priority')                          || find('priority'),
+    type:          exact('issue type')                        || find('issue type','issuetype'),
+    resolved:      exact('resolved')                          || find('resolved date','resolution date','closed'),
+    releaseNotes:  exact('release notes')                     || find('release notes'),
+    comment:       exact('comment')                           || find('comment'),
+  };
+}
+
+// ── CSV PARSER ────────────────────────────────────────────────────────────
+function parseFullCSV(text) {
+  const lines = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
+  if (!lines.length) return [];
+  const headers = parseCSVLine(lines[0]);
+  const rows = [];
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+    const vals = parseCSVLine(line);
+    const row = {};
+    headers.forEach((h, j) => { row[h] = vals[j] !== undefined ? vals[j] : ''; });
+    rows.push(row);
+  }
+  return rows;
+}
+
+function parseCSVLine(line) {
+  const result = [];
+  let cur = '', inQuote = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (ch === '"') {
+      if (inQuote && line[i+1] === '"') { cur += '"'; i++; }
+      else { inQuote = !inQuote; }
+    } else if (ch === ',' && !inQuote) {
+      result.push(cur); cur = '';
+    } else {
+      cur += ch;
+    }
+  }
+  result.push(cur);
+  return result;
+}
+
+// ── METRIC CARDS (project + status rows, matched to IT-CXMIS-Dashboard) ────
+const METRICS_PROJ = [
+  { lbl:'Total',  fn: a => a.length,                                                                           clr:'var(--nice-blue)' },
+  { lbl:'IT',     fn: a => a.filter(r => { const c=detectCols(Object.keys(r)); return (r[c.key]||'').startsWith('IT-'); }).length,     clr:'#3694fc' },
+  { lbl:'CXMIS',  fn: a => a.filter(r => { const c=detectCols(Object.keys(r)); return (r[c.key]||'').startsWith('CXMIS-'); }).length,  clr:'#872bff' },
+  { lbl:'CXSCOE', fn: a => a.filter(r => { const c=detectCols(Object.keys(r)); return (r[c.key]||'').startsWith('CXSCOE-'); }).length, clr:'#36ebd1' },
+];
+const METRICS_STATUS = [
+  { lbl:'Open',       fn: a => a.filter(r => { const c=detectCols(Object.keys(r)); return (r[c.status]||'') === 'Open'; }).length,                                                                   clr:'#9098b5' },
+  { lbl:'Qualified',  fn: a => a.filter(r => { const c=detectCols(Object.keys(r)); return (r[c.status]||'') === 'Qualified'; }).length,                                                              clr:'#94c2fa' },
+  { lbl:'Design',     fn: a => a.filter(r => { const c=detectCols(Object.keys(r)); return (r[c.status]||'') === 'Design'; }).length,                                                                 clr:'#ad7dfc' },
+  { lbl:'Ready Dev',  fn: a => a.filter(r => { const c=detectCols(Object.keys(r)); return (r[c.status]||'') === 'Ready for Dev'; }).length,                                                          clr:'#00e3a1' },
+  { lbl:'In Dev',     fn: a => a.filter(r => { const c=detectCols(Object.keys(r)); return (r[c.status]||'') === 'In Development'; }).length,                                                         clr:'#36ebd1' },
+  { lbl:'Testing',    fn: a => a.filter(r => { const c=detectCols(Object.keys(r)); return (r[c.status]||'') === 'In Testing'; }).length,                                                             clr:'#82ed87' },
+  { lbl:'In UAT',     fn: a => a.filter(r => { const c=detectCols(Object.keys(r)); return ['In UAT','UAT Approved'].includes(r[c.status]||''); }).length,                                            clr:'#ff88e0' },
+  { lbl:'Rdy Deploy', fn: a => a.filter(r => { const c=detectCols(Object.keys(r)); return (r[c.status]||'') === 'Ready for Deployment'; }).length,                                                   clr:'#abadf9' },
+  { lbl:'Done',       fn: a => a.filter(r => { const c=detectCols(Object.keys(r)); return ['Done','Resolved','Closed','Complete','Completed'].includes(r[c.status]||''); }).length,                  clr:'#82ed87' },
+];
+
+function renderMetricGroup(metrics, elId, rows) {
+  const total = rows.length + filtered.filter(r => {
+    // Add back Done rows that were filtered out by done-window for the total base
+    return false;
+  }).length;
+  const base = allRows.length;
+  const doneSelEl = document.getElementById('done-window-sel');
+  const doneMonths = doneSelEl ? parseInt(doneSelEl.value) : 99;
+  const el = document.getElementById(elId);
+  if (!el) return;
+  el.innerHTML = metrics.map(m => {
+    let lbl = m.lbl;
+    if (m.lbl === 'Done') {
+      lbl = doneMonths === 0 ? 'Done (off)' : doneMonths === 99 ? 'Done (all)' : doneMonths === 1 ? 'Done (last mo)' : `Done (${doneMonths}mo)`;
+    }
+    const val = m.fn(rows);
+    const pct = base > 0 ? Math.round(val / base * 100) : 0;
+    return `<div class="metric-card">
+      <div class="mc-val" style="color:${m.clr}">${val.toLocaleString()}</div>
+      <div class="mc-lbl">${lbl}</div>
+      <div class="mc-bar" style="background:${m.clr};width:${pct}%"></div>
+    </div>`;
+  }).join('');
+}
+
+function renderKPIs() {
+  if (!allRows.length) return;
+  renderMetricGroup(METRICS_PROJ,   'metrics-row-proj',   filtered);
+  renderMetricGroup(METRICS_STATUS, 'metrics-row-status', filtered);
+}
+
+// ── GITHUB DATA SOURCE ───────────────────────────────────────────────────
+// GitHub raw URL for jira-export.csv — update branch/path if needed.
+const DATA_URL = 'https://raw.githubusercontent.com/nocode13-afk/it-dashboard/main/jira-export.csv';
+
+function loadCSVText(csvText, sourceName) {
+  try {
+    const rows = parseFullCSV(csvText);
+    if (!rows.length) {
+      document.getElementById('load-label').textContent = 'No data found in file.';
+      return;
+    }
+    const cols = detectCols(Object.keys(rows[0]));
+    let typeFiltered = cols.type ? rows.filter(r => {
+      const t = (r[cols.type] || '').trim().toLowerCase();
+      return t === 'story' || t === 'user story' || t === 'cr' || t === 'change request' || t === 'epic';
+    }) : rows;
+    allRows = typeFiltered.filter(r => {
+      const candidates = [r[cols.assignee]||'', r[cols.analysisOwner]||'', r[cols.baAssignee]||'']
+        .map(c => c.trim()).filter(Boolean);
+      return !(candidates.length > 0 && candidates.every(c => isExcluded(c)));
+    });
+    const dot = document.querySelector('#status-row .status-dot');
+    if (dot) dot.style.background = 'var(--sec-emerald)';
+    const now = new Date();
+    const timeStr = now.toLocaleDateString('en-US', { weekday:'short', year:'numeric', month:'short', day:'numeric' })
+      + ' · ' + now.toLocaleTimeString('en-US', { hour:'2-digit', minute:'2-digit' });
+    document.getElementById('load-label').textContent = allRows.length.toLocaleString() + ' issues loaded from ' + sourceName;
+    const wrap = document.getElementById('last-updated-wrap');
+    const timeEl = document.getElementById('last-updated-time');
+    if (wrap && timeEl) { timeEl.textContent = timeStr; wrap.style.display = 'flex'; }
+    document.getElementById('empty-state').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'block';
+    document.getElementById('filters-bar').style.display = 'flex';
+    buildFilters();
+    applyFilters();
+  } catch(err) {
+    document.getElementById('load-label').textContent = 'Error parsing data: ' + err.message;
+  }
+}
+
+async function fetchFromGitHub() {
+  if (!DATA_URL || DATA_URL === 'PASTE_YOUR_DATA_URL_HERE') {
+    document.getElementById('load-label').textContent = 'Data URL not configured — update DATA_URL in the source.';
+    return;
+  }
+  document.getElementById('load-label').textContent = 'Fetching latest data…';
+  try {
+    const res = await fetch(DATA_URL);
+    if (!res.ok) throw new Error('HTTP ' + res.status + ' — check the URL is publicly accessible');
+    const text = await res.text();
+    loadCSVText(text, 'GitHub');
+  } catch(err) {
+    document.getElementById('load-label').textContent = 'Could not load data: ' + err.message;
+    document.getElementById('empty-state').style.display = 'block';
+  }
+}
+
+function refreshData() { fetchFromGitHub(); }
+
+// Auto-load on page open
+(function() { fetchFromGitHub(); })();
+
+// ── FILTERS ───────────────────────────────────────────────────────────────
+ ───────────────────────────────────────────────────────────────
+function buildFilters() {
+  const cols = detectCols(Object.keys(allRows[0]));
+  const pop = (id, col, label) => {
+    if (!col) return;
+    const vals = [...new Set(allRows.map(r => (r[col]||'').trim()).filter(Boolean))].sort();
+    const sel = document.getElementById(id);
+    sel.innerHTML = `<option value="">All ${label}</option>` + vals.map(v => `<option>${v}</option>`).join('');
+  };
+  pop('filter-status',   cols.status,      'statuses');
+  pop('filter-priority', cols.projectName, 'projects');
+  // Business owner — use resolved values
+  const bizEl = document.getElementById('filter-bizowner');
+  if (bizEl) {
+    const owners = [...new Set(allRows.map(r => resolveBusinessOwner(r, cols)).filter(Boolean))].sort();
+    const cur = bizEl.value;
+    bizEl.innerHTML = '<option value="">All business owners</option>' +
+      owners.map(o => `<option value="${o}"${o===cur?' selected':''}>${o}</option>`).join('');
+  }
+  // Assignee
+  const asnEl = document.getElementById('filter-assignee');
+  if (asnEl) {
+    const assignees = [...new Set(allRows.map(r => resolveAssignee(r, cols)).filter(Boolean))].sort();
+    const cur2 = asnEl.value;
+    asnEl.innerHTML = '<option value="">All assignees</option>' +
+      assignees.map(a => `<option value="${a}"${a===cur2?' selected':''}>${a}</option>`).join('');
+  }
+
+  // Assignee filter: pool resolved values from all three merged source fields
+  const assigneeSel = document.getElementById('filter-assignee');
+  const assigneeVals = [...new Set(
+    allRows.map(r => resolveAssignee(r, cols)).filter(Boolean)
+  )].sort();
+  assigneeSel.innerHTML = `<option value="">All assignees</option>` +
+    assigneeVals.map(v => `<option>${v}</option>`).join('');
+}
+
+function resetFilters() {
+  document.getElementById('search').value = '';
+  document.getElementById('filter-status').value = '';
+  document.getElementById('filter-assignee').value = '';
+  document.getElementById('filter-priority').value = '';
+  document.getElementById('filter-bizowner').value = '';
+  document.getElementById('done-window-sel').value = '1';
+  applyFilters();
+}
+
+function getDoneWindowDate() {
+  const sel = document.getElementById('done-window-sel');
+  const months = sel ? parseInt(sel.value) : 0;
+  if (months === 0 || months === 99) return null;
+  const d = new Date();
+  d.setMonth(d.getMonth() - months);
+  return d;
+}
+
+
+function applyFilters() {
+  const cols = detectCols(Object.keys(allRows[0]||{}));
+  const search   = document.getElementById('search').value.toLowerCase();
+  const status   = document.getElementById('filter-status').value;
+  const assignee = document.getElementById('filter-assignee').value;
+  const project  = document.getElementById('filter-priority').value;
+  const bizowner = document.getElementById('filter-bizowner').value;
+  const doneSelEl= document.getElementById('done-window-sel');
+  const doneMonths = doneSelEl ? parseInt(doneSelEl.value) : 99;
+  const doneWindow = getDoneWindowDate();
+
+  filtered = allRows.filter(r => {
+    const rowStatus = (r[cols.status] || '').trim();
+    const isDone = ['Done','Resolved','Closed','Complete','Completed'].includes(rowStatus);
+
+    // Done window filter
+    if (isDone) {
+      if (doneMonths === 0) return false;            // "Select months" — hide all Done
+      if (doneMonths !== 99 && doneWindow) {
+        const resDate = r[cols.updated] || r[cols.created] || '';
+        if (!resDate || new Date(resDate) < doneWindow) return false;
+      }
+    }
+
+    if (status   && rowStatus !== status)                               return false;
+    if (assignee && resolveAssignee(r, cols) !== assignee)             return false;
+    if (project  && (r[cols.projectName] ||'').trim() !== project)     return false;
+    if (bizowner && resolveBusinessOwner(r, cols) !== bizowner)        return false;
+    if (search) { const h = Object.values(r).join(' ').toLowerCase(); if (!h.includes(search)) return false; }
+    return true;
+  });
+  document.getElementById('match-count').textContent = filtered.length.toLocaleString();
+  page = 1;
+  renderKPIs(); renderTable();
+}
+
+// ── CHARTS ────────────────────────────────────────────────────────────────
+// ── ISSUE URL HELPER ──────────────────────────────────────────────────────
+function issueUrl(key) {
+  if (!key) return null;
+  return `https://nice-it.atlassian.net/browse/${key.trim().toUpperCase()}`;
+}
+
+
+// Columns in order:
+// Issue # | Project Name | Status | Summary | Project |
+// Business Owner | Assignee (merged: Assignee → Analysis Owner → BA Assignee)
+
+
+
+function scls(s) {
+  const v = (s || '').toLowerCase().trim();
+  // Exact matches first (from reference dashboard S_CSS map)
+  const exact = {
+    'open':                 's-todo',
+    'qualified':            's-todo',
+    'discovery':            's-todo',
+    'design':               's-default',
+    'ready for dev':        's-done',
+    'in development':       's-inprogress',
+    'in testing':           's-done',
+    'in uat':               's-review',
+    'uat approved':         's-review',
+    'ready for deployment': 's-blocked',
+    'done':                 's-done',
+    'resolved':             's-done',
+    'closed':               's-done',
+    'complete':             's-done',
+    'completed':            's-done',
+  };
+  if (exact[v]) return exact[v];
+  // Fuzzy fallbacks
+  if (v.includes('progress') || v.includes('doing') || v.includes('dev')) return 's-inprogress';
+  if (v.includes('done') || v.includes('closed') || v.includes('resolv') || v.includes('complet')) return 's-done';
+  if (v.includes('block') || v.includes('imped') || v.includes('deploy')) return 's-blocked';
+  if (v.includes('uat') || v.includes('review') || v.includes('test')) return 's-review';
+  if (v.includes('open') || v.includes('todo') || v.includes('qual') || v.includes('backlog') || v.includes('new')) return 's-todo';
+  return 's-default';
+}
+
+function renderTable() {
+  const cols = detectCols(Object.keys(allRows[0]||{}));
+  defaultSort(cols);
+  const active = TABLE_SPEC.filter(spec => {
+    if (spec.key === 'assignee') {
+      return cols.assignee || cols.analysisOwner || cols.baAssignee;
+    }
+    if (spec.key === 'businessOwner') {
+      // Always show — falls back to Reporter if Business Owner column missing
+      return cols.businessOwner || cols.reporter;
+    }
+    if (spec.key === 'releaseNotes' || spec.key === 'comment') {
+      return true; // always show — populated from extracted comment fields
+    }
+    return !!cols[spec.key];
+  });
+
+  if (!filtered.length) {
+    document.getElementById('table-body').innerHTML = '<tr><td colspan="99" style="text-align:center;padding:40px;color:rgba(33,33,43,0.4)">No matching issues</td></tr>';
+    return;
+  }
+
+  let rows = [...filtered];
+  if (sortCol) {
+    const isKeyCol = cols.key && sortCol === cols.key;
+    if (isKeyCol) {
+      rows.sort((a, b) => issueKeySort(a, b, sortCol, sortDir));
+    } else {
+      rows.sort((a,b) => { const av=(a[sortCol]||'').toLowerCase(), bv=(b[sortCol]||'').toLowerCase(); return av<bv?-sortDir:av>bv?sortDir:0; });
+    }
+  }
+
+  const total = rows.length;
+
+  document.getElementById('table-head').innerHTML = active.map(spec => {
+    const csvCol = spec.key === 'assignee' ? (cols.assignee || cols.analysisOwner || cols.baAssignee) : cols[spec.key];
+    const arrow = sortCol===csvCol ? (sortDir>0?' ↑':' ↓') : '';
+    return `<th onclick="setSort('${csvCol}')">${spec.label}${arrow}</th>`;
+  }).join('');
+
+  document.getElementById('table-body').innerHTML = rows.map(r => {
+    return '<tr>' + active.map(spec => {
+      if (spec.render === 'key') {
+        const val = (r[cols[spec.key]]||'').trim();
+        const href = issueUrl(val);
+        if (href) return `<td><a class="key-link" href="${href}" target="_blank" rel="noopener noreferrer">${val||'—'}</a></td>`;
+        return `<td><span class="key-text">${val||'—'}</span></td>`;
+      }
+      if (spec.render === 'status') {
+        const val = (r[cols[spec.key]]||'').trim();
+        return `<td><span class="badge ${scls(val)}">${val||'—'}</span></td>`;
+      }
+      if (spec.render === 'assignee') {
+        const val = resolveAssignee(r, cols);
+        return `<td title="${val}">${val||'—'}</td>`;
+      }
+      if (spec.render === 'businessOwner') {
+        const val = resolveBusinessOwner(r, cols);
+        return `<td title="${val}">${val||'—'}</td>`;
+      }
+      if (spec.render === 'comment') {
+        const val = (r[cols.comment] || r['Comment'] || '').trim();
+        return `<td title="${val}" style="font-size:12px;${val?'':'color:var(--text-muted)'}">${val||'—'}</td>`;
+      }
+      if (spec.render === 'resolved') {
+        const raw = (r[cols.resolved] || '').trim();
+        if (!raw) return `<td style="color:var(--text-muted)">—</td>`;
+        // Parse "24/Apr/26 8:10 PM" → format as "Apr 24, 2026"
+        const d = new Date(raw);
+        const fmt = isNaN(d) ? raw : d.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+        return `<td title="${raw}" style="font-size:12px;color:var(--text-muted)">${fmt}</td>`;
+      }
+      if (spec.key === 'project') {
+        const val = (r[cols[spec.key]]||'').trim();
+        const cls = val.toUpperCase() === 'IT' ? 'proj-it' : val.toUpperCase() === 'CXMIS' ? 'proj-cxmis' : val.toUpperCase() === 'CXSCOE' ? 'proj-cxscoe' : '';
+        return `<td><span class="${cls}">${val||'—'}</span></td>`;
+      }
+      // cols mapping may be null for extracted fields — try direct field name too
+      const FIELD_MAP = { releaseNotes: 'Release Notes', comment: 'Comment' };
+      const fieldName = cols[spec.key] || FIELD_MAP[spec.key] || spec.key;
+      const val = (r[fieldName] || '').trim();
+      return `<td title="${val}">${val||'—'}</td>`;
+    }).join('') + '</tr>';
+  }).join('');
+
+  document.getElementById('table-range').textContent = `${total.toLocaleString()} issues`;
+}
+
+function setSort(col) {
+  sortCol===col ? sortDir*=-1 : (sortCol=col, sortDir=1);
+  renderTable();
+}
+</script>
+</body>
+</html>
