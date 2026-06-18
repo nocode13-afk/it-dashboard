@@ -444,8 +444,9 @@
       <div style="display:flex;align-items:center;gap:6px;margin-left:4px">
         <span style="font-size:11px;font-weight:500;color:rgba(33,33,43,0.5);white-space:nowrap">Done:</span>
         <select id="done-window-sel" onchange="applyFilters()" style="min-width:110px">
-          <option value="0">Select months</option>
-          <option value="1" selected>Last Month</option>
+          <option value="-1" selected>-</option>
+          <option value="0">Hide all</option>
+          <option value="1">Last Month</option>
           <option value="3">3 months</option>
           <option value="6">6 months</option>
           <option value="12">12 months</option>
@@ -795,7 +796,7 @@ function renderMetricGroup(metrics, elId, rows) {
   el.innerHTML = metrics.map(m => {
     let lbl = m.lbl;
     if (m.lbl === 'Done') {
-      lbl = doneMonths === 0 ? 'Done (off)' : doneMonths === 99 ? 'Done (all)' : doneMonths === 1 ? 'Done (last mo)' : `Done (${doneMonths}mo)`;
+      lbl = (doneMonths === -1 || doneMonths === 0) ? 'Done (off)' : doneMonths === 99 ? 'Done (all)' : doneMonths === 1 ? 'Done (last mo)' : `Done (${doneMonths}mo)`;
     }
     const val = m.fn(rows);
     const pct = base > 0 ? Math.round(val / base * 100) : 0;
@@ -936,14 +937,14 @@ function resetFilters() {
   document.getElementById('filter-assignee').value = '';
   document.getElementById('filter-priority').value = '';
   document.getElementById('filter-bizowner').value = '';
-  document.getElementById('done-window-sel').value = '1';
+  document.getElementById('done-window-sel').value = '-1';
   applyFilters();
 }
 
 function getDoneWindowDate() {
   const sel = document.getElementById('done-window-sel');
-  const months = sel ? parseInt(sel.value) : 0;
-  if (months === 0 || months === 99) return null;
+  const months = sel ? parseInt(sel.value) : -1;
+  if (months === -1 || months === 0 || months === 99) return null;
   const d = new Date();
   d.setMonth(d.getMonth() - months);
   return d;
@@ -967,7 +968,7 @@ function applyFilters() {
 
     // Done window filter
     if (isDone) {
-      if (doneMonths === 0) return false;            // "Select months" -- hide all Done
+      if (doneMonths === -1 || doneMonths === 0) return false; // '-' or 'Hide all' -- hide all Done
       if (doneMonths !== 99 && doneWindow) {
         const resDate = r[cols.updated] || r[cols.created] || '';
         if (!resDate || new Date(resDate) < doneWindow) return false;
