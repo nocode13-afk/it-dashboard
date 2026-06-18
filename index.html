@@ -759,19 +759,37 @@ function loadCSVText(csvText, sourceName) {
 }
 
 async function fetchFromGitHub() {
-  if (!DATA_URL || DATA_URL === 'https://raw.githubusercontent.com/nocode13-afk/it-dashboard/main/jira-export.csv') {
+  if (!DATA_URL || DATA_URL === 'PASTE_YOUR_DATA_URL_HERE') {
     document.getElementById('load-label').textContent = 'Data URL not configured — update DATA_URL in the source.';
     return;
   }
   document.getElementById('load-label').textContent = 'Fetching latest data…';
   try {
-    const res = await fetch(DATA_URL);
-    if (!res.ok) throw new Error('HTTP ' + res.status + ' — check the URL is publicly accessible');
+    // Cache-busting forces GitHub to return a fresh response
+    const bustUrl = DATA_URL + '?t=' + Date.now();
+    const res = await fetch(bustUrl, {
+      method: 'GET',
+      headers: { 'Accept': 'text/plain, text/csv, */*' },
+      cache: 'no-store'
+    });
+    if (!res.ok) {
+      throw new Error('HTTP ' + res.status + ' ' + res.statusText);
+    }
     const text = await res.text();
+    if (!text || text.trim().length === 0) {
+      throw new Error('File is empty');
+    }
+    const firstLine = text.split('\n')[0];
+    if (!firstLine.includes(',')) {
+      throw new Error('Not a valid CSV (first line: "' + firstLine.substring(0, 80) + '")');
+    }
     loadCSVText(text, 'GitHub');
   } catch(err) {
-    document.getElementById('load-label').textContent = 'Could not load data: ' + err.message;
+    const msg = 'Load failed: ' + err.message + ' — open DevTools Console (F12) for details';
+    document.getElementById('load-label').textContent = msg;
     document.getElementById('empty-state').style.display = 'block';
+    console.error('[IT Dashboard] Fetch error:', err);
+    console.error('[IT Dashboard] URL attempted:', DATA_URL);
   }
 }
 
