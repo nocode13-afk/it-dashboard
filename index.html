@@ -724,7 +724,7 @@ function renderKPIs() {
 // convert to direct download format:
 //   https://YOUR_TENANT.sharepoint.com/sites/YOUR_SITE/Shared%20Documents/
 //   jira-dashboard/jira-export.csv?download=1
-const SHAREPOINT_CSV_URL = 'https://niceonline.sharepoint.com/teams/BillingIT/Shared%20Documents/jira-dashboard/jira-export.csv';
+const SHAREPOINT_CSV_URL = 'https://niceonline.sharepoint.com/teams/BillingIT/Shared%20Documents/jira-dashboard/jira-export.csv?download=1';
 
 function loadCSVText(csvText, sourceName) {
   try {
@@ -763,7 +763,7 @@ function loadCSVText(csvText, sourceName) {
 }
 
 async function fetchFromSharePoint() {
-  if (!SHAREPOINT_CSV_URL || SHAREPOINT_CSV_URL === 'https://niceonline.sharepoint.com/teams/BillingIT/Shared%20Documents/jira-dashboard/jira-export.csv') {
+  if (!SHAREPOINT_CSV_URL || SHAREPOINT_CSV_URL === 'https://niceonline.sharepoint.com/teams/BillingIT/Shared%20Documents/jira-dashboard/jira-export.csv?download=1') {
     document.getElementById('load-label').textContent = 'SharePoint URL not configured — update SHAREPOINT_CSV_URL in the source.';
     return;
   }
