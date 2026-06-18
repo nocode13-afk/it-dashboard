@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IT Dashboard — NiCE</title>
+<title>IT Dashboard -- NiCE</title>
 <style>
   /* ── NiCE BRAND TOKENS ── */
   :root {
@@ -37,7 +37,7 @@
     --radius-md: 16px;
     --radius-lg: 24px;
 
-    /* Theme surface tokens — nice.com palette */
+    /* Theme surface tokens -- nice.com palette */
     --bg-page:      #f2f0eb;
     --bg-card:      #ffffff;
     --bg-card2:     #ffffff;
@@ -264,7 +264,7 @@
     white-space: nowrap;
   }
 
-  /* All columns explicitly sized — table-layout:fixed requires this */
+  /* All columns explicitly sized -- table-layout:fixed requires this */
   th:nth-child(1), td:nth-child(1) { width: 130px; }
   th:nth-child(2), td:nth-child(2) { width: 160px; }
   th:nth-child(3), td:nth-child(3) { width: 280px; white-space: normal; word-break: break-word; }
@@ -402,7 +402,7 @@
 <!-- STATUS / LOAD INFO -->
 <div class="status-row" id="status-row">
   <span class="status-dot"></span>
-  <span id="load-label">No data loaded — upload a Jira CSV export to begin</span>
+  <span id="load-label">No data loaded -- upload a Jira CSV export to begin</span>
   <span style="flex:1"></span>
   <div id="last-updated-wrap" style="display:none;align-items:center;gap:6px;font-size:11px;font-weight:500;color:rgba(255,255,255,0.7)">
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -435,7 +435,7 @@
       <span class="subbar-label">Filter</span>
       <div class="search-wrap">
         <svg class="search-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" id="search" placeholder="Search issues…" oninput="applyFilters()">
+        <input type="text" id="search" placeholder="Search issues..." oninput="applyFilters()">
       </div>
       <select id="filter-status"   onchange="applyFilters()"><option value="">All statuses</option></select>
       <select id="filter-assignee" onchange="applyFilters()"><option value="">All assignees</option></select>
@@ -719,7 +719,7 @@ function renderKPIs() {
 }
 
 // ── GITHUB DATA SOURCE ───────────────────────────────────────────────────
-// GitHub raw URL for jira-export.csv — update branch/path if needed.
+// GitHub raw URL for jira-export.csv -- update branch/path if needed.
 const DATA_URL = 'https://raw.githubusercontent.com/nocode13-afk/it-dashboard/main/jira-export.csv';
 
 function loadCSVText(csvText, sourceName) {
@@ -743,7 +743,7 @@ function loadCSVText(csvText, sourceName) {
     if (dot) dot.style.background = 'var(--sec-emerald)';
     const now = new Date();
     const timeStr = now.toLocaleDateString('en-US', { weekday:'short', year:'numeric', month:'short', day:'numeric' })
-      + ' · ' + now.toLocaleTimeString('en-US', { hour:'2-digit', minute:'2-digit' });
+      + ' . ' + now.toLocaleTimeString('en-US', { hour:'2-digit', minute:'2-digit' });
     document.getElementById('load-label').textContent = allRows.length.toLocaleString() + ' issues loaded from ' + sourceName;
     const wrap = document.getElementById('last-updated-wrap');
     const timeEl = document.getElementById('last-updated-time');
@@ -760,10 +760,10 @@ function loadCSVText(csvText, sourceName) {
 
 async function fetchFromGitHub() {
   if (!DATA_URL || DATA_URL === 'PASTE_YOUR_DATA_URL_HERE') {
-    document.getElementById('load-label').textContent = 'Data URL not configured — update DATA_URL in the source.';
+    document.getElementById('load-label').textContent = 'Data URL not configured -- update DATA_URL in the source.';
     return;
   }
-  document.getElementById('load-label').textContent = 'Fetching latest data…';
+  document.getElementById('load-label').textContent = 'Fetching latest data...';
   try {
     // Cache-busting forces GitHub to return a fresh response
     const bustUrl = DATA_URL + '?t=' + Date.now();
@@ -785,7 +785,7 @@ async function fetchFromGitHub() {
     }
     loadCSVText(text, 'GitHub');
   } catch(err) {
-    const msg = 'Load failed: ' + err.message + ' — open DevTools Console (F12) for details';
+    const msg = 'Load failed: ' + err.message + ' -- open DevTools Console (F12) for details';
     document.getElementById('load-label').textContent = msg;
     document.getElementById('empty-state').style.display = 'block';
     console.error('[IT Dashboard] Fetch error:', err);
@@ -810,7 +810,7 @@ function buildFilters() {
   };
   pop('filter-status',   cols.status,      'statuses');
   pop('filter-priority', cols.projectName, 'projects');
-  // Business owner — use resolved values
+  // Business owner -- use resolved values
   const bizEl = document.getElementById('filter-bizowner');
   if (bizEl) {
     const owners = [...new Set(allRows.map(r => resolveBusinessOwner(r, cols)).filter(Boolean))].sort();
@@ -873,7 +873,7 @@ function applyFilters() {
 
     // Done window filter
     if (isDone) {
-      if (doneMonths === 0) return false;            // "Select months" — hide all Done
+      if (doneMonths === 0) return false;            // "Select months" -- hide all Done
       if (doneMonths !== 99 && doneWindow) {
         const resDate = r[cols.updated] || r[cols.created] || '';
         if (!resDate || new Date(resDate) < doneWindow) return false;
@@ -944,11 +944,11 @@ function renderTable() {
       return cols.assignee || cols.analysisOwner || cols.baAssignee;
     }
     if (spec.key === 'businessOwner') {
-      // Always show — falls back to Reporter if Business Owner column missing
+      // Always show -- falls back to Reporter if Business Owner column missing
       return cols.businessOwner || cols.reporter;
     }
     if (spec.key === 'releaseNotes' || spec.key === 'comment') {
-      return true; // always show — populated from extracted comment fields
+      return true; // always show -- populated from extracted comment fields
     }
     return !!cols[spec.key];
   });
@@ -981,28 +981,28 @@ function renderTable() {
       if (spec.render === 'key') {
         const val = (r[cols[spec.key]]||'').trim();
         const href = issueUrl(val);
-        if (href) return `<td><a class="key-link" href="${href}" target="_blank" rel="noopener noreferrer">${val||'—'}</a></td>`;
-        return `<td><span class="key-text">${val||'—'}</span></td>`;
+        if (href) return `<td><a class="key-link" href="${href}" target="_blank" rel="noopener noreferrer">${val||'--'}</a></td>`;
+        return `<td><span class="key-text">${val||'--'}</span></td>`;
       }
       if (spec.render === 'status') {
         const val = (r[cols[spec.key]]||'').trim();
-        return `<td><span class="badge ${scls(val)}">${val||'—'}</span></td>`;
+        return `<td><span class="badge ${scls(val)}">${val||'--'}</span></td>`;
       }
       if (spec.render === 'assignee') {
         const val = resolveAssignee(r, cols);
-        return `<td title="${val}">${val||'—'}</td>`;
+        return `<td title="${val}">${val||'--'}</td>`;
       }
       if (spec.render === 'businessOwner') {
         const val = resolveBusinessOwner(r, cols);
-        return `<td title="${val}">${val||'—'}</td>`;
+        return `<td title="${val}">${val||'--'}</td>`;
       }
       if (spec.render === 'comment') {
         const val = (r[cols.comment] || r['Comment'] || '').trim();
-        return `<td title="${val}" style="font-size:12px;${val?'':'color:var(--text-muted)'}">${val||'—'}</td>`;
+        return `<td title="${val}" style="font-size:12px;${val?'':'color:var(--text-muted)'}">${val||'--'}</td>`;
       }
       if (spec.render === 'resolved') {
         const raw = (r[cols.resolved] || '').trim();
-        if (!raw) return `<td style="color:var(--text-muted)">—</td>`;
+        if (!raw) return `<td style="color:var(--text-muted)">--</td>`;
         // Parse "24/Apr/26 8:10 PM" → format as "Apr 24, 2026"
         const d = new Date(raw);
         const fmt = isNaN(d) ? raw : d.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
@@ -1011,13 +1011,13 @@ function renderTable() {
       if (spec.key === 'project') {
         const val = (r[cols[spec.key]]||'').trim();
         const cls = val.toUpperCase() === 'IT' ? 'proj-it' : val.toUpperCase() === 'CXMIS' ? 'proj-cxmis' : val.toUpperCase() === 'CXSCOE' ? 'proj-cxscoe' : '';
-        return `<td><span class="${cls}">${val||'—'}</span></td>`;
+        return `<td><span class="${cls}">${val||'--'}</span></td>`;
       }
-      // cols mapping may be null for extracted fields — try direct field name too
+      // cols mapping may be null for extracted fields -- try direct field name too
       const FIELD_MAP = { releaseNotes: 'Release Notes', comment: 'Comment' };
       const fieldName = cols[spec.key] || FIELD_MAP[spec.key] || spec.key;
       const val = (r[fieldName] || '').trim();
-      return `<td title="${val}">${val||'—'}</td>`;
+      return `<td title="${val}">${val||'--'}</td>`;
     }).join('') + '</tr>';
   }).join('');
 
