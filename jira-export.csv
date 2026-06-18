@@ -1,5 +1,5 @@
 Summary,Issue key,Issue id,Issue Type,Status,Project key,Project name,Project type,Project lead,Project lead id,Project description,Project url,Priority,Resolution,Assignee,Assignee Id,Reporter,Reporter Id,Creator,Creator Id,Created,Updated,Last Viewed,Resolved,Fix versions,Fix versions,Fix versions,Components,Due date,Votes,Labels,Labels,Labels,Description,Environment,Watchers,Watchers,Watchers,Watchers,Watchers,Watchers Id,Watchers Id,Watchers Id,Watchers Id,Watchers Id,Original estimate,Remaining Estimate,Time Spent,Work Ratio,Σ Original Estimate,Σ Remaining Estimate,Σ Time Spent,Security Level,Inward issue link (Blocks),Inward issue link (Cloners),Outward issue link (Cloners),Inward issue link (Dependency),Outward issue link (Dependency),Inward issue link (Issue split),Inward issue link (Relates),Outward issue link (Relates),Inward issue link (Test),Inward issue link (Test),Outward issue link (Test),Outward issue link (Test),Attachment,Attachment,Attachment,Attachment,Attachment,Attachment,Attachment,Attachment,Attachment,Attachment,Attachment,Attachment,Attachment,Attachment,Attachment,Attachment,Attachment,Attachment,Attachment,Attachment,Custom field (Acceptance Criteria),Custom field (Acceptance Owner),Custom field (Action Completed Date),Custom field (Actual Delivery Date),Custom field (Actual Result),Custom field (Actual end),Custom field (Actual start),Custom field (Additional Activities),Custom field (Additional Activities),Custom field (Additional Activities),Custom field (Additional Questions),Custom field (Affected services),Custom field (Analysis Actual Story Points),Custom field (Analysis Effort),Custom field (Analysis Owner),Custom field (Analysis Owner)Id,Custom field (Analysis Updated Effort),Custom field (Approvals),Custom field (Approved By),Custom field (Architect),Custom field (Asset Class),Custom field (Assignment Type),Custom field (Associated Automation),Custom field (Automated),Custom field (Automated By),Custom field (Automated Date),Custom field (Automation Status),Custom field (BA Assignee),Custom field (BA Assignee)Id,Custom field (Backlog Rank),Custom field (Begin Date),Custom field (Billing Project Link),Custom field (Billing Project Number),Custom field (Block Reason),Custom field (Bug Origin),Custom field (Bug Type),Custom field (Business Domain),Custom field (Business Owner),Custom field (Business Owner)Id,Custom field (CS Task ID),Custom field (CS Task Owner),Custom field (Candidate for Automation),Custom field (Category),Custom field (Change Approver),Custom field (Change Reporter),Custom field (Change reason),Custom field (Change risk),Custom field (Change type),Custom field (Change_Reason),Custom field (Closed),Custom field (Closed By),Custom field (Closed By)Id,Custom field (Committed by),Custom field (Customer),Custom field (Customer Impact),Custom field (Dev Actual Story Points),Custom field (Dev Effort),Custom field (Dev Owner),Custom field (Dev Owner)Id,Custom field (Dev Updated Effort),Custom field (Development),Custom field (Development Team Priority),Custom field (Division),Custom field (Division),Custom field (Division),Custom field (Division),Custom field (Documentation Completed),Custom field (Documentation Notes),Custom field (EPIC Type),Custom field (ETA Given Date),Custom field (Engineering Manager),Custom field (Epic Color),Custom field (Epic Name),Custom field (Epic Salesforce ID),Custom field (Epic Status),Custom field (Epic Story Points),Custom field (EpicClosure),Custom field (Escalation Notes),Custom field (Estimated Story Points),Custom field (Expected Next Update),Custom field (Expected Result),Custom field (External issue ID),Custom field (External issue ID),Custom field (External issue ID),Custom field (External issue ID),Custom field (External issue ID),Custom field (FR Owner),Custom field (FR Status),Custom field (Feature Name),Custom field (Field Readiness Notes),Custom field (Flag - Comment Added),Custom field (Flag - Status Changed),Custom field (Flagged),Custom field (Focus Areas),Custom field (Forecast Delivery Date),Custom field (Functionality),Custom field (Functionality Required Version),Custom field (GDPR Files Location),Custom field (Gate Date),Custom field (General Questions),Custom field (Goals),Custom field (Groomed Story Points),Custom field (Guide Names),Custom field (Guide Page\Section),Custom field (Guide Version),Custom field (High Level Estimate),Custom field (Impact),Custom field (Impact (migrated)),Custom field (Impacted Applications),Custom field (Impacted Applications),Custom field (Impacted Applications),Custom field (Impacted Applications),Custom field (Initial Supported Users),Custom field (Initiative Type),Custom field (Installation Steps),Custom field (Instance SP),Custom field (Instance Version),Custom field (Instrument Type),Custom field (Investigation Steps),Custom field (Issue Category),Custom field (Issue color),Custom field (Justification),Custom field (KEM Version),Custom field (Last Updated By Wiser),Custom field (Link to CS Task),Custom field (Link to Case/SR),Custom field (Link to Task),Custom field (Locked forms),Custom field (MIS Project Link),Custom field (MIS Project Number),Custom field (MVP Delivery Date),Custom field (Main Application),Custom field (Max score),Custom field (Measurements),Custom field (Method Name),Custom field (Mitigations),Custom field (Number of Users per Scale),Custom field (OLD Issue URL),Custom field (Old Issue ID),Custom field (Old Issue Key),Custom field (On Budget),Custom field (On Scope),Custom field (On Time),Custom field (Open forms),Custom field (Pair Assignee),Custom field (Partner Project Link),Custom field (Partner Project Number),Custom field (Peer Review Required),Custom field (Peer Reviewer),Custom field (Planned Date),Custom field (Planned Story Points),Custom field (Platform Version),Custom field (Possible Root Cause),Custom field (Preventive Action Owner),Custom field (Pricing Deck Link),Custom field (Pricing Only),Custom field (Pricing Project Link),Custom field (Pricing Project Number),Custom field (Pricing Project Status),Custom field (Priority Customer),Custom field (Product Owner),Custom field (Product Questions),Custom field (Program Manager),Custom field (Project),Custom field (Project Link),Custom field (Project Manager),Custom field (Project Risk),Custom field (Project Type),Custom field (Project Updates),Custom field (Project overview key),Custom field (Project overview status),Custom field (Q1 Score),Custom field (Q2 Score),Custom field (Q3 Score),Custom field (Q4 Score),Custom field (QA Owner),Custom field (QA Owner)Id,Custom field (QA Test Status),Custom field (RN Description),Custom field (RN Fix),Custom field (RN Summary),Custom field (RTC ID),Custom field (Rank),Custom field (Ready to Deploy Date),Custom field (Recompiled Objects),Custom field (Regression),Custom field (Rejected By),Custom field (Release Highlights),Custom field (Release Notes),Custom field (Release On Content),Custom field (Release On Quality),Custom field (Release On Time),Custom field (Release Start Date),Custom field (Release Type),Custom field (Release on Scope),Custom field (Remaining Analysis Effort),Custom field (Remaining Dev Effort),Custom field (Reopen Counter),Custom field (Request Initiator),Custom field (Request Type),Custom field (Request language),Custom field (Request participants),Custom field (Request_Type),Custom field (Requested Date),Custom field (Requested PI),Custom field (Requirement Category),Custom field (Resolution Type),Custom field (Resolved By),Custom field (Resolved Date),Custom field (Risk Notes),Custom field (Risk Score),Custom field (Root Cause Analysis),Custom field (Root Cause Category),Custom field (Root cause for No Automation),Custom field (Run Once),Custom field (Run on Build),Custom field (SF Created Date),Custom field (SF Linked Date),Custom field (SF Project Manager),Custom field (SF Project Number),Custom field (SLA Exceeded),Custom field (SNOW Ticket Number),Custom field (Salesforce Case),Custom field (Salesforce ID),Satisfaction rating,Custom field (Satisfaction date),Custom field (Sentiment),Custom field (Severity),Custom field (Shared Attachment Folder),Custom field (Solution Required Version),Custom field (Source),Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Sprint,Custom field (Start date),Custom field (Steps To Reproduce),Custom field (Story Points),Custom field (Story Type),Custom field (Story point estimate),Custom field (Sub-Task Type),Custom field (Submitted forms),Custom field (SupportEngEmail),Custom field (T-shirt Size),Custom field (TFS ID),Custom field (TFS URL),Custom field (Target end),Custom field (Target start),Custom field (Task ID),Custom field (Team),Custom field (Team Name),Custom field (Technical Description \ Limitation),Custom field (Technical Design),Custom field (Temp - TFS ID),Custom field (Tenant ID),Custom field (Test Case ID),Custom field (Test Coverage Type),Custom field (Test Notes),Custom field (Testing Required),Custom field (Total forms),Custom field (URL to QC),Custom field (URL to RTC),Custom field (URL to TFS),Custom field (User Name),Custom field (Version),Custom field (Vulnerability),Custom field (Weight),Custom field (Wiser Attachments),Custom field (Wiser Case Creation Date),Custom field (Wiser Case Owner),Custom field (Wiser Case#),Custom field (Wiser Item Name),Custom field (Wiser SysID),Custom field (Work item created forms),Custom field (Workstream Priority),Custom field (Xray Begin Date),Custom field (Xray End Date),Custom field ([CHART] Date of First Response),Custom field ([CHART] Time in Status),Custom field (customfield_10050),Custom field (customfield_10050),Comment,Comment,Comment,Comment,Comment,Comment,Comment,Comment,Comment,Comment,Comment,Comment,Comment,Comment,Comment,Comment,Comment,Parent,Parent key,Parent summary,Status Category,Status Category Changed
-206129 - MIS for reporting on Cadebill Billing for CX Success,CXMIS-6624,798850,Epic,Open,CXMIS,CXMIS,software,Chanchal Katiyar,6405e9049ce2cd2c240f713a,,,,,,,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,Rajiv Ranjan,5c233e5a71c9f02df7746418,17/Jul/25 10:44 AM,24/Apr/26 4:22 PM,26/May/26 1:43 PM,,,,,,,0,CXMIS_Missing_Epic2,,,"Phase 2 project requirements
+206129 - MIS for reporting on Cadebill Billing for CX Success,CXMIS-6624,798850,Epic,Open,CXMIS,CXMIS,software,Chanchal Katiyar,6405e9049ce2cd2c240f713a,,,,,,,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,Rajiv Ranjan,5c233e5a71c9f02df7746418,17/Jul/25 10:44 AM,24/Apr/26 4:22 PM,17/Jun/26 6:23 PM,,,,,,,0,CXMIS_Missing_Epic2,,,"Phase 2 project requirements
  •	MIS for reporting on Cadebill Billing for CX Success
  •	Today, Services teams have functionality that accrues and decrements PS Project and PSoD hours to their account based off their purchased success package (although it is not functioning; SF team working on a fix to the VisualForce page now).  This functionality/automation exists within the PSOD/Project Hours Allocation button located on the account page of a given customer.  The automation only tracks allocated and used time, but does feed to Cadebill when hours are used (this is done manually for PSoD hours and not tracked for PS Project Hours).  For this enhancement, we want to automate the billing aspect when hours are used from this allocation.  KB Process articles below (for today’s handling)
  o	PS OnDemand Billing &amp; Time Logging Procedures: https://niceincontact.my.salesforce.com/kA139000000H6Jz?srPos=1&amp;srKp=ka1&amp;lang=en_US
@@ -141,7 +141,7 @@ General Notes:
 1. Alpha testing
 2. Beta testing
 3. Project Risk Mitigation",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,teal,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://niceincontact.lightning.force.com/a0dUi00000DM1ArIAL,,,,,,,,,,,,,,,,,,1|i07y6b:,,,No,,,,,,,,,,,,,Jonathan Jensen,,,,,,,,,,,,,,,,,,,,,419783,,,,a0dUi00000DM1ArIAL,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Incredibles,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,To Do,08/Oct/25 1:34 PM
-Provisioning API for New Instruments 12713,CXMIS-1978,794018,Epic,Ready for Dev,CXMIS,CXMIS,software,Chanchal Katiyar,6405e9049ce2cd2c240f713a,,,,,,,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,Rajiv Ranjan,5c233e5a71c9f02df7746418,16/Jul/25 4:27 AM,24/Apr/26 4:09 PM,,,,,,,,0,CXMIS_Missing_Epic,,,"Please create standard Sonus and CXONE/Central provisioning API for new instruments 12713
+Provisioning API for New Instruments 12713,CXMIS-1978,794018,Epic,Ready for Dev,CXMIS,CXMIS,software,Chanchal Katiyar,6405e9049ce2cd2c240f713a,,,,,,,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,Rajiv Ranjan,5c233e5a71c9f02df7746418,16/Jul/25 4:27 AM,24/Apr/26 4:09 PM,17/Jun/26 7:01 PM,,,,,,,0,CXMIS_Missing_Epic,,,"Please create standard Sonus and CXONE/Central provisioning API for new instruments 12713
 
 New Instrument International to Switched 12713 mirrors Type 2
 
@@ -328,6 +328,60 @@ General Notes:
 1. Alpha testing
 2. Beta testing
 3. Project Risk Mitigation",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,dark_yellow,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://niceincontact.lightning.force.com/a0dUi00000EJHujIAH,,,,,,,,,,,,,,,,,,1|i08coz:,,,No,,,,,,,,,,,,,Jonathan Jensen,,,,,,,,,,,,,,,,,,,,,423295,,,,a0dUi00000EJHujIAH,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Incredibles,,,,,,,,,,,,,,,,,,,,,,,,,,,,1_*:*_1_*:*_1306_*|*_10009_*:*_1_*:*_0_*|*_10011_*:*_1_*:*_6956_*|*_10010_*:*_1_*:*_16329030460_*|*_10001_*:*_1_*:*_3366_*|*_10003_*:*_1_*:*_71796_*|*_10006_*:*_1_*:*_5203_*|*_10005_*:*_1_*:*_5757,,,,,,,,,,,,,,,,,,,,,,,Done,18/May/26 5:01 PM
+"SF2CB Order Integration Phase 2 - (No Charge Products, Minimums)",CXMIS-13513,812102,Epic,Done,CXMIS,CXMIS,software,Chanchal Katiyar,6405e9049ce2cd2c240f713a,,,P3,Done,Jonathan Jensen,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,22/Aug/25 5:41 PM,17/Jun/26 5:21 PM,17/Jun/26 5:21 PM,17/Jun/26 5:21 PM,MIS Release_25.09,,,,13/Nov/25 12:00 AM,0,,,,"h2. Objective
+
+Automate the integration of no charge products and minimums for the SF2CB system.
+
+h2. Context
+
+This issue focuses on enhancing the SF2CB system by integrating specific no charge products and minimums. The integration aims to streamline processes related to these products.
+
+h2. Scope
+
+* *Included*:
+** Integration of SKU specific no charge products.
+** Integration of all MRC no charge products.
+** Minimum integration.
+* *Not Included*:
+** Any integrations outside of no charge products and minimums.
+
+h2. Success criteria
+
+* Successful integration of SKU specific no charge products.
+* Successful integration of all MRC no charge products.
+* Implementation of minimum integration.
+
+h2. Risks and dependencies
+
+* Potential delays in integration due to unforeseen technical challenges.
+* Dependencies on existing infrastructure for successful implementation.
+
+h2. Other information
+
+N/A",,Jonathan Jensen,srv Jira,,,,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Done,,,,,,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,Jonathan Jensen,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,,,,,,,,Finance,robert.gordon,712020:df79a8f6-847c-4b10-a993-274b231e4ebc,,,,,,,,,,,17/Jun/26 5:21 PM,Jonathan Jensen,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,,,,,,,,,{},,CX,,,,,,,,,ghx-label-14,,,To Do,,,,,,,,,,,,,,,"Sizing document change:
+
+PS Architecture change:
+
+PS Methodology change:
+
+PS Project plan change:
+
+Data requirement change:
+
+Update PS Tools:
+
+Training Materials:
+
+Communication:
+
+Update PS Sales:
+
+PS Demo:
+
+General Notes:
+1. Alpha testing
+2. Beta testing
+3. Project Risk Mitigation",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,dark_orange,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://niceincontact.lightning.force.com/a0dUi00000CPnJZIA1,,,,,,,,,,,Virat Jain,622b9dbb49c900007024482a,,,,,,1|i076sz:,,,No,,,,,,,,,,,,,Jonathan Jensen,,,,,,,,,,,,,,,,,,,,,414692,,,,a0dUi00000CPnJZIA1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Justice League,,,,,,,,,,,,,,,,,,,,,,,,,,,2026-06-17 17:21:07.668,1_*:*_1_*:*_1283_*|*_10009_*:*_1_*:*_0_*|*_10011_*:*_1_*:*_9054_*|*_10010_*:*_1_*:*_25832097381_*|*_10001_*:*_1_*:*_3044_*|*_10003_*:*_1_*:*_273520_*|*_10006_*:*_1_*:*_1982_*|*_10005_*:*_1_*:*_2737,,,17/Jun/26 5:21 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;Done,17/Jun/26 5:21 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;Done,17/Jun/26 5:21 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;Done,,,,,,,,,,,,,,,,,,Done,17/Jun/26 5:21 PM
 "SF2CB Order Integration Phase 2 - (Milestones, Tiered Pricing) ",CXMIS-13480,812018,Epic,Done,CXMIS,CXMIS,software,Chanchal Katiyar,6405e9049ce2cd2c240f713a,,,P3,Done,,,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,21/Aug/25 8:08 PM,24/Apr/26 8:28 PM,,24/Apr/26 8:28 PM,MIS Release_25.16,,,,13/Nov/25 12:00 AM,0,,,,"SF2CB Order Integration Phase 2
 
 - PS Milestones Integration​Actual Completion Date Outbound message​
@@ -400,12 +454,12 @@ SF2CB - Exclude Textel SKUS from Automation,CXMIS-56,790014,Epic,Done,CXMIS,CXMI
 SF2CB - Combine all errors in Workato notification email,CXMIS-55,790013,Epic,Done,CXMIS,CXMIS,software,Chanchal Katiyar,6405e9049ce2cd2c240f713a,,,,Done,,,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,Rajiv Ranjan,5c233e5a71c9f02df7746418,14/Jul/25 6:46 AM,17/Jun/26 2:17 PM,17/Jun/26 2:17 PM,17/Jun/26 2:17 PM,MIS Release_25.09,,,,07/Aug/25 12:00 AM,0,CXMIS_Project_Import,,,"Currently, the workato error notification email only show on error at a time for failed opportunities.  It means the same opportunity has to be resubmitted 8 times for it to be a success. 
 
 This project is for Workato capture the entire object containing error and display all the rows in the email instead of showing only 1 reason at a time.",,Jonathan Jensen,Rajiv Ranjan,,,,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,5c233e5a71c9f02df7746418,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"<p><strong>Business Goal: </strong></p><p>Display all the errors in the Workato notification email for failed opportunities with multiple errors, instead of 1 at a time.</p><p><br></p><p><strong>Solution Details:</strong></p><ol><li>Workato captures the entire JSON object containing errors and displays all rows from it in the notification email.</li></ol>",,,,,,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,,,,,,,,,jonathan.jensen,712020:0ccf8b0f-2002-4a3d-bc14-ae34e9bc6d3c,,,,,,,,Finance,robert.gordon,712020:df79a8f6-847c-4b10-a993-274b231e4ebc,,,,,,,,,,,17/Jun/26 2:17 PM,Jonathan Jensen,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,,,,,,,,,{},,CX,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://niceincontact.lightning.force.com/a0dUi00000BXtDtIAL,,,,,,,,,,,,,,,,,,1|i042ib:,,,,,,,,,,,,,,,,Jonathan Jensen,,,,,,,,,,,,,,,,,,,,,409895,,,,a0dUi00000BXtDtIAL,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Justice League,,,,,,,,,,,,,,,,,,,,,,,,,,,2026-06-17 14:17:17.635,10009_*:*_1_*:*_0_*|*_10011_*:*_1_*:*_7676_*|*_10001_*:*_1_*:*_3434_*|*_10003_*:*_1_*:*_29230238243_*|*_10006_*:*_1_*:*_2117_*|*_10005_*:*_1_*:*_2330,,,17/Jun/26 2:17 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;Done,17/Jun/26 2:17 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;Done,17/Jun/26 2:17 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;Done,,,,,,,,,,,,,,,,,,Done,17/Jun/26 2:17 PM
-Add 1 Seat for Opportunities with No ACD Products during Auto BU process,CXMIS-53,790011,Epic,Done,CXMIS,CXMIS,software,Chanchal Katiyar,6405e9049ce2cd2c240f713a,,,,Done,,,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,Rajiv Ranjan,5c233e5a71c9f02df7746418,14/Jul/25 6:46 AM,17/Jun/26 2:15 PM,17/Jun/26 2:15 PM,17/Jun/26 2:15 PM,MIS Release_25.09,,,,07/Aug/25 12:00 AM,0,CXMIS_Project_Import,,,"Currently, opportunities that are sent for BU Automation that do not have any ACD products are failing Auto BU creation.  The OM team is going in and manually adding 1 seat to the ACD product and resubmitting the for Auto BU creation.
+Add 1 Seat for Opportunities with No ACD Products during Auto BU process,CXMIS-53,790011,Epic,Done,CXMIS,CXMIS,software,Chanchal Katiyar,6405e9049ce2cd2c240f713a,,,,Done,,,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,Rajiv Ranjan,5c233e5a71c9f02df7746418,14/Jul/25 6:46 AM,17/Jun/26 2:15 PM,17/Jun/26 6:31 PM,17/Jun/26 2:15 PM,MIS Release_25.09,,,,07/Aug/25 12:00 AM,0,CXMIS_Project_Import,,,"Currently, opportunities that are sent for BU Automation that do not have any ACD products are failing Auto BU creation.  The OM team is going in and manually adding 1 seat to the ACD product and resubmitting the for Auto BU creation.
 
 This is due ACD being sent as product on the opportunity, even though no ACD products are being added.
 
 This project is to add 1 seat to ACD products on opportunities that do not have any ACD products on them so Auto BU process does not fail and will be created automatically.",,Jonathan Jensen,Rajiv Ranjan,,,,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,5c233e5a71c9f02df7746418,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Done,,,,,,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,,,,,,,,,jonathan.jensen,712020:0ccf8b0f-2002-4a3d-bc14-ae34e9bc6d3c,,,,,,,,Finance,Katie Dresser,622ba4cfdb58c100687e5414,,,,,,,,,,,17/Jun/26 2:15 PM,Jonathan Jensen,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,,,,,,,,,{},,CX,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://niceincontact.lightning.force.com/a0dUi000008JYe5IAG,,,,,,,,,,,,,,,,,,1|i042hv:,,,,,,,,,,,,,,,,Jonathan Jensen,,,,,,,,,,,,,,,,,,,,,394806,,,,a0dUi000008JYe5IAG,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Incredibles,,,,,,,,,,,,,,,,,,,,,,,,,,,2026-06-17 14:15:24.223,10009_*:*_1_*:*_0_*|*_10011_*:*_1_*:*_6352_*|*_10001_*:*_1_*:*_5599_*|*_10003_*:*_1_*:*_29230126601_*|*_10006_*:*_1_*:*_3857_*|*_10005_*:*_1_*:*_3071,,,17/Jun/26 2:15 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;Done,,,,,,,,,,,,,,,,,,,,Done,17/Jun/26 2:15 PM
-Sonus Provisioning - Create new Wrapper for UK2,CXMIS-46,790004,Epic,Done,CXMIS,CXMIS,software,Chanchal Katiyar,6405e9049ce2cd2c240f713a,,,,Done,,,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,Rajiv Ranjan,5c233e5a71c9f02df7746418,14/Jul/25 6:46 AM,17/Jun/26 4:31 PM,17/Jun/26 4:26 PM,17/Jun/26 2:16 PM,MIS Release_25.09,,,,07/Aug/25 12:00 AM,0,CXMIS_Project_Import,,,Add a new Sonus Sov Wrapper so numbers can be provisioned for the United Kingdom Cloud Region (UK2).,,Jonathan Jensen,Rajiv Ranjan,,,,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,5c233e5a71c9f02df7746418,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,<p>Add a new Sonus Sov Wrapper so numbers can be provisioned for the United Kingdom Cloud Region (UK2).</p><p><br></p><ol><li>A new user in OPS-&gt; Provisioning Admin is added<ol><li>Username: PSXPROVISIONER_UK2</li><li>Password: &lt;&lt;Not to be shared here&gt;&gt;</li></ol></li><li>A new wrapper service is created</li><li>psxWebServiceUrl: https://sonusems.nicecxone-sov1.uk/emsapi/services/PSXAPI/r16_01_00</li></ol>,,,,,,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,,,,,,,,,jonathan.jensen,712020:0ccf8b0f-2002-4a3d-bc14-ae34e9bc6d3c,,,,,,,,Voice,Carolyn Hatcher,622ba24315521d00726f833e,,,,,,,,,,,17/Jun/26 2:16 PM,Jonathan Jensen,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,,,,,,,,,{},,CX,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://niceincontact.lightning.force.com/a0dUi00000BKHb6IAH,,,,,,,,,,,,,,,,,,1|i042gb:,,,,,,,,,,,,,,,,Jonathan Jensen,,,,,,,,,,,,,,,,,,,,,408664,,,,a0dUi00000BKHb6IAH,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Power Rangers,,,,,,,,,,,,,,,,,,,,,,,,,,,2026-06-17 14:16:33.278,10009_*:*_1_*:*_0_*|*_10011_*:*_1_*:*_7095_*|*_10010_*:*_1_*:*_29230184806_*|*_10001_*:*_1_*:*_3268_*|*_10003_*:*_1_*:*_16440_*|*_10006_*:*_1_*:*_2414_*|*_10005_*:*_1_*:*_3407,,,17/Jun/26 2:16 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;Done,17/Jun/26 2:16 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;Done,17/Jun/26 2:16 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;Done,17/Jun/26 4:07 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;[Release Notes] This a test.,17/Jun/26 4:27 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;[Update] XXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXXXXXXXXX.,17/Jun/26 4:28 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;[Comment] This is test 2.,17/Jun/26 4:31 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;[Comment] This is test 3.,,,,,,,,,,,,,,Done,17/Jun/26 2:16 PM
+Sonus Provisioning - Create new Wrapper for UK2,CXMIS-46,790004,Epic,Done,CXMIS,CXMIS,software,Chanchal Katiyar,6405e9049ce2cd2c240f713a,,,,Done,,,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,Rajiv Ranjan,5c233e5a71c9f02df7746418,14/Jul/25 6:46 AM,17/Jun/26 4:31 PM,18/Jun/26 4:13 PM,17/Jun/26 2:16 PM,MIS Release_25.09,,,,07/Aug/25 12:00 AM,0,CXMIS_Project_Import,,,Add a new Sonus Sov Wrapper so numbers can be provisioned for the United Kingdom Cloud Region (UK2).,,Jonathan Jensen,Rajiv Ranjan,,,,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,5c233e5a71c9f02df7746418,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,<p>Add a new Sonus Sov Wrapper so numbers can be provisioned for the United Kingdom Cloud Region (UK2).</p><p><br></p><ol><li>A new user in OPS-&gt; Provisioning Admin is added<ol><li>Username: PSXPROVISIONER_UK2</li><li>Password: &lt;&lt;Not to be shared here&gt;&gt;</li></ol></li><li>A new wrapper service is created</li><li>psxWebServiceUrl: https://sonusems.nicecxone-sov1.uk/emsapi/services/PSXAPI/r16_01_00</li></ol>,,,,,,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,,,,,,,,,jonathan.jensen,712020:0ccf8b0f-2002-4a3d-bc14-ae34e9bc6d3c,,,,,,,,Voice,Carolyn Hatcher,622ba24315521d00726f833e,,,,,,,,,,,17/Jun/26 2:16 PM,Jonathan Jensen,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,,,,,,,,,{},,CX,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://niceincontact.lightning.force.com/a0dUi00000BKHb6IAH,,,,,,,,,,,,,,,,,,1|i042gb:,,,,,,,,,,,,,,,,Jonathan Jensen,,,,,,,,,,,,,,,,,,,,,408664,,,,a0dUi00000BKHb6IAH,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Power Rangers,,,,,,,,,,,,,,,,,,,,,,,,,,,2026-06-17 14:16:33.278,10009_*:*_1_*:*_0_*|*_10011_*:*_1_*:*_7095_*|*_10010_*:*_1_*:*_29230184806_*|*_10001_*:*_1_*:*_3268_*|*_10003_*:*_1_*:*_16440_*|*_10006_*:*_1_*:*_2414_*|*_10005_*:*_1_*:*_3407,,,17/Jun/26 2:16 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;Done,17/Jun/26 2:16 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;Done,17/Jun/26 2:16 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;Done,17/Jun/26 4:07 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;Release Notes: This a test.,17/Jun/26 4:27 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;[Update] This is a test.,17/Jun/26 4:28 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;[Comment] This is test 2.,17/Jun/26 4:31 PM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;[Comment] This is test 3.,,,,,,,,,,,,,,Done,17/Jun/26 2:16 PM
 441517 - (Sonus) UK3 Sovereign (UKSov2),CXMIS-21329,857277,Epic,Qualified,CXMIS,CXMIS,software,Chanchal Katiyar,6405e9049ce2cd2c240f713a,,,P3,,,,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,24/Apr/26 7:59 PM,06/May/26 3:00 PM,,,,,,,,0,,,,"Breaking the Sonus items out from the AutoBU (Project#430789) items so I can close them.
 
 1.  Create a new Sonus Sov Wrapper UK3
@@ -491,60 +545,6 @@ General Notes:
 1. Alpha testing
 2. Beta testing
 3. Project Risk Mitigation",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,blue,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://niceincontact.lightning.force.com/a0dUi00000FGW3LIAX,,,,,,,,,,,,,,,,,,1|i08rwr:,,,No,,,,,,,,,,,,,Jonathan Jensen,,,,,,,,,,,,,,,,,,,,,426174,,,,a0dUi00000FGW3LIAX,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Power Rangers,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,To Do,09/Dec/25 1:47 PM
-"SF2CB Order Integration Phase 2 - (No Charge Products, Minimums)",CXMIS-13513,812102,Epic,Qualified,CXMIS,CXMIS,software,Chanchal Katiyar,6405e9049ce2cd2c240f713a,,,P3,,Rahul Bais,712020:af5628e6-e5dc-45c4-a2b4-3f94d40af87e,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,22/Aug/25 5:41 PM,30/Oct/25 4:38 PM,,,,,,,13/Nov/25 12:00 AM,0,,,,"h2. Objective
-
-Automate the integration of no charge products and minimums for the SF2CB system.
-
-h2. Context
-
-This issue focuses on enhancing the SF2CB system by integrating specific no charge products and minimums. The integration aims to streamline processes related to these products.
-
-h2. Scope
-
-* *Included*:
-** Integration of SKU specific no charge products.
-** Integration of all MRC no charge products.
-** Minimum integration.
-* *Not Included*:
-** Any integrations outside of no charge products and minimums.
-
-h2. Success criteria
-
-* Successful integration of SKU specific no charge products.
-* Successful integration of all MRC no charge products.
-* Implementation of minimum integration.
-
-h2. Risks and dependencies
-
-* Potential delays in integration due to unforeseen technical challenges.
-* Dependencies on existing infrastructure for successful implementation.
-
-h2. Other information
-
-N/A",,srv Jira,,,,,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,Jonathan Jensen,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,,,,,,,,Finance,robert.gordon,712020:df79a8f6-847c-4b10-a993-274b231e4ebc,,,,,,,,,,,,,,,,,,,,,,{},,CX,,,,,,,,,ghx-label-14,,,To Do,,,,,,,,,,,,,,,"Sizing document change:
-
-PS Architecture change:
-
-PS Methodology change:
-
-PS Project plan change:
-
-Data requirement change:
-
-Update PS Tools:
-
-Training Materials:
-
-Communication:
-
-Update PS Sales:
-
-PS Demo:
-
-General Notes:
-1. Alpha testing
-2. Beta testing
-3. Project Risk Mitigation",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,dark_orange,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://niceincontact.lightning.force.com/a0dUi00000CPnJZIA1,,,,,,,,,,,Virat Jain,622b9dbb49c900007024482a,,,,,,1|i076sz:,,,No,,,,,,,,,,,,,Jonathan Jensen,,,,,,,,,,,,,,,,,,,,,414692,,,,a0dUi00000CPnJZIA1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Justice League,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,To Do,22/Aug/25 5:41 PM
 Exclude non POC numbers to Fed Ramp,CXMIS-12601,807287,Epic,Qualified,CXMIS,CXMIS,software,Chanchal Katiyar,6405e9049ce2cd2c240f713a,,,P3,,,,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,22/Jul/25 1:11 PM,24/Apr/26 4:20 PM,,,,,,,,0,,,,"Currently all numbers are sent to both Sonus Standard and FedRamp.
 
 The only numbers that are expected in both FedRAMP and Production are Point of Contact numbers that would be routed back to a clusters.
@@ -789,14 +789,14 @@ General Notes:
 SF2CB - Load CPIDs to SFDC PROD #2,CXSCOE-42,791372,Epic,Done,CXSCOE,CXSCOE,software,Devin Jefferies,611cf68ca3e00f00687a04e0,,,,Done,,,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,Rajiv Ranjan,5c233e5a71c9f02df7746418,14/Jul/25 1:52 PM,18/Aug/25 3:42 PM,,30/Jul/25 11:00 PM,,,,,,0,CXSCOE_Project_Import,,,"As art of the SFDC to Cadebill automation - for amendments we will do a data migration to update the Cadebill CPID to quote lines and subscriptions into the production environment.
 
 Note:  There were CPIDs and Subscriptions missed in the last upload.",,Rajiv Ranjan,,,,,5c233e5a71c9f02df7746418,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Business Goal:Update Cadebill CPID on quote lines and subscriptions in Production environment.Solution Details:Using the provided file add the corresponding CPID values to existing Quote Lines and Subscriptions in the Production environment.Notes:We will coordinate with Sean again to disable CPQ processes while CPID values are being added.,,,,,,,,,,,,,,jonathan.jensen,712020:0ccf8b0f-2002-4a3d-bc14-ae34e9bc6d3c,,ApprovalsCFValue{approvals=[]},,,,,,,,,,,,,,,,,,,Finance,robert.gordon,712020:df79a8f6-847c-4b10-a993-274b231e4ebc,,,,,,,,,,,18/Aug/25 3:42 PM,,,,,,,,,,,{},17.0,CX,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,https://niceincontact.lightning.force.com/a0dUi00000BOHRCIA5,,,,,,,,,,,,,,,,,,1|i04atn:,,,,,,,,,,,,,,,,Jonathan Jensen,,,,,,,,,,,,,,,,,,,,,409039,,,,a0dUi00000BOHRCIA5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,XS,,,,,,,SCOE Operations,,,,,,,,,,,,,,,,,,,,,,,,10.0,,,,10001_*:*_2_*:*_608466832,,,,,,,,,,,,,,,,,,,,,,,Done,30/Jul/25 11:00 PM
-Auto-Populate Platform Type and Shipping/Billing Address for New Prospects,CXSCOE-5070,820534,Epic,In UAT,CXSCOE,CXSCOE,software,Devin Jefferies,611cf68ca3e00f00687a04e0,,,P3,,,,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,07/Oct/25 5:57 PM,03/Jun/26 11:47 AM,17/Jun/26 2:19 PM,,,,,,28/May/26 12:00 AM,0,,,,"After reviewing the current Auto BU success/failure report, we have determined that the the following two items are causing the majority of BU failing in validation for Production BU's.
+Auto-Populate Platform Type and Shipping/Billing Address for New Prospects,CXSCOE-5070,820534,Epic,In UAT,CXSCOE,CXSCOE,software,Devin Jefferies,611cf68ca3e00f00687a04e0,,,P3,,,,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,srv Jira,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,07/Oct/25 5:57 PM,18/Jun/26 2:39 PM,17/Jun/26 2:19 PM,,,,,,28/May/26 12:00 AM,0,,,,"After reviewing the current Auto BU success/failure report, we have determined that the the following two items are causing the majority of BU failing in validation for Production BU's.
 
 1.  Account-&gt; Platform Type not being selected
 2.  Account-&gt; Shipping/Billing address not being selected
 
 The business problem we are trying to solve is the fields not being populated on an account when it is sent for BU Automation.
 
-I have met with Katie D. (OM) and Hugo P. (Sales) and outlined the requirements below.",,srv Jira,,,,,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"**UPDATED** 12/9/2025Business Goal: Ensure that the Salesforce Account is populated with the following information at the time of conversion from a Lead to a Prospect or at the time of Prospect Account creation so we have the required fields before it is sent for BU Automation so the Auto BU process does not fail.Account Platform StatusAccount Billing AddressAccount Shipping AddressSolution Details:auto_populate_account_fields_for_auto_bu_v5.docxTechnical Details:Auto-populate the account Platform Type to CXone at the time of Prospect Account creation.If Prospect Account is already created, add validation that requires the account platform to be populated on the Account before you can you can go to stages (2 - Determining Problem / Impact) through (5 - Closed – Won) on the Opportunity. Copy the Parent account Billing and/or Shipping Address information and add it to the Prospect Account at the time of creation. (when applicable)If Prospect Account is already created, add validation that requires the account Billing and/or Shipping Address to be populated on the Account before you can go to stages (2 - Determining Problem / Impact) through (5 - Closed – Won) on the Opportunity. Add validation that requires the account Billing and/or Shipping Address to be populated on the Account on the Quote Submit for Approval flow.Notes:If there is not a Parent Billing/Shipping address to populate these fields, nothing needs to be done. Billing/Shipping address will be collected using #4 above.",,,,,,,,,,,,,,jonathan.jensen,712020:0ccf8b0f-2002-4a3d-bc14-ae34e9bc6d3c,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,Finance,Katie Dresser,622ba4cfdb58c100687e5414,,,,,,,,,,,16/Apr/26 6:55 PM,,,,,,,,,,,{},3.0,CX,,,,,,,,,ghx-label-6,,,To Do,,,,,,,,,,,,,,,"Sizing document change:
+I have met with Katie D. (OM) and Hugo P. (Sales) and outlined the requirements below.",,srv Jira,,,,,712020:fbe734e5-99e6-46ff-b65c-bcc60d1677cc,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"**UPDATED** 12/9/2025Business Goal: Ensure that the Salesforce Account is populated with the following information at the time of conversion from a Lead to a Prospect or at the time of Prospect Account creation so we have the required fields before it is sent for BU Automation so the Auto BU process does not fail.Account Platform StatusAccount Billing AddressAccount Shipping AddressSolution Details:auto_populate_account_fields_for_auto_bu_v5.docxTechnical Details:Auto-populate the account Platform Type to CXone at the time of Prospect Account creation.If Prospect Account is already created, add validation that requires the account platform to be populated on the Account before you can you can go to stages (2 - Determining Problem / Impact) through (5 - Closed – Won) on the Opportunity. Copy the Parent account Billing and/or Shipping Address information and add it to the Prospect Account at the time of creation. (when applicable)If Prospect Account is already created, add validation that requires the account Billing and/or Shipping Address to be populated on the Account before you can go to stages (2 - Determining Problem / Impact) through (5 - Closed – Won) on the Opportunity. Add validation that requires the account Billing and/or Shipping Address to be populated on the Account on the Quote Submit for Approval flow.Notes:If there is not a Parent Billing/Shipping address to populate these fields, nothing needs to be done. Billing/Shipping address will be collected using #4 above.",,,,,,,,,,,,,,jonathan.jensen,712020:0ccf8b0f-2002-4a3d-bc14-ae34e9bc6d3c,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,Finance,Katie Dresser,622ba4cfdb58c100687e5414,,,,,,,,,,,16/Apr/26 6:55 PM,,,,,,,,,,,{},4.0,CX,,,,,,,,,ghx-label-6,,,To Do,,,,,,,,,,,,,,,"Sizing document change:
 
 PS Architecture change:
 
@@ -911,6 +911,36 @@ And to your follow up question - maybe we can edit the active directory schema t
 as a suggestion - if you need a new attribute for automation, if snow supports LDAP protocol, we can use a smart group or regular group instead?
 
 Thanks & Regards“",,,,,,,,,,,,,,,,,,,,To Do,11/Jun/26 11:19 AM
+ExpertAI billing logic 26.2 release- support from MCL,IT-34335,865340,Change Request,Open,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,Uri Zernitsky,6114ec5175ad960069a77ba9,Uri Zernitsky,6114ec5175ad960069a77ba9,11/Jun/26 7:25 AM,18/Jun/26 11:06 AM,,,,,,,,0,,,,"As part of 26.1 release, we had a billing project for ExpertAI SKUs. We didn’t manage to establish billing logic to support the product requirement. we need IT/MCL support to check if we can support such requirement and help to developed a logic to support it. 
+
+Can you build a custom function that reads the contracted quantities of both the Standard and Advanced user SKUs on the same account and returns their sum × 100 as the Included quantity? this is for SKUs 7075-3996 + 7075-3997. for other SKUs in this project we have different *X amount
+
+7075-3999 + 7075-3998 should be different *X amount 
+
+Pricing project attached",,Uri Zernitsky,,,,,6114ec5175ad960069a77ba9,,,,,,,,,,,,,,,,,,,,,,,,,11/Jun/26 7:24 AM;ug:1ce7593e-dd0a-4d94-af42-0ed39b158415;Expert_26.1-NewSKU-Adjustment-Final.xlsb;https://nice-it.atlassian.net/rest/api/3/attachment/content/190087,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,Billing,Asa Barnea,6114ec50c51f3a00696cf9ed,,,,,,,,,,,,,,,,,,,,,,{},,CX,,,,,,,,,,,,,,,,,,,,,,,,,,,"Sizing document change:
+
+PS Architecture change:
+
+PS Methodology change:
+
+PS Project plan change:
+
+Data requirement change:
+
+Update PS Tools:
+
+Training Materials:
+
+Communication:
+
+Update PS Sales:
+
+PS Demo:
+
+General Notes:
+1. Alpha testing
+2. Beta testing
+3. Project Risk Mitigation",FALSE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Cadebill,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i0bns3:,,,No,,,,,,,,,,,,,Uri Zernitsky,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Billing,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,To Do,11/Jun/26 7:25 AM
 Revenue Assurance Billing QA Agent,IT-34314,865156,Epic,Open,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,Eitan Fireberg,621f1c4f94f7e20069fdd50c,Amit Noga,712020:3a7505d9-2d9f-4039-8564-836f2fbe4186,10/Jun/26 11:44 AM,10/Jun/26 11:44 AM,,,,,,,,0,,,,"An AI QA agent layered over the billing pipeline that confirms billing accuracy of new products and plans before they reach production. It detects billing errors, rate mismatches, and potential revenue leakage in real time, reduces manual QA effort, and increases scope coverage - freeing the billing team to focus on exceptions requiring human judgment.",,Amit Noga,,,,,712020:3a7505d9-2d9f-4039-8564-836f2fbe4186,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,ITSM,,,,,,,,,,,,,,,,,,,,,,,,{},,,,,,,,MVP,,,ghx-label-6,,,To Do,,,,,,,,,,,,,,,"Sizing document change:
 
 PS Architecture change:
@@ -1356,7 +1386,7 @@ PS Demo:
 General Notes:
 1. Alpha testing
 2. Beta testing
-3. Project Risk Mitigation",,,,,,,,,,,,,,,,,,,Cadebill,,,,,,,,,,,,,,,,,,,,,,,Cadebill,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i09isr:,,,No,,,,,,,,,,,,,Robert Gordan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Billing,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,20/Apr/26 11:48 AM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;This is a test This is a test This is a test This is a test This is a test This is a test,,,,,,,,,,,,,,,,,,,,To Do,30/Jan/26 10:09 PM
+3. Project Risk Mitigation",,,,,,,,,,,,,,,,,,,Cadebill,,,,,,,,,,,,,,,,,,,,,,,Cadebill,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i09isr:,,,No,,,,,,,,,,,,,Robert Gordan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Billing,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,20/Apr/26 11:48 AM;712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661;This is a test,,,,,,,,,,,,,,,,,,,,To Do,30/Jan/26 10:09 PM
 Automation -  Cannot insert duplicate key row in object 'Customers.customer_property_values' with unique index 'idx_customer_property_values,IT-31292,837368,Change Request,Open,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P2,,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,22/Jan/26 6:01 AM,22/Jan/26 7:38 AM,09/Jun/26 1:55 PM,,,,,,,0,,,,"For example:
 
 Opp#359896
@@ -1735,7 +1765,7 @@ General Notes:
 1. Alpha testing
 2. Beta testing
 3. Project Risk Mitigation",FALSE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i08i7n:,,,No,,,,,,,,,,,,,Henry Miles,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,BI and Analytics,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,To Do,18/Nov/25 10:55 AM
-GEN AI,IT-29578,825724,Epic,Open,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,,Dana Trybiasz,6114ed43e6e6f80071784a76,Eitan Fireberg,621f1c4f94f7e20069fdd50c,Dana Trybiasz,6114ed43e6e6f80071784a76,12/Nov/25 11:29 AM,12/Nov/25 1:56 PM,27/May/26 4:35 PM,,,,,,,0,,,,GEN AI for Actimize,,Dana Trybiasz,,,,,6114ed43e6e6f80071784a76,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,Customer Support,,,,,,,,,,,,,,,,,,,,,,,,{},,,,,,,,Non-MVP,,,ghx-label-8,GEN AI,,To Do,,,,,,,,,,,,,,,"Sizing document change:
+GEN AI,IT-29578,825724,Epic,Open,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,,Dana Trybiasz,6114ed43e6e6f80071784a76,Eitan Fireberg,621f1c4f94f7e20069fdd50c,Dana Trybiasz,6114ed43e6e6f80071784a76,12/Nov/25 11:29 AM,12/Nov/25 1:56 PM,,,,,,,,0,,,,GEN AI for Actimize,,Dana Trybiasz,,,,,6114ed43e6e6f80071784a76,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,Customer Support,,,,,,,,,,,,,,,,,,,,,,,,{},,,,,,,,Non-MVP,,,ghx-label-8,GEN AI,,To Do,,,,,,,,,,,,,,,"Sizing document change:
 
 PS Architecture change:
 
@@ -2390,6 +2420,144 @@ General Notes:
 1. Alpha testing
 2. Beta testing
 3. Project Risk Mitigation",FALSE,,,,,,,,,,,,,,,,,,ServiceNow NSC,,,,,,,,,,,,,,,,,,,,,,,ServiceNow,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i0bokj:,,,No,,,,,,,,,,,,,Eitan Fireberg,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,IT S65 (15 Jun - 29 Jun 2026),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5.0,,,,,,,,,,,,,AI Engineering & Services,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,To Do,14/Jun/26 6:03 AM
+Fix instance status handling for overlapping Maintenance Windows ,IT-34275,864824,Change Request,Ready for Dev,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,,Dana Trybiasz,6114ed43e6e6f80071784a76,Dany Ditchi,633f26b4234d44d406d50578,Dany Ditchi,633f26b4234d44d406d50578,08/Jun/26 4:18 PM,18/Jun/26 7:27 AM,,,July 2026,,,,,0,Silverstorm,,,"h2. *Summary*
+
+Enhance Maintenance Window logic to align case suppression and instance sub-status with Change Request lifecycle
+
+----
+
+h2. *Description*
+
+The current Maintenance Window logic sets the instance sub-status (In maintenance) based on the start and end of the maintenance window itself. This approach creates inaccuracies when multiple maintenance windows overlap on the same instance or when multiple change requests occur at different times within a maintenance.
+
+To address this, the logic should be updated so that instance sub-status and case suppression are driven by the lifecycle of associated Change Requests rather than the maintenance window duration.
+
+----
+
+h2. *Context*
+
+During analysis, it was identified that:
+
+* An instance can be part of multiple maintenance windows simultaneously. When one maintenance ends while another is still active, the system removes the sub-status incorrectly and resumes case creation.
+* Alerts triggered during ongoing work can therefore generate unwanted cases, even though maintenance activity is still in progress. 
+
+Additionally:
+
+* A single maintenance window may include multiple change requests with different execution times. 
+* Current behavior does not reflect the actual work timeline at the change level, leading to inaccurate monitoring suppression. 
+
+----
+
+h2. *Solution*
+
+Update system behavior to align instance sub-status and case suppression with Change Request lifecycle:
+
+# *Trigger Sub-status Based on Change Lifecycle*
+#* When a Change Request moves to *“Implement”*, apply sub-status (Downtime CR) to relevant instances. 
+#* When the Change Request moves to *“Review”*, remove the sub-status. 
+# *Decouple from Maintenance Start/End*
+#* Remove existing logic that applies/removes sub-status based on maintenance window timing. 
+# *Maintenance Completion Validation*
+#* When attempting to end a maintenance:
+#** If any associated Change Request is still in “Implement”:
+#*** Display a warning notification to the user “Please note, CR # (can be multiples) is still in Implement state”
+# *Notification / Governance Enhancements (Optional)*
+#* Ensure visibility if:
+#** Change Requests are not moved to “Implement” after maintenance start.
+#** Maintenance is being closed while active changes still exist. 
+# *Scope Enforcement*
+#* Validation applies *only to Change Requests linked to the maintenance window*, not unrelated changes. 
+
+
+
+IMPORTANT! Please note: when we built the CR substatus with Tzeela (CR 19130) we exclude CR related to MW, we just need to remove this exclusion and it will work.
+
+----
+
+h2. *Acceptance Criteria*
+
+h3. *AC1 – Sub-status driven by Change Request*
+
+* GIVEN a Change Request linked to a maintenance
+* WHEN the Change moves to *Implement*
+* THEN the instance sub-status is set to Downtime CR (like any other CR)
+* GIVEN the Change moves to *Review*
+* THEN the instance sub-status is removed
+
+----
+
+h3. *AC2 – Removal of Maintenance-based Logic*
+
+* GIVEN a maintenance window starts or ends
+* THEN no sub-status changes occur unless triggered by a Change Request
+
+----
+
+h3. *AC3 – Case Suppression Accuracy*
+
+* GIVEN an instance has at least one Change in “Implement”
+* THEN alerts do NOT generate cases
+* GIVEN no active Change in “Implement”
+* THEN alerts generate cases normally
+
+----
+
+h3. *AC4 – Maintenance Closure Validation*
+
+* GIVEN a user attempts to end a maintenance
+* AND at least one Change is still in “Implement”
+* THEN the system:
+** Shows a warning requiring user acknowledgment
+
+----
+
+h3. *AC5 – No Impact from Overlapping Maintenance*
+
+* GIVEN multiple maintenance windows exist on the same instance
+* THEN sub-status behavior is controlled only by Change Requests
+
+----
+
+h3. *AC6 – Scope Control*
+
+* GIVEN Change Requests not linked to the maintenance
+* THEN they are NOT considered in validation or sub-status logic
+
+----
+
+h3. *AC7 – System warning* 
+
+* when a MW is move to Start and End there is a warning to say that Instances will be in sub-status, need to remove that, and add a sentence to MWM to ensure that users will change CR to implement.
+* The exact sentence that need to be removed is: the creation of cases will be disabled from alert/alarm 
+* the exact sentence that need to be is: Please note on changing the status to start maintenance, the publication is going to be sent to the publication customers-related list, the publication will be displayed in the portal and under the instances, and a message will be sent to the Change request owner, please check the CR owner move the status to disable creation of cases
+
+----
+
+h2. *Additional Details / Considerations*
+
+* *Operational benefit:*
+** Eliminates false case creation during ongoing maintenance work
+** Improves monitoring accuracy and alert suppression
+* *Process alignment:*
+** Fully aligns with standard Change Management lifecycle (Implement → Review).
+* *Edge cases to consider:*
+** Very large maintenance scopes (e.g., thousands of CIs) may impact performance
+** Users must follow correct Change lifecycle updates to avoid unintended alerts
+* *Interim workaround (current state):*
+** Manage all related work within a single maintenance window to avoid duplicate behavior issues.",,Dany Ditchi,,,,,633f26b4234d44d406d50578,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SNOW Dev,,,,,,,Dana Trybiasz,6114ed43e6e6f80071784a76,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,ALM - Cross Domains,Dany Ditchi,633f26b4234d44d406d50578,,,,,,,,,,,,,,,,,,,,,,{},,CX,,,,,,,,,,,,,,,,,,,,,,,,,,,"*CR Sub-status Logic:*
+
+# Remove the MW-exclusion condition from the existing Business Rule / Script Include (built in IT-19130) that prevents MW-linked CRs from triggering the 'Downtime CR' sub-status flow. After removal, when a CR linked to a Maintenance Window transitions to 'Implement', sub-status 'Downtime CR' is set on all related instances — identical to non-MW CRs.
+# When a MW-linked CR transitions to 'Review', sub-status is removed from all related instances. If multiple CRs cover the same instance, sub-status is only cleared when no remaining linked CR is in 'Implement' state.
+
+*Maintenance Window Start/End Scripts:*
+
+# Remove or disable sub-status logic from the Script Actions 'Set Instances In Maintenance' and 'Clear Instances In Maintenance' (NiCE Publication Page, identified in IT-23157). MW Start/End transitions must no longer apply or remove any instance sub-status.
+# Review Script Include 'RetrieveMaintenance' for any sub-status-related logic that must be removed or updated.
+
+*MW Closure Validation (UI / Form):*
+
+# Add a UI Action / Client Script on cmn_schedule_maintenance: when the user attempts to transition to 'End Maintenance', query all linked CRs in 'Implement' status. If any exist, display a warning dialog: 'Please note, CR #[numbers] is/are still in Implement state'. User must acknowledge before proceeding. No warning is shown when no linked CRs are in Implement.
+# Remove the sub-status notification/warning from the existing 'Start Maintenance' and 'End Maintenance' action messages. Add an informational guidance note on the MWM form: 'Once maintenance begins, move linked Change Requests to Implement to activate monitoring suppression.'",FALSE,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i0bmgr:,,,No,,,,,,,,,,,,,Dany Ditchi,,,,,,,Run the Business,,,,,,,,,,,,,,,,,,,,,,,,,,IT S64 (1 Jun - 15 Jun 2026),IT S65 (15 Jun - 29 Jun 2026),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3.0,,,,,,,,,,,,,Customer Support,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,To Do,08/Jun/26 4:18 PM
 MyGlobal Usage Anomaly Report,IT-21779,778539,Change Request,Ready for Dev,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,,Yana Gurevich,6335750888ed2ebef97ca2a5,Eitan Fireberg,621f1c4f94f7e20069fdd50c,Eitan Fireberg,621f1c4f94f7e20069fdd50c,13/Nov/24 6:23 AM,15/Jun/26 3:36 PM,,,January 2025,,,,,0,,,,"*Subject:* RE: Bring MyGlobal data to Snowflake to detect usage annomalys
 
  
@@ -2588,144 +2756,6 @@ General Notes:
 * Reduction in *bounce rate*
 * Reduction in *time-to-close* across support queues
 * Improved user satisfaction / business continuity",,,,,,,,,,,,,,,,,,,,,,No,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i0bnaj:,,,No,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,IT S69 (10 Aug - 24 Aug 2026),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,20.0,,,,,,,,,,,,,AI Engineering & Services,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,836194,IT-30955,AI-ITSM,To Do,10/Jun/26 11:51 AM
-Fix instance status handling for overlapping Maintenance Windows ,IT-34275,864824,Change Request,Design,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,,Dana Trybiasz,6114ed43e6e6f80071784a76,Dany Ditchi,633f26b4234d44d406d50578,Dany Ditchi,633f26b4234d44d406d50578,08/Jun/26 4:18 PM,17/Jun/26 12:18 PM,,,July 2026,,,,,0,,,,"h2. *Summary*
-
-Enhance Maintenance Window logic to align case suppression and instance sub-status with Change Request lifecycle
-
-----
-
-h2. *Description*
-
-The current Maintenance Window logic sets the instance sub-status (In maintenance) based on the start and end of the maintenance window itself. This approach creates inaccuracies when multiple maintenance windows overlap on the same instance or when multiple change requests occur at different times within a maintenance.
-
-To address this, the logic should be updated so that instance sub-status and case suppression are driven by the lifecycle of associated Change Requests rather than the maintenance window duration.
-
-----
-
-h2. *Context*
-
-During analysis, it was identified that:
-
-* An instance can be part of multiple maintenance windows simultaneously. When one maintenance ends while another is still active, the system removes the sub-status incorrectly and resumes case creation.
-* Alerts triggered during ongoing work can therefore generate unwanted cases, even though maintenance activity is still in progress. 
-
-Additionally:
-
-* A single maintenance window may include multiple change requests with different execution times. 
-* Current behavior does not reflect the actual work timeline at the change level, leading to inaccurate monitoring suppression. 
-
-----
-
-h2. *Solution*
-
-Update system behavior to align instance sub-status and case suppression with Change Request lifecycle:
-
-# *Trigger Sub-status Based on Change Lifecycle*
-#* When a Change Request moves to *“Implement”*, apply sub-status (Downtime CR) to relevant instances. 
-#* When the Change Request moves to *“Review”*, remove the sub-status. 
-# *Decouple from Maintenance Start/End*
-#* Remove existing logic that applies/removes sub-status based on maintenance window timing. 
-# *Maintenance Completion Validation*
-#* When attempting to end a maintenance:
-#** If any associated Change Request is still in “Implement”:
-#*** Display a warning notification to the user “Please note, CR # (can be multiples) is still in Implement state”
-# *Notification / Governance Enhancements (Optional)*
-#* Ensure visibility if:
-#** Change Requests are not moved to “Implement” after maintenance start.
-#** Maintenance is being closed while active changes still exist. 
-# *Scope Enforcement*
-#* Validation applies *only to Change Requests linked to the maintenance window*, not unrelated changes. 
-
-
-
-IMPORTANT! Please note: when we built the CR substatus with Tzeela (CR 19130) we exclude CR related to MW, we just need to remove this exclusion and it will work.
-
-----
-
-h2. *Acceptance Criteria*
-
-h3. *AC1 – Sub-status driven by Change Request*
-
-* GIVEN a Change Request linked to a maintenance
-* WHEN the Change moves to *Implement*
-* THEN the instance sub-status is set to Downtime CR (like any other CR)
-* GIVEN the Change moves to *Review*
-* THEN the instance sub-status is removed
-
-----
-
-h3. *AC2 – Removal of Maintenance-based Logic*
-
-* GIVEN a maintenance window starts or ends
-* THEN no sub-status changes occur unless triggered by a Change Request
-
-----
-
-h3. *AC3 – Case Suppression Accuracy*
-
-* GIVEN an instance has at least one Change in “Implement”
-* THEN alerts do NOT generate cases
-* GIVEN no active Change in “Implement”
-* THEN alerts generate cases normally
-
-----
-
-h3. *AC4 – Maintenance Closure Validation*
-
-* GIVEN a user attempts to end a maintenance
-* AND at least one Change is still in “Implement”
-* THEN the system:
-** Shows a warning requiring user acknowledgment
-
-----
-
-h3. *AC5 – No Impact from Overlapping Maintenance*
-
-* GIVEN multiple maintenance windows exist on the same instance
-* THEN sub-status behavior is controlled only by Change Requests
-
-----
-
-h3. *AC6 – Scope Control*
-
-* GIVEN Change Requests not linked to the maintenance
-* THEN they are NOT considered in validation or sub-status logic
-
-----
-
-h3. *AC7 – System warning* 
-
-* when a MW is move to Start and End there is a warning to say that Instances will be in sub-status, need to remove that, and add a sentence to MWM to ensure that users will change CR to implement.
-* The exact sentence that need to be removed is: the creation of cases will be disabled from alert/alarm 
-* the exact sentence that need to be is: Please note on changing the status to start maintenance, the publication is going to be sent to the publication customers-related list, the publication will be displayed in the portal and under the instances, and a message will be sent to the Change request owner, please check the CR owner move the status to disable creation of cases
-
-----
-
-h2. *Additional Details / Considerations*
-
-* *Operational benefit:*
-** Eliminates false case creation during ongoing maintenance work
-** Improves monitoring accuracy and alert suppression
-* *Process alignment:*
-** Fully aligns with standard Change Management lifecycle (Implement → Review).
-* *Edge cases to consider:*
-** Very large maintenance scopes (e.g., thousands of CIs) may impact performance
-** Users must follow correct Change lifecycle updates to avoid unintended alerts
-* *Interim workaround (current state):*
-** Manage all related work within a single maintenance window to avoid duplicate behavior issues.",,Dany Ditchi,,,,,633f26b4234d44d406d50578,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SNOW Dev,,,,,,,Dana Trybiasz,6114ed43e6e6f80071784a76,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,ALM - Cross Domains,Dany Ditchi,633f26b4234d44d406d50578,,,,,,,,,,,,,,,,,,,,,,{},,CX,,,,,,,,,,,,,,,,,,,,,,,,,,,"*CR Sub-status Logic:*
-
-# Remove the MW-exclusion condition from the existing Business Rule / Script Include (built in IT-19130) that prevents MW-linked CRs from triggering the 'Downtime CR' sub-status flow. After removal, when a CR linked to a Maintenance Window transitions to 'Implement', sub-status 'Downtime CR' is set on all related instances — identical to non-MW CRs.
-# When a MW-linked CR transitions to 'Review', sub-status is removed from all related instances. If multiple CRs cover the same instance, sub-status is only cleared when no remaining linked CR is in 'Implement' state.
-
-*Maintenance Window Start/End Scripts:*
-
-# Remove or disable sub-status logic from the Script Actions 'Set Instances In Maintenance' and 'Clear Instances In Maintenance' (NiCE Publication Page, identified in IT-23157). MW Start/End transitions must no longer apply or remove any instance sub-status.
-# Review Script Include 'RetrieveMaintenance' for any sub-status-related logic that must be removed or updated.
-
-*MW Closure Validation (UI / Form):*
-
-# Add a UI Action / Client Script on cmn_schedule_maintenance: when the user attempts to transition to 'End Maintenance', query all linked CRs in 'Implement' status. If any exist, display a warning dialog: 'Please note, CR #[numbers] is/are still in Implement state'. User must acknowledge before proceeding. No warning is shown when no linked CRs are in Implement.
-# Remove the sub-status notification/warning from the existing 'Start Maintenance' and 'End Maintenance' action messages. Add an informational guidance note on the MWM form: 'Once maintenance begins, move linked Change Requests to Implement to activate monitoring suppression.'",FALSE,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i0bmgr:,,,No,,,,,,,,,,,,,Dany Ditchi,,,,,,,Run the Business,,,,,,,,,,,,,,,,,,,,,,,,,,IT S64 (1 Jun - 15 Jun 2026),IT S65 (15 Jun - 29 Jun 2026),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3.0,,,,,,,,,,,,,Customer Support,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,To Do,08/Jun/26 4:18 PM
 Hybrid cases assignment based on SF account DSA,IT-34266,864782,Change Request,Design,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,Reut Sagi,70121:b17a5a27-67c5-4f03-a3fb-16001ddbf256,Reut Sagi,70121:b17a5a27-67c5-4f03-a3fb-16001ddbf256,08/Jun/26 12:35 PM,15/Jun/26 7:20 AM,,,,,,,,0,,,,"* bring SF account DSA to Wiser once linking instance to BU 
 * should be saved on the account level in Wiser
 * if there is any contradiction  need to take the latest
@@ -2900,41 +2930,6 @@ General Notes:
 1. Alpha testing
 2. Beta testing
 3. Project Risk Mitigation",FALSE,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i0bhl7:,,,No,,,,,,,,,,,,,Eitan Fireberg,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,IT S67 (13 Jul - 27 Jul 2026),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,20.0,,,,,,,,,,,,,Customer Support,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,To Do,01/Jun/26 8:58 AM
-Creating a field in Wiser of “Outsource Partner” ,IT-33748,860298,Change Request,Design,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P2,,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,Alok Kumar,622b99569c3cce0069503815,Alok Kumar,622b99569c3cce0069503815,14/May/26 10:14 AM,17/Jun/26 11:57 AM,,,,,,,,0,,,,"Create a field in Wiser of “_Outsource Partner_” for reporting purposes. This field will be manually entered when the partner provides outsources activities such as Support & Implementation, for direct customers. No logic change, only informative field.
-
-* *Field name:* _“Outsource Partner_ “*on instance level*
-* Type: reference to *Active* all customer table
-* *Permission:* Only managers can change (Moran should get _manager)_
-* The field is *updated manually*, not from integration
-* The field should be included in *BI* (different CR)
-* *Division:* Enterprise or/and Actimize  - TBD upon synch with Reut Sagi",,Alok Kumar,Meital Rashti,,,,622b99569c3cce0069503815,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,Customer Support,Alok Kumar,622b99569c3cce0069503815,,,,,,,,,,,,,,,,,,,,,,{},,Actimize,,,,,,,,,,,,,,,,,,,,,,,,,,,"Sizing document change:
-
-PS Architecture change:
-
-PS Methodology change:
-
-PS Project plan change:
-
-Data requirement change:
-
-Update PS Tools:
-
-Training Materials:
-
-Communication:
-
-Update PS Sales:
-
-PS Demo:
-
-General Notes:
-1. Alpha testing
-2. Beta testing
-3. Project Risk Mitigation",FALSE,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i0b78j:,,,No,,,,,,,,,,,,,alok.kumar@niceactimize.com,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,IT S66 (29 Jun - 13 Jul 2026),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.0,,,,,,,,,,,,,Customer Support,,,,,,,,,,,,,,,,,,,,,,,,,,,2026-06-17 11:57:03.666,,,,"17/Jun/26 11:57 AM;70121:33c9c08c-01ca-4a34-ac93-994a2946b894;Comment from Moran:
-
-Following up on the below, I’ve given this additional thought and would like to manage the _“Outsource Partner_ “ informational field primarily at the *Customer Account level*. Managing it only at the instance level would require additional operational effort that may be unnecessary.
-
-Also let’s call it *_“Partner Outsource Engagement”_*",,,,,,,,,,,,,,,,,,,,To Do,14/May/26 10:14 AM
 Agent AI Rebate SKU – Requirements,IT-33161,855069,Change Request,Design,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,Uri Zernitsky,6114ec5175ad960069a77ba9,Uri Zernitsky,6114ec5175ad960069a77ba9,15/Apr/26 6:03 AM,26/May/26 11:02 AM,,,,,,,,0,,,,"A major new ELT promotion to accelerate Contact Center transition from agents to AI
 
 Create Charges of AI SKUs in a particular month * xx% . List of SKUs attach
@@ -3351,7 +3346,7 @@ General Notes:
 1. Alpha testing
 2. Beta testing
 3. Project Risk Mitigation",FALSE,,,,,,,,,,,,,,,,,,Cadebill,,,,,,,,,,,,,,,,,,,,,,,PowerBI,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i03jdz:,,,No,,,,,,,,,,,,,Eitan Fireberg,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,IT S34 (7 Apr - 21 Apr 2025),IT S35 (21 Apr - 5 May 2025),IT S36 (5 May - 19 May 2025),IT S37 (19 May - 2 Jun 2025),IT S38 (2 Jun - 16 Jun 2025),IT S39 (16 Jun - 30 Jun 2025),IT S40 (30 Jun - 14 Jul 2025),IT S41 (14 Jul - 28 Jul 2025),IT S42 (28 Jul - 11 Aug 2025),IT S43 (11 Aug - 25 Aug 2025),IT S44 (25 Aug -  8 Sep 2025),IT S45 (8 Sep - 22 Sep 2025),IT S46 (22 Sep - 6 Oct 2025),IT S47 (6 Oct - 20 Oct 2025),IT S48 (20 Oct - 3 Nov 2025),IT S49 (3 Nov - 17 Nov 2025),IT S50 (17 Nov - 1 Dec 2025),IT S51 (1 Dec - 15 Dec 2025),IT S52 (15 Dec - 29 Dec 2025),IT S53 (29 Dec - 12 Jan 2026),IT S54 (12 Jan - 26 Jan 2026),IT S55 (26 Jan - 9 Feb 2026),IT S56 (9 Feb - 23 Feb 2026),IT S57 (23 Feb - 9 Mar 2026),IT S58 (9 Mar - 23 Mar 2026),IT S59 (23 Mar - 6 Apr 2026),IT S60 (6 Apr - 20 Apr 2026),IT S61 (20 Apr - 4 May 2026),IT S62 (4 May - 18 May 2026),IT S63 (18 May - 1 Jun 2026),IT S64 (1 Jun - 15 Jun 2026),IT S65 (15 Jun - 29 Jun 2026),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4.0,,,,,,,,,,,,,BI and Analytics,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,779234,IT-21977,Certified Billing Data Model,To Do,15/Apr/25 8:23 AM
-Update Active Storage Billing Usage,IT-24301,784168,Change Request,Design,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,,Jonathan Jensen,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,Eitan Fireberg,621f1c4f94f7e20069fdd50c,Eitan Fireberg,621f1c4f94f7e20069fdd50c,09/Apr/25 2:45 AM,15/Jun/26 3:36 PM,,,May 2025,,,,,0,MCL,,,"For individual BUs, when quoting bundles/products that include free storage per seat with other bundles/products that also include free storage per seat, combine the free storage for the total that is subtracted from the actual billing usage.",,Eitan Fireberg,,,,,621f1c4f94f7e20069fdd50c,,,,,,,,,,,,,,,,,,,,,,,,,02/May/25 3:45 PM;5d660108-31f4-4202-8e32-73ae87acfd1a;IT - 24301 (MIS) Multi ACD.docx;https://nice-it.atlassian.net/rest/api/3/attachment/content/158837,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Jonathan Jensen,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,Billing,Orr Rachlevsky,63db8d66790148a18094867c,,,,,,,,,,,,,,,,,,,,,,{},,CX,,,,,,,,,,,,,,,,,,,,,,,,,,,"Sizing document change:
+Update Active Storage Billing Usage,IT-24301,784168,Change Request,Design,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,,Jonathan Jensen,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,Eitan Fireberg,621f1c4f94f7e20069fdd50c,Eitan Fireberg,621f1c4f94f7e20069fdd50c,09/Apr/25 2:45 AM,15/Jun/26 3:36 PM,17/Jun/26 5:23 PM,,May 2025,,,,,0,MCL,,,"For individual BUs, when quoting bundles/products that include free storage per seat with other bundles/products that also include free storage per seat, combine the free storage for the total that is subtracted from the actual billing usage.",,Eitan Fireberg,,,,,621f1c4f94f7e20069fdd50c,,,,,,,,,,,,,,,,,,,,,,,,,02/May/25 3:45 PM;5d660108-31f4-4202-8e32-73ae87acfd1a;IT - 24301 (MIS) Multi ACD.docx;https://nice-it.atlassian.net/rest/api/3/attachment/content/158837,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Jonathan Jensen,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,Billing,Orr Rachlevsky,63db8d66790148a18094867c,,,,,,,,,,,,,,,,,,,,,,{},,CX,,,,,,,,,,,,,,,,,,,,,,,,,,,"Sizing document change:
 
 PS Architecture change:
 
@@ -3981,7 +3976,7 @@ General Notes:
 1. Alpha testing
 2. Beta testing
 3. Project Risk Mitigation",FALSE,,Impediment,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1|hzyxx3:,,,No,,,,,,,,,,,,,Manny Shaw,,,,,,,Run the Business,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2.0,,,,,,,,,,,,,Customer Support,,,,,,,,,,,,,,,,,,,,,,,,,,,2023-02-24 10:40:22.981,,,,24/Feb/23 10:40 AM;6283698562e0790069a58cee;This CR needs to be cancelled.,,,,,,,,,,,,,,,,,,,,To Do,13/Feb/23 11:37 PM
-610131 Business Rule,IT-33467,857720,Change Request,In Testing,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P1,,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,29/Apr/26 12:02 PM,17/Jun/26 11:11 AM,,,June 2026,,,,,0,SFDC_Automation_to_Cadebill,,,"When an opp is not an Amendment
+610131 Business Rule,IT-33467,857720,Change Request,In Testing,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P1,,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,29/Apr/26 12:02 PM,18/Jun/26 4:54 AM,,,June 2026,,,,,0,SFDC_Automation_to_Cadebill,,,"When an opp is not an Amendment
 Amended Contract = BLANK
 
 And the quote has SKU which starts with *610131*
@@ -3994,7 +3989,7 @@ Cadebill needs to add to the account three Volume Discounts
 
 
 
-Start Date = Processing Date",,Ajinkya Jawanjal,Meital Rashti,,,,712020:852f441b-a0c8-46c8-8fde-f79fe6a35723,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,,,,,,,,,,,,,,,,,,,IT-34122,,,IT-34123,,29/Apr/26 12:02 PM;ug:09c91872-a878-4f07-97a1-3f1811d26aca;image-20260429-120139.png;https://nice-it.atlassian.net/rest/api/3/attachment/content/184482,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,Billing,Orr Rachlevsky,63db8d66790148a18094867c,,,,,,,,,,,,,,,,,,,,,,{},,,,,,,,,,,,,,,,,,,,,,,,,,,,,"Sizing document change:
+Start Date = Processing Date",,Ajinkya Jawanjal,Meital Rashti,,,,712020:852f441b-a0c8-46c8-8fde-f79fe6a35723,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,,,,,,,,,,,,,,,,,,,IT-34122,,,IT-34123,,18/Jun/26 4:52 AM;ug:25efd078-2cb1-4c9d-bd50-5e4a260878c4;Re_ IT-33467 -  610131 Business Rule - Automation.eml;https://nice-it.atlassian.net/rest/api/3/attachment/content/191206,29/Apr/26 12:02 PM;ug:09c91872-a878-4f07-97a1-3f1811d26aca;image-20260429-120139.png;https://nice-it.atlassian.net/rest/api/3/attachment/content/184482,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,Billing,Orr Rachlevsky,63db8d66790148a18094867c,,,,,,,,,,,,,,,,,,,,,,{},,,,,,,,,,,,,,,,,,,,,,,,,,,,,"Sizing document change:
 
 PS Architecture change:
 
@@ -4017,7 +4012,7 @@ PS Demo:
 General Notes:
 1. Alpha testing
 2. Beta testing
-3. Project Risk Mitigation",FALSE,,,,,,,,,,,,,,,,,,Cadebill,,,,,,,,,,,,,,,,,,,,,,,Cadebill,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i0axzv:,,,No,,,,,,,,,,,,,Orr Rachlevsky,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,IT S65 (15 Jun - 29 Jun 2026),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,14.0,,,,,,,,,,,,,Billing,,,,,,,,,,,,,,,,,,,,,,,,,,,2026-06-02 10:14:16.482,,,,01/Jun/26 3:37 AM;70121:33c9c08c-01ca-4a34-ac93-994a2946b894;“Development and testing of this BR is completed in CPFin instance. Changes are also updated in CPQa instance for UAT.“,"02/Jun/26 10:14 AM;712020:852f441b-a0c8-46c8-8fde-f79fe6a35723;Test execution is done for scenarios mentioned, Artifacts is linked inside Test.",17/Jun/26 11:11 AM;70121:33c9c08c-01ca-4a34-ac93-994a2946b894;Need to test with Amenmend with new product ,,,,,,,,,,,,,,,,,,In Progress,01/Jun/26 3:36 AM
+3. Project Risk Mitigation",FALSE,,,,,,,,,,,,,,,,,,Cadebill,,,,,,,,,,,,,,,,,,,,,,,Cadebill,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i0axzv:,,,No,,,,,,,,,,,,,Orr Rachlevsky,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,IT S65 (15 Jun - 29 Jun 2026),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,14.0,,,,,,,,,,,,,Billing,,,,,,,,,,,,,,,,,,,,,,,,,,,2026-06-02 10:14:16.482,,,,01/Jun/26 3:37 AM;70121:33c9c08c-01ca-4a34-ac93-994a2946b894;“Development and testing of this BR is completed in CPFin instance. Changes are also updated in CPQa instance for UAT.“,"02/Jun/26 10:14 AM;712020:852f441b-a0c8-46c8-8fde-f79fe6a35723;Test execution is done for scenarios mentioned, Artifacts is linked inside Test.",17/Jun/26 11:11 AM;70121:33c9c08c-01ca-4a34-ac93-994a2946b894;Need to test with Amenmend with new product ,18/Jun/26 4:54 AM;712020:852f441b-a0c8-46c8-8fde-f79fe6a35723;Tested for amendment. Attaching the mail with results.,,,,,,,,,,,,,,,,,In Progress,01/Jun/26 3:36 AM
 Reset Password is not permitted Angie.Quan@btp.police.uk,IT-30228,831359,Bug,In Testing,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,,Eitan Fireberg,621f1c4f94f7e20069fdd50c,Eitan Fireberg,621f1c4f94f7e20069fdd50c,Eitan Fireberg,621f1c4f94f7e20069fdd50c,10/Dec/25 11:34 AM,15/Jun/26 3:36 PM,,,December 2025,,,,,0,,,,"[https://niceprod.service-now.com/now/nav/ui/classic/params/target/sys_email_list.do%3Fsysparm_query%3Dsys_created_onONThis%2Bweek%2540javascript%253Ags.beginningOfThisWeek%2528%2529%2540javascript%253Ags.endOfThisWeek%2528%2529%255EdirectSTARTSWITHAngie.Quan%2540btp.police.uk%26sysparm_view%26sysparm_clear_stack%3Dtrue%26sysparm_first_row%3D1|https://niceprod.service-now.com/now/nav/ui/classic/params/target/sys_email_list.do%3Fsysparm_query%3Dsys_created_onONThis%2Bweek%2540javascript%253Ags.beginningOfThisWeek%2528%2529%2540javascript%253Ags.endOfThisWeek%2528%2529%255EdirectSTARTSWITHAngie.Quan%2540btp.police.uk%26sysparm_view%26sysparm_clear_stack%3Dtrue%26sysparm_first_row%3D1|smart-link] 
 
 Gets the following email:
@@ -4864,9 +4859,9 @@ to:
 Pending R&D Prioritization
 
 thank you",17/Jun/26 9:48 AM;62c291d8a7de1e7c7c2cdb87;[~accountid:6335750888ed2ebef97ca2a5]  Changes moved to PROD,,,,,,,,,,,,,,,,,,Done,17/Jun/26 9:48 AM
-XSE - new field ,IT-33421,857501,Change Request,Done,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,Done,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,Dany Ditchi,633f26b4234d44d406d50578,Dany Ditchi,633f26b4234d44d406d50578,27/Apr/26 2:34 PM,01/Jun/26 3:05 AM,27/May/26 6:27 PM,01/Jun/26 3:05 AM,June 2025,,,,,0,,,,"As a part of deployment for a new product need to add a new field:
+XSE - new field ,IT-33421,857501,Change Request,Done,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,Done,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,Dany Ditchi,633f26b4234d44d406d50578,Dany Ditchi,633f26b4234d44d406d50578,27/Apr/26 2:34 PM,01/Jun/26 3:05 AM,,01/Jun/26 3:05 AM,June 2025,,,,,0,,,,"As a part of deployment for a new product need to add a new field:
 
-*<DATAIQACCOUNTID>String</DATAIQACCOUNTID>*",,Dany Ditchi,Meital Rashti,Rivka Eisenstein,,,633f26b4234d44d406d50578,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,62c291d8a7de1e7c7c2cdb87,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,31/May/26 12:00 AM,,,,SNOW Dev,,,,,,,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,ALM - Actimize,Dany Ditchi,633f26b4234d44d406d50578,,,,,,,,,,,,,,,,,,,Rivka Eisenstein,62c291d8a7de1e7c7c2cdb87,,"{pullrequest={dataType=pullrequest, state=MERGED, stateCount=1}, json={""cachedValue"":{""errors"":[],""summary"":{""pullrequest"":{""overall"":{""count"":1,""lastUpdated"":""2026-05-31T09:15:42.557+0000"",""stateCount"":1,""state"":""MERGED"",""dataType"":""pullrequest"",""open"":false},""byInstanceType"":{""stash"":{""count"":1,""name"":""Bitbucket Server""}}}}},""isStale"":true}}",,Actimize,CX,,,,,,,,,,,,,,,,,,,,,,,,,,"Sizing document change:
+*<DATAIQACCOUNTID>String</DATAIQACCOUNTID>*",,Dany Ditchi,Meital Rashti,Rivka Eisenstein,,,633f26b4234d44d406d50578,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,62c291d8a7de1e7c7c2cdb87,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,31/May/26 12:00 AM,,,,SNOW Dev,,,,,,,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,ALM - Actimize,Dany Ditchi,633f26b4234d44d406d50578,,,,,,,,,,,,,,,,,,,Rivka Eisenstein,62c291d8a7de1e7c7c2cdb87,,"{pullrequest={dataType=pullrequest, state=MERGED, stateCount=1}, json={""cachedValue"":{""errors"":[],""summary"":{""pullrequest"":{""overall"":{""count"":1,""lastUpdated"":""2026-05-31T09:15:42.557+0000"",""stateCount"":1,""state"":""MERGED"",""open"":false,""dataType"":""pullrequest""},""byInstanceType"":{""stash"":{""count"":1,""name"":""Bitbucket Server""}}}}},""isStale"":true}}",,Actimize,CX,,,,,,,,,,,,,,,,,,,,,,,,,,"Sizing document change:
 
 PS Architecture change:
 
@@ -5609,7 +5604,7 @@ General Notes:
 1. Alpha testing
 2. Beta testing
 3. Project Risk Mitigation",FALSE,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i09nv7:,,,No,,.,,,,,,Off-Release,,,,,Meital Rashti,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,IT S61 (20 Apr - 4 May 2026),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3.0,,,,,,,,,,,,,Customer Support,,,,,,,,,,,,,,,,,,,,,,,,,,,,1_*:*_1_*:*_5351441084_*|*_10009_*:*_1_*:*_0_*|*_10011_*:*_1_*:*_673034744_*|*_10010_*:*_1_*:*_32023_*|*_10001_*:*_1_*:*_7410_*|*_10003_*:*_1_*:*_24142_*|*_10006_*:*_1_*:*_4058_*|*_10005_*:*_1_*:*_375291057,,,,,,,,,,,,,,,,,,,,,,,Done,27/Apr/26 8:03 AM
-Triage NSC Tickets Agent,IT-31777,842306,Change Request,Done,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,Done,Dana Trybiasz,6114ed43e6e6f80071784a76,Eitan Fireberg,621f1c4f94f7e20069fdd50c,Dana Trybiasz,6114ed43e6e6f80071784a76,10/Feb/26 3:06 PM,09/Jun/26 12:31 PM,27/May/26 7:43 PM,09/Jun/26 12:31 PM,April 2026,,,,,0,,,,"h2. Requirements
+Triage NSC Tickets Agent,IT-31777,842306,Change Request,Done,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,Done,Dana Trybiasz,6114ed43e6e6f80071784a76,Eitan Fireberg,621f1c4f94f7e20069fdd50c,Dana Trybiasz,6114ed43e6e6f80071784a76,10/Feb/26 3:06 PM,09/Jun/26 12:31 PM,,09/Jun/26 12:31 PM,April 2026,,,,,0,,,,"h2. Requirements
 
 *Purpose:*
 
@@ -35506,7 +35501,7 @@ General Notes:
 1. Alpha testing
 2. Beta testing
 3. Project Risk Mitigation",FALSE,,,,,,,,,,,,,,,,,,No Impacted Application,,,,,,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1|hyn36v:,,,No,,,,,,,,Release,,,,1.0,Efrat Soffer Ram,,,,,,,Run the Business,,,,,,,,,,,,,,,,,,,,,,,,,,IT Sprint 7.2,IT Sprint 8.1,IT Sprint 8.2,IT Sprint 9.1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2.0,,,,,,,,,,,,,Customer Support,,,,,,,,,,,,,,,,,,,,,,,,,,,,1_*:*_1_*:*_1448517407_*|*_10403_*:*_1_*:*_5546_*|*_10803_*:*_2_*:*_1208153378_*|*_10001_*:*_1_*:*_0_*|*_11500_*:*_1_*:*_339490732_*|*_11400_*:*_1_*:*_417580882_*|*_10600_*:*_1_*:*_3318_*|*_11502_*:*_2_*:*_782215897_*|*_11501_*:*_1_*:*_705848083,,,,,,,,,,,,,,,,,,,,,,,Done,28/Apr/22 9:13 PM
-Wiser Performance - Create Baseline,IT-3413,18796,Epic,Done,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,None,Done,Dana Trybiasz,6114ed43e6e6f80071784a76,Michal Mor Yosef,6114ec568c15ca006feb9d51,Michal Mor Yosef,6114ec568c15ca006feb9d51,21/Jun/21 12:15 PM,29/Jun/25 10:19 PM,,29/Aug/21 11:06 AM,September 2021,,,,,0,,,,create baseline for several actions from different locations using Solarwinds,,Michal Mor Yosef,,,,,6114ec568c15ca006feb9d51,,,,,,,,,,,,,,,,,,,IT-1842,,,,,,01/Jul/21 5:03 AM;ug:0ae2aa22-d613-49d4-ba65-c117642317c8;BP Flags calculated after the submit at server side.docx;https://nice-it.atlassian.net/rest/api/3/attachment/content/13798,,,,,,,,,,,,,,,,,,,,attached all tested scenarios,,,30/Jun/21 12:00 AM,,,,,,,,,,,Dana Trybiasz,6114ed43e6e6f80071784a76,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,Customer Support,,,,,,,,,,,,,,,,,,,,,,,,{},,,,,,,,Non-MVP,,,ghx-label-3,Wiser Performance - Create Baseline,,To Do,4.0,,,,,,,,,,,,,,"Sizing document change:
+Wiser Performance - Create Baseline,IT-3413,18796,Epic,Done,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,None,Done,Dana Trybiasz,6114ed43e6e6f80071784a76,Michal Mor Yosef,6114ec568c15ca006feb9d51,Michal Mor Yosef,6114ec568c15ca006feb9d51,21/Jun/21 12:15 PM,29/Jun/25 10:19 PM,17/Jun/26 6:31 PM,29/Aug/21 11:06 AM,September 2021,,,,,0,,,,create baseline for several actions from different locations using Solarwinds,,Michal Mor Yosef,,,,,6114ec568c15ca006feb9d51,,,,,,,,,,,,,,,,,,,IT-1842,,,,,,01/Jul/21 5:03 AM;ug:0ae2aa22-d613-49d4-ba65-c117642317c8;BP Flags calculated after the submit at server side.docx;https://nice-it.atlassian.net/rest/api/3/attachment/content/13798,,,,,,,,,,,,,,,,,,,,attached all tested scenarios,,,30/Jun/21 12:00 AM,,,,,,,,,,,Dana Trybiasz,6114ed43e6e6f80071784a76,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,Customer Support,,,,,,,,,,,,,,,,,,,,,,,,{},,,,,,,,Non-MVP,,,ghx-label-3,Wiser Performance - Create Baseline,,To Do,4.0,,,,,,,,,,,,,,"Sizing document change:
 
 PS Architecture change:
 
@@ -37054,7 +37049,7 @@ General Notes:
 1. Alpha testing
 2. Beta testing
 3. Project Risk Mitigation",,,,,,,,,,,,,,,,,,,Cadebill,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i07gyb:,,,No,,,,,,,,,,,,,Orr Rachievsky,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Billing,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,To Do,10/Sep/25 2:19 PM
-Telco CDR Monthly Report by Call Month,IT-27482,810885,Change Request,Qualified,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,,Jonathan Jensen,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,Eitan Fireberg,621f1c4f94f7e20069fdd50c,Eitan Fireberg,621f1c4f94f7e20069fdd50c,12/Aug/25 7:28 AM,15/Jun/26 3:36 PM,,,September 2025,,,,,0,,,,"We request IT’s help in creating and managing a CDR Breakdown Report by Call Month.  This is a report that was built by me several years ago and that Austin on the Billing team currently manages.  The data from this report is used in Mike’s presentation to the SLT on a regular basis and its accuracy is crucial.  We need this report to be IT created and supported going forward.  I ask for your help in assigning resources to this project.
+Telco CDR Monthly Report by Call Month,IT-27482,810885,Change Request,Qualified,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,,Jonathan Jensen,712020:4c7bb93a-69d9-47b6-bc60-f97d9b955661,Eitan Fireberg,621f1c4f94f7e20069fdd50c,Eitan Fireberg,621f1c4f94f7e20069fdd50c,12/Aug/25 7:28 AM,15/Jun/26 3:36 PM,17/Jun/26 5:22 PM,,September 2025,,,,,0,,,,"We request IT’s help in creating and managing a CDR Breakdown Report by Call Month.  This is a report that was built by me several years ago and that Austin on the Billing team currently manages.  The data from this report is used in Mike’s presentation to the SLT on a regular basis and its accuracy is crucial.  We need this report to be IT created and supported going forward.  I ask for your help in assigning resources to this project.
 
  
 
@@ -37409,6 +37404,41 @@ General Notes:
 1. Alpha testing
 2. Beta testing
 3. Project Risk Mitigation",FALSE,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i0bher:,,,No,,,,,,,,,,,,,Dana Trybiasz,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,IT S64 (1 Jun - 15 Jun 2026),IT S65 (15 Jun - 29 Jun 2026),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2.0,,,,,,,,,,,,,Customer Support,,,,,,,,,,,,,,,,,,,,,,,,,,,2026-06-04 10:50:27.227,,,,04/Jun/26 10:50 AM;621f1bd06a4c4c0070adaae7;Access Token lifespan in the [Claude MCP Server (prod)|https://niceprod.service-now.com/nav_to.do?uri=oauth_entity.do?sys_id=c0bee54d3b94c31430fc3a64c3e45a2d%26sysparm_view=default] was updated,"09/Jun/26 7:44 AM;6114ed43e6e6f80071784a76;Access Token lifespan in the [Claude MCP Server (prod)|https://niceprod.service-now.com/nav_to.do?uri=oauth_entity.do?sys_id=c0bee54d3b94c31430fc3a64c3e45a2d%26sysparm_view=default] was updated to 86,400 5 days ago.",,,,,,,,,,,,,,,,,,,In Progress,02/Jun/26 8:03 AM
+Creating a field in Wiser of “Outsource Partner” ,IT-33748,860298,Change Request,In UAT,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P2,,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,Alok Kumar,622b99569c3cce0069503815,Alok Kumar,622b99569c3cce0069503815,14/May/26 10:14 AM,18/Jun/26 12:13 PM,,,July 2026,,,,,0,,,,"Create a field in Wiser of “_Outsource Partner_” for reporting purposes. This field will be manually entered when the partner provides outsources activities such as Support & Implementation, for direct customers. No logic change, only informative field.
+
+* *Field name:* _“Outsource Partner_ “*on instance level*
+* Type: reference to *Active* all customer table
+* *Permission:* Only managers can change (Moran should get _manager)_
+* The field is *updated manually*, not from integration
+* The field should be included in *BI* (different CR)
+* *Division:* Enterprise or/and Actimize  - TBD upon synch with Reut Sagi",,Alok Kumar,Meital Rashti,,,,622b99569c3cce0069503815,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Meital Rashti,70121:33c9c08c-01ca-4a34-ac93-994a2946b894,,ApprovalsCFValue{approvals=[]},,,,,,No,,,,,,,,,,,,,Customer Support,Alok Kumar,622b99569c3cce0069503815,,,,,,,,,,,,,,,,,,,Rivka Eisenstein,62c291d8a7de1e7c7c2cdb87,,{},,Actimize,,,,,,,,,,,,,,,,,,,,,,,,,,,"Sizing document change:
+
+PS Architecture change:
+
+PS Methodology change:
+
+PS Project plan change:
+
+Data requirement change:
+
+Update PS Tools:
+
+Training Materials:
+
+Communication:
+
+Update PS Sales:
+
+PS Demo:
+
+General Notes:
+1. Alpha testing
+2. Beta testing
+3. Project Risk Mitigation",FALSE,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,Wiser,,,,,,,,,,,,,,,,,,,,,,,,,,,New,,,,,,,,,,,,,,,,,,,,,,,,1|i0b78j:,,,No,,,,,,,,,,,,,alok.kumar@niceactimize.com,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,IT S66 (29 Jun - 13 Jul 2026),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.0,,,,,,,,,,,,,Customer Support,,,,,,,,,,,,,,,,,,,,,,,,,,,2026-06-17 11:57:03.666,,,,"17/Jun/26 11:57 AM;70121:33c9c08c-01ca-4a34-ac93-994a2946b894;Comment from Moran:
+
+Following up on the below, I’ve given this additional thought and would like to manage the _“Outsource Partner_ “ informational field primarily at the *Customer Account level*. Managing it only at the instance level would require additional operational effort that may be unnecessary.
+
+Also let’s call it *_“Partner Outsource Engagement”_*",18/Jun/26 12:12 PM;70121:33c9c08c-01ca-4a34-ac93-994a2946b894;I sent an email to Moran ,,,,,,,,,,,,,,,,,,,In Progress,18/Jun/26 12:12 PM
 NIA build enhancement - Server Specifications,IT-32326,847773,Change Request,In UAT,IT,IT,software,atlassianadmin,6124bbed3ef46a0070571c09,,,P3,,Dana Trybiasz,6114ed43e6e6f80071784a76,Linoy Tsarfaty,6114ec62eb7aef006967538b,Linoy Tsarfaty,6114ec62eb7aef006967538b,08/Mar/26 11:36 AM,16/Jun/26 9:54 AM,,,May 2025,,,,,0,Silverstorm,,,"Attached design, *the attachments include:*
 
 # NIA Build Workflow design changes (word file)
