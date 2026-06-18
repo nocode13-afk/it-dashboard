@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IT Dashboard -- NiCE</title>
 <style>
-  /* ── NiCE BRAND TOKENS ── */
+  /* -- NiCE BRAND TOKENS -- */
   :root {
     --nice-blue:      #3694fc;
     --nice-charcoal:  #21212b;
@@ -54,7 +54,7 @@
     --topbar-title: #21212b;
   }
 
-  /* ── DARK THEME ── */
+  /* -- DARK THEME -- */
   [data-theme="dark"] {
     --bg-page:      #13131a;
     --bg-card:      #1e1e2e;
@@ -97,7 +97,7 @@
     transition: background 0.2s, color 0.2s;
   }
 
-  /* ── TOP BAR ── */
+  /* -- TOP BAR -- */
   .topbar {
     background: var(--bg-topbar);
     padding: 0 32px;
@@ -129,7 +129,7 @@
 
 
 
-  /* ── FILTERS (inline, below KPIs) ── */
+  /* -- FILTERS (inline, below KPIs) -- */
   .filters-inline {
     background: var(--bg-card);
     border-radius: var(--radius-md);
@@ -190,10 +190,10 @@
     padding: 4px 12px; border-radius: 50px;
   }
 
-  /* ── MAIN ── */
+  /* -- MAIN -- */
   .main { padding: 28px 32px; background: var(--bg-page); }
 
-  /* ── METRIC CARDS (matched to IT-CXMIS-Dashboard) ── */
+  /* -- METRIC CARDS (matched to IT-CXMIS-Dashboard) -- */
   .metrics-row {
     display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px;
     animation: fadeUp 0.4s ease both;
@@ -224,7 +224,7 @@
   /* remove old KPI styles */
   .kpi-row { display: none; }
 
-  /* ── TABLE ── */
+  /* -- TABLE -- */
   .table-card {
     background: var(--bg-card);
     border-radius: var(--radius-md);
@@ -277,7 +277,7 @@
 
   tr:hover td { background: var(--row-hover); }
 
-  /* ── BADGES ── */
+  /* -- BADGES -- */
   .badge {
     display: inline-flex; align-items: center;
     padding: 3px 10px; border-radius: 50px;
@@ -314,7 +314,7 @@
   .key-link:hover { opacity: 0.7; text-decoration: underline; }
   .key-link::after { content: none; }
 
-  /* ── PAGINATION ── */
+  /* -- PAGINATION -- */
   .table-footer {
     padding: 10px 24px;
     border-top: 1px solid var(--border-card);
@@ -337,7 +337,7 @@
   .empty-state p { font-size: 14px; font-weight: 300; line-height: 1.6; color: rgba(33,33,43,0.55); }
   .empty-state strong { font-weight: 500; color: var(--nice-charcoal); }
 
-  /* ── STATUS ROW ── */
+  /* -- STATUS ROW -- */
   .status-row {
     padding: 10px 32px;
     background: var(--bg-statusbar);
@@ -346,7 +346,7 @@
   }
   .status-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.25); display: inline-block; }
 
-  /* ── SCROLL ── */
+  /* -- SCROLL -- */
   ::-webkit-scrollbar { width: 5px; height: 5px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: rgba(33,33,43,0.15); border-radius: 3px; }
@@ -480,7 +480,7 @@
 </div><!-- /main -->
 
 <script>
-// ── THEME TOGGLE ──────────────────────────────────────────────────────────
+// -- THEME TOGGLE ----------------------------------------------------------
 function toggleTheme() {
   const html = document.documentElement;
   const isDark = html.getAttribute('data-theme') === 'dark';
@@ -523,7 +523,7 @@ const TABLE_SPEC = [
   { key:'releaseNotes',  label:'Release Notes',  render:'plain' },
 ];
 
-// ── BUSINESS OWNER LOGIC ─────────────────────────────────────────────────
+// -- BUSINESS OWNER LOGIC -------------------------------------------------
 // Falls back to Reporter if Business Owner is empty.
 // Normalises known username formats.
 const BUSINESS_OWNER_MAP = {
@@ -553,7 +553,7 @@ function issueKeySort(a, b, col, dir) {
   return (an - bn) * dir;
 }
 
-// ── NAME NORMALISATION ────────────────────────────────────────────────────
+// -- NAME NORMALISATION ----------------------------------------------------
 // Add any additional name mappings here as needed.
 const NAME_MAP = {
   'jonathan.jensen': 'Jonathan Jensen',
@@ -578,8 +578,8 @@ function isExcluded(raw) {
   return EXCLUDED_NAMES.some(x => v === x || raw.trim().toLowerCase() === x);
 }
 
-// ── MERGED ASSIGNEE LOGIC ─────────────────────────────────────────────────
-// Falls back: Assignee → Analysis Owner → BA Assignee
+// -- MERGED ASSIGNEE LOGIC -------------------------------------------------
+// Falls back: Assignee -> Analysis Owner -> BA Assignee
 // Skips any value that matches the exclusion list.
 function resolveAssignee(r, cols) {
   const candidates = [
@@ -595,7 +595,7 @@ function resolveAssignee(r, cols) {
 }
 
 
-// ── COLUMN DETECTION ──────────────────────────────────────────────────────
+// -- COLUMN DETECTION ------------------------------------------------------
 // Finds the actual CSV header that best matches each logical column.
 function detectCols(headers) {
   const h = headers.map(x => x.toLowerCase().trim());
@@ -633,7 +633,7 @@ function detectCols(headers) {
   };
 }
 
-// ── CSV PARSER ────────────────────────────────────────────────────────────
+// -- CSV PARSER ------------------------------------------------------------
 function parseFullCSV(text) {
   const lines = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
   if (!lines.length) return [];
@@ -668,7 +668,7 @@ function parseCSVLine(line) {
   return result;
 }
 
-// ── METRIC CARDS (project + status rows, matched to IT-CXMIS-Dashboard) ────
+// -- METRIC CARDS (project + status rows, matched to IT-CXMIS-Dashboard) ----
 const METRICS_PROJ = [
   { lbl:'Total',  fn: a => a.length,                                                                           clr:'var(--nice-blue)' },
   { lbl:'IT',     fn: a => a.filter(r => { const c=detectCols(Object.keys(r)); return (r[c.key]||'').startsWith('IT-'); }).length,     clr:'#3694fc' },
@@ -718,7 +718,7 @@ function renderKPIs() {
   renderMetricGroup(METRICS_STATUS, 'metrics-row-status', filtered);
 }
 
-// ── GITHUB DATA SOURCE ───────────────────────────────────────────────────
+// -- GITHUB DATA SOURCE ---------------------------------------------------
 // GitHub raw URL for jira-export.csv -- update branch/path if needed.
 const DATA_URL = 'https://raw.githubusercontent.com/nocode13-afk/it-dashboard/main/jira-export.csv';
 
@@ -798,8 +798,7 @@ function refreshData() { fetchFromGitHub(); }
 // Auto-load on page open
 (function() { fetchFromGitHub(); })();
 
-// ── FILTERS ───────────────────────────────────────────────────────────────
- ───────────────────────────────────────────────────────────────
+// -- FILTERS ---------------------------------------------------------------
 function buildFilters() {
   const cols = detectCols(Object.keys(allRows[0]));
   const pop = (id, col, label) => {
@@ -892,8 +891,8 @@ function applyFilters() {
   renderKPIs(); renderTable();
 }
 
-// ── CHARTS ────────────────────────────────────────────────────────────────
-// ── ISSUE URL HELPER ──────────────────────────────────────────────────────
+// -- CHARTS ----------------------------------------------------------------
+// -- ISSUE URL HELPER ------------------------------------------------------
 function issueUrl(key) {
   if (!key) return null;
   return `https://nice-it.atlassian.net/browse/${key.trim().toUpperCase()}`;
@@ -902,7 +901,7 @@ function issueUrl(key) {
 
 // Columns in order:
 // Issue # | Project Name | Status | Summary | Project |
-// Business Owner | Assignee (merged: Assignee → Analysis Owner → BA Assignee)
+// Business Owner | Assignee (merged: Assignee -> Analysis Owner -> BA Assignee)
 
 
 
@@ -972,7 +971,7 @@ function renderTable() {
 
   document.getElementById('table-head').innerHTML = active.map(spec => {
     const csvCol = spec.key === 'assignee' ? (cols.assignee || cols.analysisOwner || cols.baAssignee) : cols[spec.key];
-    const arrow = sortCol===csvCol ? (sortDir>0?' ↑':' ↓') : '';
+    const arrow = sortCol===csvCol ? (sortDir>0?' ^':' v') : '';
     return `<th onclick="setSort('${csvCol}')">${spec.label}${arrow}</th>`;
   }).join('');
 
@@ -1003,7 +1002,7 @@ function renderTable() {
       if (spec.render === 'resolved') {
         const raw = (r[cols.resolved] || '').trim();
         if (!raw) return `<td style="color:var(--text-muted)">--</td>`;
-        // Parse "24/Apr/26 8:10 PM" → format as "Apr 24, 2026"
+        // Parse "24/Apr/26 8:10 PM" -> format as "Apr 24, 2026"
         const d = new Date(raw);
         const fmt = isNaN(d) ? raw : d.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
         return `<td title="${raw}" style="font-size:12px;color:var(--text-muted)">${fmt}</td>`;
