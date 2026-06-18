@@ -644,9 +644,9 @@ function detectCols(headers) {
     project:       exact('project')                           || find('project'),
     reporter:      exact('reporter')                          || find('reporter'),
     businessOwner: exact('custom field (business owner)')     || find('business owner'),
-    assignee:      exact('assignee')                          || find('assignee'),
+    assignee:      exact('assignee'), // exact only -- find('assignee') would match BA Assignee too
     analysisOwner: exact('custom field (analysis owner)')     || find('analysis owner'),
-    baAssignee:    exact('ba assignee')                       || find('ba assignee'),
+    baAssignee:    exact('custom field (ba assignee)')        || find('ba assignee'),
     // kept for charts / age bars only (not shown in table)
     created:       exact('created')                           || find('created'),
     updated:       exact('updated')                           || find('updated'),
@@ -1012,6 +1012,17 @@ function scls(s) {
 
 function renderTable() {
   const cols = detectCols(Object.keys(allRows[0]||{}));
+  // DEBUG
+  const t53 = allRows.find(r => r['Issue key'] === 'CXMIS-53');
+  if (t53) {
+    console.log('CXMIS-53 cols.assignee:', cols.assignee);
+    console.log('CXMIS-53 cols.analysisOwner:', cols.analysisOwner);
+    console.log('CXMIS-53 cols.baAssignee:', cols.baAssignee);
+    console.log('CXMIS-53 Assignee value:', t53['Assignee']);
+    console.log('CXMIS-53 BA Assignee value:', t53['Custom field (BA Assignee)']);
+    console.log('CXMIS-53 Analysis Owner value:', t53['Custom field (Analysis Owner)']);
+    console.log('CXMIS-53 resolveAssignee:', resolveAssignee(t53, cols));
+  }
 
   defaultSort(cols);
   const active = TABLE_SPEC.filter(spec => {
