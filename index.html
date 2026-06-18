@@ -759,7 +759,7 @@ function loadCSVText(csvText, sourceName) {
 }
 
 async function fetchFromGitHub() {
-  if (!DATA_URL || DATA_URL === 'PASTE_YOUR_DATA_URL_HERE') {
+  if (!DATA_URL || DATA_URL === 'https://raw.githubusercontent.com/nocode13-afk/it-dashboard/main/jira-export.csv') {
     document.getElementById('load-label').textContent = 'Data URL not configured — update DATA_URL in the source.';
     return;
   }
