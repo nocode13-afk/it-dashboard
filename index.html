@@ -720,9 +720,7 @@ function parseFullCSV(text) {
 
     // DEBUG -- remove after fixing
     if (row['Issue key'] === 'CXMIS-46') {
-      console.log('CXMIS-46 commentEntries:', JSON.stringify(commentEntries));
-      console.log('CXMIS-46 latestComment:', JSON.stringify(latestComment));
-      console.log('CXMIS-46 latestReleaseNote:', JSON.stringify(latestReleaseNote));
+      console.log('CXMIS-46 row keys:', Object.keys(row).filter(k => k.toLowerCase().includes('release') || k.toLowerCase().includes('comment')));
       console.log('CXMIS-46 row Comment:', row['Comment']);
       console.log('CXMIS-46 row Release Notes:', row['Release Notes']);
     }
@@ -1019,6 +1017,17 @@ function scls(s) {
 
 function renderTable() {
   const cols = detectCols(Object.keys(allRows[0]||{}));
+  // DEBUG -- remove after fixing
+  const testRow = allRows.find(r => (r['Issue key'] || r[cols.key] || '') === 'CXMIS-46');
+  if (testRow) {
+    console.log('renderTable cols.releaseNotes:', cols.releaseNotes);
+    console.log('renderTable cols.comment:', cols.comment);
+    const FIELD_MAP = { releaseNotes: 'Release Notes', comment: 'Comment' };
+    const rnField = cols.releaseNotes || FIELD_MAP.releaseNotes;
+    console.log('renderTable releaseNotes field name used:', rnField);
+    console.log('renderTable releaseNotes value:', testRow[rnField]);
+    console.log('renderTable all keys with Release:', Object.keys(testRow).filter(k => k.toLowerCase().includes('release')));
+  }
   defaultSort(cols);
   const active = TABLE_SPEC.filter(spec => {
     if (spec.key === 'assignee') {
