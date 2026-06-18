@@ -653,7 +653,7 @@ function detectCols(headers) {
     priority:      exact('priority')                          || find('priority'),
     type:          exact('issue type')                        || find('issue type','issuetype'),
     resolved:      exact('resolved')                          || find('resolved date','resolution date','closed'),
-    releaseNotes:  exact('release notes')                     || find('release notes'),
+    releaseNotes:  null, // always read from synthetic 'Release Notes' key written by parser
     comment:       exact('comment')                           || find('comment'),
   };
 }
