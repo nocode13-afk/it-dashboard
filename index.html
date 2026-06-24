@@ -142,7 +142,7 @@
   }
   .subbar-label {
     font-size: 11px; font-weight: 600;
-    color: #21212b;
+    color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 0.8px;
     margin-right: 4px;
@@ -218,7 +218,7 @@
   }
   .mc-lbl {
     font-size: 0.69rem; font-weight: 500;
-    color: #21212b; line-height: 1.2;
+    color: var(--text-primary); line-height: 1.2;
   }
 
   /* remove old KPI styles */
@@ -242,7 +242,7 @@
   .table-range { font-size: 11px; color: rgba(33,33,43,0.4); font-weight: 400; }
 
   .table-wrap { overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 1580px; }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 1680px; }
   thead { position: sticky; top: 0; background: var(--thead-bg); z-index: 2; }
   th {
     padding: 10px 20px;
@@ -265,14 +265,15 @@
   }
 
   /* All columns explicitly sized -- table-layout:fixed requires this */
+  /* 1:Issue# 2:Status 3:Summary 4:Comments 5:BizOwner 6:Assignee 7:Sprint 8:FixVer 9:ReleaseNotes */
   th:nth-child(1), td:nth-child(1) { width: 130px; }
-  th:nth-child(2), td:nth-child(2) { width: 160px; }
+  th:nth-child(2), td:nth-child(2) { width: 140px; }
   th:nth-child(3), td:nth-child(3) { width: 280px; white-space: normal; word-break: break-word; }
-  th:nth-child(4), td:nth-child(4) { width: 220px; white-space: normal; word-break: break-word; }
-  th:nth-child(5), td:nth-child(5) { width: 100px; }
-  th:nth-child(6), td:nth-child(6) { width: 180px; }
-  th:nth-child(7), td:nth-child(7) { width: 160px; }
-  th:nth-child(8), td:nth-child(8) { width: 110px; }
+  th:nth-child(4), td:nth-child(4) { width: 200px; white-space: normal; word-break: break-word; }
+  th:nth-child(5), td:nth-child(5) { width: 160px; }
+  th:nth-child(6), td:nth-child(6) { width: 160px; }
+  th:nth-child(7), td:nth-child(7) { width: 240px; }
+  th:nth-child(8), td:nth-child(8) { width: 150px; }
   th:nth-child(9), td:nth-child(9) { width: 220px; white-space: normal; word-break: break-word; }
 
   tr:hover td { background: var(--row-hover); }
@@ -441,6 +442,8 @@
       <select id="filter-assignee" onchange="applyFilters()"><option value="">All assignees</option></select>
       <select id="filter-priority" onchange="applyFilters()"><option value="">All projects</option></select>
       <select id="filter-bizowner" onchange="applyFilters()"><option value="">All business owners</option></select>
+      <select id="filter-sprint"    onchange="applyFilters()" style="display:none"><option value="">All sprints</option></select>
+      <select id="filter-fixver"    onchange="applyFilters()" style="display:none"><option value="">All fix versions</option></select>
       <div style="display:flex;align-items:center;gap:6px;margin-left:4px">
         <span style="font-size:11px;font-weight:500;color:rgba(33,33,43,0.5);white-space:nowrap">Done:</span>
         <select id="done-window-sel" onchange="applyFilters()" style="min-width:110px">
@@ -542,10 +545,10 @@ const TABLE_SPEC = [
   { key:'status',        label:'Status',         render:'status' },
   { key:'summary',       label:'Summary',        render:'plain' },
   { key:'comment',       label:'Comments',       render:'comment' },
-  { key:'project',       label:'Project',        render:'plain' },
   { key:'businessOwner', label:'Business owner', render:'businessOwner' },
   { key:'assignee',      label:'Assignee',       render:'assignee' },
-  { key:'resolved',      label:'Closed',         render:'resolved' },
+  { key:'sprint',        label:'Sprint',         render:'plain' },
+  { key:'fixVersions',   label:'Fix Version',    render:'plain' },
   { key:'releaseNotes',  label:'Release Notes',  render:'plain' },
 ];
 
@@ -654,6 +657,8 @@ function detectCols(headers) {
     priority:      exact('priority')                          || find('priority'),
     type:          exact('issue type')                        || find('issue type','issuetype'),
     resolved:      exact('resolved')                          || find('resolved date','resolution date','closed'),
+    sprint:        null, // synthetic key -- last non-empty Sprint column written by parser
+    fixVersions:   null, // synthetic key -- first non-empty Fix versions column written by parser
     releaseNotes:  null, // always read from synthetic 'Release Notes' key written by parser
     comment:       null, // always read from synthetic 'Comment' key written by parser
   };
@@ -694,8 +699,15 @@ function parseFullCSV(text) {
     const commentEntries = [];
     headers.forEach((h, j) => {
       const v = vals[j] !== undefined ? vals[j] : '';
-      if (h.toLowerCase().trim() === 'comment') {
+      const hl = h.toLowerCase().trim();
+      if (hl === 'comment') {
         if (v.trim()) commentEntries.push(v.trim());
+      } else if (hl === 'sprint') {
+        // Keep the LAST non-empty sprint (most recent)
+        if (v.trim()) row['Sprint'] = v.trim();
+      } else if (hl === 'fix versions') {
+        // Keep the FIRST non-empty fix version
+        if (v.trim() && !row['Fix versions']) row['Fix versions'] = v.trim();
       } else {
         // Non-comment column -- keep first non-empty for duplicate headers
         if (!(h in row) || (row[h] === '' && v !== '')) {
@@ -896,6 +908,33 @@ function refreshData() { fetchFromGitHub(); }
 (function() { fetchFromGitHub(); })();
 
 // -- FILTERS ---------------------------------------------------------------
+// Sort sprint/version names by embedded date, most recent first.
+// Handles YY.MM (25.09), YYYY-MM (2026-01), YYYY-QN (2026-Q1) formats.
+// Items with no recognisable date sort to the bottom alphabetically.
+function sortByEmbeddedDate(names) {
+  function dateKey(name) {
+    // YYYY.MM.N format e.g. "IT 2022.12.1 (21 Nov - 5 Dec)"
+    var m = name.match(/(\d{4})\.(\d{2})/);
+    if (m) return [parseInt(m[1]) - 2000, parseInt(m[2])];
+    // YY.MM format e.g. "MIS Release_26.03"
+    m = name.match(/(\d{2})\.(\d{2})/);
+    if (m) return [parseInt(m[1]), parseInt(m[2])];
+    // YYYY-MM format e.g. "IT Sprint 2026-01"
+    m = name.match(/(\d{4})-(\d{2})/);
+    if (m) return [parseInt(m[1]) - 2000, parseInt(m[2])];
+    // YYYY-QN format e.g. "Sprint 2026-Q1"
+    m = name.match(/(\d{4})-Q(\d)/);
+    if (m) return [parseInt(m[1]) - 2000, parseInt(m[2]) * 3];
+    return [-1, -1];
+  }
+  return names.slice().sort(function(a, b) {
+    var ka = dateKey(a), kb = dateKey(b);
+    if (ka[0] !== kb[0]) return kb[0] - ka[0];
+    if (ka[1] !== kb[1]) return kb[1] - ka[1];
+    return a.localeCompare(b);
+  });
+}
+
 function buildFilters() {
   const cols = detectCols(Object.keys(allRows[0]));
   const pop = (id, col, label) => {
@@ -930,6 +969,30 @@ function buildFilters() {
   )].sort();
   assigneeSel.innerHTML = `<option value="">All assignees</option>` +
     assigneeVals.map(v => `<option>${v}</option>`).join('');
+
+  // Sprint filter
+  const sprintSel = document.getElementById('filter-sprint');
+  if (sprintSel) {
+    const sprints = sortByEmbeddedDate([...new Set(allRows.map(r => (r['Sprint'] || '').trim()).filter(Boolean))]);
+    if (sprints.length) {
+      sprintSel.style.display = '';
+      const cur = sprintSel.value;
+      sprintSel.innerHTML = '<option value="">All sprints</option>' +
+        sprints.map(s => `<option value="${s}"${s===cur?' selected':''}>${s}</option>`).join('');
+    } else { sprintSel.style.display = 'none'; }
+  }
+
+  // Fix version filter
+  const fixverSel = document.getElementById('filter-fixver');
+  if (fixverSel) {
+    const fixvers = sortByEmbeddedDate([...new Set(allRows.map(r => (r['Fix versions'] || '').trim()).filter(Boolean))]);
+    if (fixvers.length) {
+      fixverSel.style.display = '';
+      const cur = fixverSel.value;
+      fixverSel.innerHTML = '<option value="">All fix versions</option>' +
+        fixvers.map(v => `<option value="${v}"${v===cur?' selected':''}>${v}</option>`).join('');
+    } else { fixverSel.style.display = 'none'; }
+  }
 }
 
 function resetFilters() {
@@ -938,6 +1001,8 @@ function resetFilters() {
   document.getElementById('filter-assignee').value = '';
   document.getElementById('filter-priority').value = '';
   document.getElementById('filter-bizowner').value = '';
+  document.getElementById('filter-sprint').value   = '';
+  document.getElementById('filter-fixver').value   = '';
   document.getElementById('done-window-sel').value = '-1';
   applyFilters();
 }
@@ -959,6 +1024,8 @@ function applyFilters() {
   const assignee = document.getElementById('filter-assignee').value;
   const project  = document.getElementById('filter-priority').value;
   const bizowner = document.getElementById('filter-bizowner').value;
+  const sprint   = document.getElementById('filter-sprint').value;
+  const fixver   = document.getElementById('filter-fixver').value;
   const doneSelEl= document.getElementById('done-window-sel');
   const doneMonths = doneSelEl ? parseInt(doneSelEl.value) : 99;
   const doneWindow = getDoneWindowDate();
@@ -980,6 +1047,8 @@ function applyFilters() {
     if (assignee && resolveAssignee(r, cols) !== assignee)             return false;
     if (project  && (r[cols.projectName] ||'').trim() !== project)     return false;
     if (bizowner && resolveBusinessOwner(r, cols) !== bizowner)        return false;
+    if (sprint   && (r['Sprint']       || '').trim() !== sprint)         return false;
+    if (fixver   && (r['Fix versions'] || '').trim() !== fixver)         return false;
     if (search) { const h = Object.values(r).join(' ').toLowerCase(); if (!h.includes(search)) return false; }
     return true;
   });
@@ -1048,6 +1117,12 @@ function renderTable() {
     if (spec.key === 'releaseNotes' || spec.key === 'comment') {
       return true; // always show -- populated from extracted comment fields
     }
+    if (spec.key === 'sprint') {
+      return allRows.some(r => (r['Sprint'] || '').trim());
+    }
+    if (spec.key === 'fixVersions') {
+      return allRows.some(r => (r['Fix versions'] || '').trim());
+    }
     return !!cols[spec.key];
   });
 
@@ -1098,7 +1173,6 @@ function renderTable() {
         // Always read from synthetic key written by parser -- never from cols.comment
         // which may resolve to an unrelated field like 'Custom field (Flag - Comment Added)'
         const val = (r['Comment'] || '').trim();
-        if ((r['Issue key']||r[cols.key]||'') === 'CXMIS-46') console.log('CXMIS-46 render comment val:', JSON.stringify(val), 'r keys:', Object.keys(r).filter(k=>k==='Comment'||k==='Release Notes'));
         return `<td title="${val}" style="font-size:12px;${val?'':'color:var(--text-muted)'}">${val||'--'}</td>`;
       }
       if (spec.render === 'resolved') {
@@ -1118,7 +1192,14 @@ function renderTable() {
       // For releaseNotes and comment, always read from the synthetic keys the parser wrote
       if (spec.key === 'releaseNotes') {
         const val = (r['Release Notes'] || '').trim();
-        if ((r['Issue key']||r[cols.key]||'') === 'CXMIS-46') console.log('CXMIS-46 render releaseNotes val:', JSON.stringify(val));
+        return `<td title="${val}" style="font-size:12px;${val?'':'color:var(--text-muted)'}">${val||'--'}</td>`;
+      }
+      if (spec.key === 'sprint') {
+        const val = (r['Sprint'] || '').trim();
+        return `<td title="${val}" style="font-size:12px;${val?'':'color:var(--text-muted)'}">${val||'--'}</td>`;
+      }
+      if (spec.key === 'fixVersions') {
+        const val = (r['Fix versions'] || '').trim();
         return `<td title="${val}" style="font-size:12px;${val?'':'color:var(--text-muted)'}">${val||'--'}</td>`;
       }
       const FIELD_MAP = { comment: 'Comment' };
