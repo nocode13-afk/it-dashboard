@@ -519,15 +519,12 @@
       </button>
     </div>
 
-    <!-- Release heading -->
-    <div id="release-heading" style="display:none;margin-bottom:10px;">
-      <span id="release-heading-text" style="font-size:14px;font-weight:400;color:var(--topbar-title);font-family:var(--font)"></span>
-    </div>
-
     <!-- Table -->
     <div class="table-card">
       <div class="table-top">
-        <div class="card-title"></div>
+        <div class="card-title">
+          <span id="release-heading-text" style="font-size:14px;font-weight:400;color:var(--topbar-title);font-family:var(--font)"></span>
+        </div>
         <span class="table-range" id="table-range"></span>
       </div>
       <div class="table-wrap">
@@ -946,7 +943,6 @@ function loadCSVText(csvText, sourceName) {
     const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
     const now2 = new Date();
     document.getElementById('release-heading-text').textContent = months[now2.getMonth()] + ' ' + now2.getFullYear() + ' Release';
-    document.getElementById('release-heading').style.display = 'block';
     buildFilters();
     applyFilters();
   } catch(err) {
