@@ -292,7 +292,7 @@
   .table-range { font-size: 11px; color: rgba(33,33,43,0.4); font-weight: 400; }
 
   .table-wrap { overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 1470px; }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 1510px; }
   thead { position: sticky; top: 0; background: var(--thead-bg); z-index: 2; }
   th {
     padding: 10px 20px;
@@ -323,7 +323,7 @@
   th:nth-child(5), td:nth-child(5) { width: 160px; }
   th:nth-child(6), td:nth-child(6) { width: 160px; }
   th:nth-child(7), td:nth-child(7) { width: 150px; }
-  th:nth-child(8), td:nth-child(8) { width: 220px; white-space: normal; word-break: break-word; }
+  th:nth-child(8), td:nth-child(8) { width: 260px; white-space: normal; word-break: break-word; }
 
   tr:hover td { background: var(--row-hover); }
 
@@ -517,6 +517,11 @@
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
         Reset
       </button>
+    </div>
+
+    <!-- Release heading -->
+    <div id="release-heading" style="display:none;margin-bottom:10px;">
+      <span id="release-heading-text" style="font-size:14px;font-weight:400;color:var(--topbar-title);font-family:var(--font)"></span>
     </div>
 
     <!-- Table -->
@@ -937,6 +942,11 @@ function loadCSVText(csvText, sourceName) {
     document.getElementById('dashboard').style.display = 'block';
     document.getElementById('filters-bar').style.display = 'flex';
     document.getElementById('tab-bar').style.display = 'flex';
+    // Release heading: "September 2026 Release"
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const now2 = new Date();
+    document.getElementById('release-heading-text').textContent = months[now2.getMonth()] + ' ' + now2.getFullYear() + ' Release';
+    document.getElementById('release-heading').style.display = 'block';
     buildFilters();
     applyFilters();
   } catch(err) {
