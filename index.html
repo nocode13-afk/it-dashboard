@@ -292,7 +292,7 @@
   .table-range { font-size: 11px; color: rgba(33,33,43,0.4); font-weight: 400; }
 
   .table-wrap { overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 1710px; }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 1470px; }
   thead { position: sticky; top: 0; background: var(--thead-bg); z-index: 2; }
   th {
     padding: 10px 20px;
@@ -322,9 +322,8 @@
   th:nth-child(4), td:nth-child(4) { width: 200px; white-space: normal; word-break: break-word; }
   th:nth-child(5), td:nth-child(5) { width: 160px; }
   th:nth-child(6), td:nth-child(6) { width: 160px; }
-  th:nth-child(7), td:nth-child(7) { width: 240px; }
-  th:nth-child(8), td:nth-child(8) { width: 150px; }
-  th:nth-child(9), td:nth-child(9) { width: 220px; white-space: normal; word-break: break-word; }
+  th:nth-child(7), td:nth-child(7) { width: 150px; }
+  th:nth-child(8), td:nth-child(8) { width: 220px; white-space: normal; word-break: break-word; }
 
   tr:hover td { background: var(--row-hover); }
 
@@ -500,7 +499,6 @@
       <select id="filter-assignee" onchange="applyFilters()"><option value="">All assignees</option></select>
       <select id="filter-priority" onchange="applyFilters()" style="display:none"><option value="">All projects</option></select>
       <select id="filter-bizowner" onchange="applyFilters()"><option value="">All business owners</option></select>
-      <select id="filter-sprint"    onchange="applyFilters()" style="display:none"><option value="">All sprints</option></select>
       <select id="filter-fixver"    onchange="applyFilters()" style="display:none"><option value="">All fix versions</option></select>
       <div style="display:flex;align-items:center;gap:6px;margin-left:4px">
         <span style="font-size:11px;font-weight:500;color:rgba(33,33,43,0.5);white-space:nowrap">Done:</span>
@@ -615,7 +613,6 @@ const TABLE_SPEC = [
   { key:'comment',       label:'Comments',       render:'comment' },
   { key:'businessOwner', label:'Business owner', render:'businessOwner' },
   { key:'assignee',      label:'Assignee',       render:'assignee' },
-  { key:'sprint',        label:'Sprint',         render:'plain' },
   { key:'fixVersions',   label:'Fix Version',    render:'plain' },
   { key:'releaseNotes',  label:'Release Notes',  render:'plain' },
 ];
@@ -1050,19 +1047,7 @@ function buildFilters() {
   assigneeSel.innerHTML = `<option value="">All assignees</option>` +
     assigneeVals.map(v => `<option>${v}</option>`).join('');
 
-  // Sprint filter
-  const sprintSel = document.getElementById('filter-sprint');
-  if (sprintSel) {
-    const sprints = sortByEmbeddedDate([...new Set(allRows.map(r => (r['Sprint'] || '').trim()).filter(Boolean))]);
-    if (sprints.length) {
-      sprintSel.style.display = '';
-      const cur = sprintSel.value;
-      sprintSel.innerHTML = '<option value="">All sprints</option>' +
-        sprints.map(s => `<option value="${s}"${s===cur?' selected':''}>${s}</option>`).join('');
-    } else { sprintSel.style.display = 'none'; }
-  }
-
-  // Fix version filter
+    // Fix version filter
   const fixverSel = document.getElementById('filter-fixver');
   if (fixverSel) {
     const fixvers = sortByEmbeddedDate([...new Set(allRows.map(r => (r['Fix versions'] || '').trim()).filter(Boolean))]);
@@ -1081,7 +1066,6 @@ function resetFilters() {
   document.getElementById('filter-assignee').value = '';
   document.getElementById('filter-priority').value = '';
   document.getElementById('filter-bizowner').value = '';
-  document.getElementById('filter-sprint').value   = '';
   document.getElementById('filter-fixver').value   = '';
   document.getElementById('done-window-sel').value = '-1';
   setTab('all');
@@ -1105,7 +1089,6 @@ function applyFilters() {
   const assignee = document.getElementById('filter-assignee').value;
   const project  = document.getElementById('filter-priority').value;
   const bizowner = document.getElementById('filter-bizowner').value;
-  const sprint   = document.getElementById('filter-sprint').value;
   const fixver   = document.getElementById('filter-fixver').value;
   const doneSelEl= document.getElementById('done-window-sel');
   const doneMonths = doneSelEl ? parseInt(doneSelEl.value) : 99;
@@ -1129,7 +1112,6 @@ function applyFilters() {
     if (project  && (r[cols.projectName] ||'').trim() !== project)     return false;
     if (bizowner && resolveBusinessOwner(r, cols) !== bizowner)        return false;
     if (activeTab !== 'all' && (r[cols.projectKey] || r[cols.project] || '').trim().toUpperCase() !== activeTab) return false;
-    if (sprint   && (r['Sprint']       || '').trim() !== sprint)         return false;
     if (fixver   && (r['Fix versions'] || '').trim() !== fixver)         return false;
     if (search) { const h = Object.values(r).join(' ').toLowerCase(); if (!h.includes(search)) return false; }
     return true;
@@ -1198,9 +1180,6 @@ function renderTable() {
     }
     if (spec.key === 'releaseNotes' || spec.key === 'comment') {
       return true; // always show -- populated from extracted comment fields
-    }
-    if (spec.key === 'sprint') {
-      return allRows.some(r => (r['Sprint'] || '').trim());
     }
     if (spec.key === 'fixVersions') {
       return allRows.some(r => (r['Fix versions'] || '').trim());
@@ -1280,10 +1259,6 @@ function renderTable() {
       // For releaseNotes and comment, always read from the synthetic keys the parser wrote
       if (spec.key === 'releaseNotes') {
         const val = (r['Release Notes'] || '').trim();
-        return `<td title="${val}" style="font-size:12px;${val?'':'color:var(--text-muted)'}">${val||'--'}</td>`;
-      }
-      if (spec.key === 'sprint') {
-        const val = (r['Sprint'] || '').trim();
         return `<td title="${val}" style="font-size:12px;${val?'':'color:var(--text-muted)'}">${val||'--'}</td>`;
       }
       if (spec.key === 'fixVersions') {
