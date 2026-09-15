@@ -38,7 +38,7 @@
     --radius-lg: 24px;
 
     /* Theme surface tokens -- nice.com palette */
-    --bg-page:      #f2f0eb;
+    --bg-page:      #3694fc;
     --bg-card:      #ffffff;
     --bg-card2:     #ffffff;
     --bg-topbar:    #ffffff;
@@ -56,7 +56,7 @@
 
   /* -- DARK THEME -- */
   [data-theme="dark"] {
-    --bg-page:      #13131a;
+    --bg-page:      #3694fc;
     --bg-card:      #1e1e2e;
     --bg-card2:     #252535;
     --bg-topbar:    #1e1e2e;
@@ -243,7 +243,7 @@
     display: flex;
     gap: 4px;
     padding: 0 24px;
-    background: var(--bg-page);
+    background: var(--bg-card);
     border-bottom: 2px solid var(--border-card);
     margin-bottom: 0;
   }
@@ -255,19 +255,21 @@
     border-bottom: 3px solid transparent;
     margin-bottom: -2px;
     cursor: pointer;
-    color: var(--text-muted);
-    transition: color 0.15s, border-color 0.15s;
+    color: var(--nice-blue);
+    opacity: 0.6;
+    transition: color 0.15s, border-color 0.15s, opacity 0.15s;
     white-space: nowrap;
   }
-  .tab-btn:hover { color: var(--text-primary); }
+  .tab-btn:hover { opacity: 1; }
   .tab-btn.active {
     color: var(--nice-blue);
     border-bottom-color: var(--nice-blue);
+    opacity: 1;
   }
-  .tab-btn.tab-all.active  { color: var(--text-primary); border-bottom-color: var(--text-primary); }
-  .tab-btn.tab-it.active   { color: #3694fc; border-bottom-color: #3694fc; }
-  .tab-btn.tab-cxmis.active  { color: #872bff; border-bottom-color: #872bff; }
-  .tab-btn.tab-cxscoe.active { color: #36ebd1; border-bottom-color: #36ebd1; }
+  .tab-btn.tab-all.active    { color: var(--nice-blue); border-bottom-color: var(--nice-blue); }
+  .tab-btn.tab-it.active     { color: var(--nice-blue); border-bottom-color: var(--nice-blue); }
+  .tab-btn.tab-cxmis.active  { color: var(--nice-blue); border-bottom-color: var(--nice-blue); }
+  .tab-btn.tab-cxscoe.active { color: var(--nice-blue); border-bottom-color: var(--nice-blue); }
 
   /* remove old KPI styles */
   .kpi-row { display: none; }
