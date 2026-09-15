@@ -271,6 +271,17 @@
   .tab-btn.tab-cxmis.active  { color: #21212b; border-bottom-color: #21212b; }
   .tab-btn.tab-cxscoe.active { color: #21212b; border-bottom-color: #21212b; }
 
+  /* -- FIX VERSION CHECKBOX DROPDOWN -- */
+  .fixver-option {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 14px; cursor: pointer;
+    font-size: 13px; color: var(--text-primary);
+    font-family: var(--font);
+    transition: background 0.1s;
+  }
+  .fixver-option:hover { background: var(--row-hover); }
+  .fixver-option input[type=checkbox] { accent-color: var(--nice-blue); cursor: pointer; }
+
   /* remove old KPI styles */
   .kpi-row { display: none; }
 
@@ -499,7 +510,16 @@
       <select id="filter-assignee" onchange="applyFilters()"><option value="">All assignees</option></select>
       <select id="filter-priority" onchange="applyFilters()" style="display:none"><option value="">All projects</option></select>
       <select id="filter-bizowner" onchange="applyFilters()"><option value="">All business owners</option></select>
-      <select id="filter-fixver"    onchange="applyFilters()" style="display:none"><option value="">All fix versions</option></select>
+      <div id="filter-fixver-wrap" style="display:none;position:relative">
+        <button id="filter-fixver-btn" onclick="toggleFixverDropdown(event)"
+          style="display:flex;align-items:center;gap:6px;height:34px;padding:0 12px;border:1.5px solid var(--border-input);border-radius:8px;background:var(--bg-card);color:var(--text-primary);font-size:13px;font-family:var(--font);cursor:pointer;white-space:nowrap">
+          <span id="filter-fixver-label">Fix Version</span>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="filter-fixver-dropdown" style="display:none;position:absolute;top:38px;left:0;z-index:500;background:var(--bg-card);border:1.5px solid var(--border-input);border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,0.12);min-width:200px;max-height:280px;overflow-y:auto;padding:6px 0">
+          <div id="filter-fixver-options"></div>
+        </div>
+      </div>
       <div style="display:flex;align-items:center;gap:6px;margin-left:4px">
         <span style="font-size:11px;font-weight:500;color:rgba(33,33,43,0.5);white-space:nowrap">Done:</span>
         <select id="done-window-sel" onchange="applyFilters()" style="min-width:110px">
@@ -991,6 +1011,54 @@ function refreshData() { fetchFromGitHub(); }
 (function() { fetchFromGitHub(); })();
 
 // -- FILTERS ---------------------------------------------------------------
+// -- FIX VERSION CHECKBOX HELPERS ------------------------------------------
+function dateKey2(year, month, altYear) {
+  // Returns "YY-MM" key matching extractDateKey output
+  const y = (altYear !== undefined ? altYear : year) % 100;
+  return y + '-' + month;
+}
+
+function extractDateKey(name) {
+  // YYYY.MM.N format
+  var m = name.match(/(\d{4})\.(\d{2})/);
+  if (m) return [parseInt(m[1]) % 100, parseInt(m[2])];
+  // YY.MM
+  m = name.match(/(\d{2})\.(\d{2})/);
+  if (m) return [parseInt(m[1]), parseInt(m[2])];
+  // YYYY-MM
+  m = name.match(/(\d{4})-(\d{2})/);
+  if (m) return [parseInt(m[1]) % 100, parseInt(m[2])];
+  return [-1, -1];
+}
+
+function getFixverChecked() {
+  return Array.from(document.querySelectorAll('#filter-fixver-options input[type=checkbox]:checked'))
+    .map(cb => cb.value);
+}
+
+function updateFixverLabel() {
+  const checked = getFixverChecked();
+  const lbl = document.getElementById('filter-fixver-label');
+  if (!lbl) return;
+  if (checked.length === 0) lbl.textContent = 'Fix Version (none)';
+  else if (checked.length === 1) lbl.textContent = checked[0];
+  else lbl.textContent = 'Fix Version (' + checked.length + ')';
+}
+
+function toggleFixverDropdown(e) {
+  e.stopPropagation();
+  const dd = document.getElementById('filter-fixver-dropdown');
+  dd.style.display = dd.style.display === 'none' ? 'block' : 'none';
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('#filter-fixver-wrap')) {
+    const dd = document.getElementById('filter-fixver-dropdown');
+    if (dd) dd.style.display = 'none';
+  }
+});
+
 // Sort sprint/version names by embedded date, most recent first.
 // Handles YY.MM (25.09), YYYY-MM (2026-01), YYYY-QN (2026-Q1) formats.
 // Items with no recognisable date sort to the bottom alphabetically.
@@ -1053,16 +1121,28 @@ function buildFilters() {
   assigneeSel.innerHTML = `<option value="">All assignees</option>` +
     assigneeVals.map(v => `<option>${v}</option>`).join('');
 
-    // Fix version filter
-  const fixverSel = document.getElementById('filter-fixver');
-  if (fixverSel) {
+    // Fix version checkbox filter
+  const fixverWrap = document.getElementById('filter-fixver-wrap');
+  if (fixverWrap) {
     const fixvers = sortByEmbeddedDate([...new Set(allRows.map(r => (r['Fix versions'] || '').trim()).filter(Boolean))]);
     if (fixvers.length) {
-      fixverSel.style.display = '';
-      const cur = fixverSel.value;
-      fixverSel.innerHTML = '<option value="">All fix versions</option>' +
-        fixvers.map(v => `<option value="${v}"${v===cur?' selected':''}>${v}</option>`).join('');
-    } else { fixverSel.style.display = 'none'; }
+      fixverWrap.style.display = '';
+      // Determine current and next month keys for defaults
+      const now = new Date();
+      const curKey  = dateKey2(now.getFullYear(), now.getMonth() + 1);
+      const nextKey = dateKey2(now.getFullYear(), now.getMonth() + 2 > 12 ? 1 : now.getMonth() + 2,
+                               now.getMonth() + 2 > 12 ? now.getFullYear() + 1 : now.getFullYear());
+      const existing = getFixverChecked();
+      const optEl = document.getElementById('filter-fixver-options');
+      optEl.innerHTML = fixvers.map(v => {
+        const vKey = extractDateKey(v);
+        const vKeyStr = vKey[0] + '-' + vKey[1];
+        const isDefault = (vKeyStr === curKey || vKeyStr === nextKey);
+        const isChecked = existing.length ? existing.includes(v) : isDefault;
+        return `<label class="fixver-option"><input type="checkbox" value="${v}" ${isChecked?'checked':''} onchange="applyFilters();updateFixverLabel()"><span>${v}</span></label>`;
+      }).join('');
+      updateFixverLabel();
+    } else { fixverWrap.style.display = 'none'; }
   }
 }
 
@@ -1072,7 +1152,8 @@ function resetFilters() {
   document.getElementById('filter-assignee').value = '';
   document.getElementById('filter-priority').value = '';
   document.getElementById('filter-bizowner').value = '';
-  document.getElementById('filter-fixver').value   = '';
+  // Reset fix version checkboxes to default (current + next month)
+  buildFilters();
   document.getElementById('done-window-sel').value = '-1';
   setTab('all');
   applyFilters();
@@ -1095,7 +1176,7 @@ function applyFilters() {
   const assignee = document.getElementById('filter-assignee').value;
   const project  = document.getElementById('filter-priority').value;
   const bizowner = document.getElementById('filter-bizowner').value;
-  const fixver   = document.getElementById('filter-fixver').value;
+  const fixverChecked = getFixverChecked();
   const doneSelEl= document.getElementById('done-window-sel');
   const doneMonths = doneSelEl ? parseInt(doneSelEl.value) : 99;
   const doneWindow = getDoneWindowDate();
@@ -1118,7 +1199,7 @@ function applyFilters() {
     if (project  && (r[cols.projectName] ||'').trim() !== project)     return false;
     if (bizowner && resolveBusinessOwner(r, cols) !== bizowner)        return false;
     if (activeTab !== 'all' && (r[cols.projectKey] || r[cols.project] || '').trim().toUpperCase() !== activeTab) return false;
-    if (fixver   && (r['Fix versions'] || '').trim() !== fixver)         return false;
+    if (fixverChecked.length && !fixverChecked.includes((r['Fix versions'] || '').trim())) return false;
     if (search) { const h = Object.values(r).join(' ').toLowerCase(); if (!h.includes(search)) return false; }
     return true;
   });
