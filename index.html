@@ -1062,7 +1062,7 @@ function toggleFixverDropdown(e) {
 
 // Close dropdown when clicking outside
 document.addEventListener('click', function(e) {
-  if (!e.target.closest('#filter-fixver-wrap')) {
+  if (!e.target.closest('#filter-fixver-wrap') && !e.target.closest('#filter-fixver-dropdown')) {
     const dd = document.getElementById('filter-fixver-dropdown');
     if (dd) dd.style.display = 'none';
   }
