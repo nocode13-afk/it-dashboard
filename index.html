@@ -1046,11 +1046,15 @@ function updateFixverLabel() {
   else lbl.textContent = 'Fix Version (' + checked.length + ')';
 }
 
+var fixverOpen = false;
+
 function toggleFixverDropdown(e) {
   e.stopPropagation();
+  e.preventDefault();
+  fixverOpen = !fixverOpen;
   const dd = document.getElementById('filter-fixver-dropdown');
-  if (dd.style.display === 'none') {
-    const btn = document.getElementById('filter-fixver-btn');
+  const btn = document.getElementById('filter-fixver-btn');
+  if (fixverOpen) {
     const rect = btn.getBoundingClientRect();
     dd.style.top  = (rect.bottom + 4) + 'px';
     dd.style.left = rect.left + 'px';
@@ -1062,7 +1066,8 @@ function toggleFixverDropdown(e) {
 
 // Close dropdown when clicking outside
 document.addEventListener('click', function(e) {
-  if (!e.target.closest('#filter-fixver-wrap') && !e.target.closest('#filter-fixver-dropdown')) {
+  if (fixverOpen && !e.target.closest('#filter-fixver-dropdown') && e.target.id !== 'filter-fixver-btn') {
+    fixverOpen = false;
     const dd = document.getElementById('filter-fixver-dropdown');
     if (dd) dd.style.display = 'none';
   }
@@ -1376,6 +1381,12 @@ function setSort(col) {
   sortCol===col ? sortDir*=-1 : (sortCol=col, sortDir=1);
   renderTable();
 }
+// Move fixver dropdown to body so it's never clipped by parent overflow
+(function() {
+  var dd = document.getElementById('filter-fixver-dropdown');
+  if (dd) document.body.appendChild(dd);
+})();
+
 // -- BORAT EASTER EGG --
 (function() {
   var img = document.createElement('img');
