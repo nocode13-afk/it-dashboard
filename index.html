@@ -1019,16 +1019,30 @@ function dateKey2(year, month, altYear) {
   return y + '-' + month;
 }
 
+var MONTH_NAMES = ['january','february','march','april','may','june','july','august','september','october','november','december'];
+
 function extractDateKey(name) {
-  // YYYY.MM.N format
+  // YYYY.MM.N format e.g. "IT 2022.12.1"
   var m = name.match(/(\d{4})\.(\d{2})/);
   if (m) return [parseInt(m[1]) % 100, parseInt(m[2])];
-  // YY.MM
+  // YY.MM format e.g. "MIS Release_26.07"
   m = name.match(/(\d{2})\.(\d{2})/);
   if (m) return [parseInt(m[1]), parseInt(m[2])];
-  // YYYY-MM
+  // YYYY-MM format
   m = name.match(/(\d{4})-(\d{2})/);
   if (m) return [parseInt(m[1]) % 100, parseInt(m[2])];
+  // "Month YYYY" format e.g. "September 2026"
+  m = name.match(/([A-Za-z]+)\s+(\d{4})/);
+  if (m) {
+    var mo = MONTH_NAMES.indexOf(m[1].toLowerCase());
+    if (mo >= 0) return [parseInt(m[2]) % 100, mo + 1];
+  }
+  // "YYYY Month" format e.g. "2026 September"
+  m = name.match(/(\d{4})\s+([A-Za-z]+)/);
+  if (m) {
+    var mo = MONTH_NAMES.indexOf(m[2].toLowerCase());
+    if (mo >= 0) return [parseInt(m[1]) % 100, mo + 1];
+  }
   return [-1, -1];
 }
 
@@ -1078,19 +1092,7 @@ document.addEventListener('click', function(e) {
 // Items with no recognisable date sort to the bottom alphabetically.
 function sortByEmbeddedDate(names) {
   function dateKey(name) {
-    // YYYY.MM.N format e.g. "IT 2022.12.1 (21 Nov - 5 Dec)"
-    var m = name.match(/(\d{4})\.(\d{2})/);
-    if (m) return [parseInt(m[1]) - 2000, parseInt(m[2])];
-    // YY.MM format e.g. "MIS Release_26.03"
-    m = name.match(/(\d{2})\.(\d{2})/);
-    if (m) return [parseInt(m[1]), parseInt(m[2])];
-    // YYYY-MM format e.g. "IT Sprint 2026-01"
-    m = name.match(/(\d{4})-(\d{2})/);
-    if (m) return [parseInt(m[1]) - 2000, parseInt(m[2])];
-    // YYYY-QN format e.g. "Sprint 2026-Q1"
-    m = name.match(/(\d{4})-Q(\d)/);
-    if (m) return [parseInt(m[1]) - 2000, parseInt(m[2]) * 3];
-    return [-1, -1];
+    return extractDateKey(name);
   }
   return names.slice().sort(function(a, b) {
     var ka = dateKey(a), kb = dateKey(b);
@@ -1149,15 +1151,26 @@ function buildFilters() {
       const existing = getFixverChecked();
       const optEl = document.getElementById('filter-fixver-options');
 
-      // Group by year (YY from extractDateKey), most recent year first
+      // Group by year (from extractDateKey), most recent year first
+      // Items with no parseable date get key [-1,-1] -- skip the 'Other' label
+      // and instead try to extract a 4-digit year directly from the name
       const groups = {};
       fixvers.forEach(v => {
         const key = extractDateKey(v);
-        const yr = key[0] >= 0 ? (key[0] < 100 ? '20' + String(key[0]).padStart(2,'0') : String(key[0])) : 'Other';
+        let yr;
+        if (key[0] >= 0) {
+          yr = '20' + String(key[0]).padStart(2, '0');
+        } else {
+          // Fallback: look for any 4-digit year in the name
+          const ym = v.match(/\d{4}/);
+          yr = ym ? ym[0] : 'Unknown';
+        }
         if (!groups[yr]) groups[yr] = [];
         groups[yr].push(v);
       });
-      const sortedYears = Object.keys(groups).sort((a, b) => b - a);
+      const sortedYears = Object.keys(groups).filter(y => y !== 'Unknown')
+        .sort((a, b) => b - a)
+        .concat(groups['Unknown'] ? ['Unknown'] : []);
 
       optEl.innerHTML = sortedYears.map(yr => {
         const items = groups[yr].map(v => {
@@ -1167,7 +1180,8 @@ function buildFilters() {
           const isChecked = existing.length ? existing.includes(v) : isDefault;
           return `<label class="fixver-option"><input type="checkbox" value="${v}" ${isChecked?'checked':''} onchange="applyFilters();updateFixverLabel()"><span>${v}</span></label>`;
         }).join('');
-        return `<div style="padding:4px 14px 2px;font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px">${yr}</div>` + items;
+        const header = yr !== 'Unknown' ? `<div style="padding:4px 14px 2px;font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px">${yr}</div>` : '';
+        return header + items;
       }).join('');
       updateFixverLabel();
     } else { fixverWrap.style.display = 'none'; }
