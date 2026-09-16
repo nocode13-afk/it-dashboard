@@ -1148,12 +1148,26 @@ function buildFilters() {
                                now.getMonth() + 2 > 12 ? now.getFullYear() + 1 : now.getFullYear());
       const existing = getFixverChecked();
       const optEl = document.getElementById('filter-fixver-options');
-      optEl.innerHTML = fixvers.map(v => {
-        const vKey = extractDateKey(v);
-        const vKeyStr = vKey[0] + '-' + vKey[1];
-        const isDefault = (vKeyStr === curKey || vKeyStr === nextKey);
-        const isChecked = existing.length ? existing.includes(v) : isDefault;
-        return `<label class="fixver-option"><input type="checkbox" value="${v}" ${isChecked?'checked':''} onchange="applyFilters();updateFixverLabel()"><span>${v}</span></label>`;
+
+      // Group by year (YY from extractDateKey), most recent year first
+      const groups = {};
+      fixvers.forEach(v => {
+        const key = extractDateKey(v);
+        const yr = key[0] >= 0 ? (key[0] < 100 ? '20' + String(key[0]).padStart(2,'0') : String(key[0])) : 'Other';
+        if (!groups[yr]) groups[yr] = [];
+        groups[yr].push(v);
+      });
+      const sortedYears = Object.keys(groups).sort((a, b) => b - a);
+
+      optEl.innerHTML = sortedYears.map(yr => {
+        const items = groups[yr].map(v => {
+          const vKey = extractDateKey(v);
+          const vKeyStr = vKey[0] + '-' + vKey[1];
+          const isDefault = (vKeyStr === curKey || vKeyStr === nextKey);
+          const isChecked = existing.length ? existing.includes(v) : isDefault;
+          return `<label class="fixver-option"><input type="checkbox" value="${v}" ${isChecked?'checked':''} onchange="applyFilters();updateFixverLabel()"><span>${v}</span></label>`;
+        }).join('');
+        return `<div style="padding:4px 14px 2px;font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px">${yr}</div>` + items;
       }).join('');
       updateFixverLabel();
     } else { fixverWrap.style.display = 'none'; }
