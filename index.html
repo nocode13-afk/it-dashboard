@@ -1354,7 +1354,14 @@ function renderTable() {
     if (isKeyCol) {
       rows.sort((a, b) => issueKeySort(a, b, sortCol, sortDir));
     } else {
-      rows.sort((a,b) => { const av=(a[sortCol]||'').toLowerCase(), bv=(b[sortCol]||'').toLowerCase(); return av<bv?-sortDir:av>bv?sortDir:0; });
+      rows.sort((a,b) => {
+        const av=(a[sortCol]||'').toLowerCase(), bv=(b[sortCol]||'').toLowerCase();
+        // Empty values always sort to bottom regardless of direction
+        if (!av && !bv) return 0;
+        if (!av) return 1;
+        if (!bv) return -1;
+        return av<bv?-sortDir:av>bv?sortDir:0;
+      });
     }
   }
 
