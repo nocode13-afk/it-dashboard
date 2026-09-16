@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IT Billing Dashboard -- NiCE</title>
+<title>IT Dashboard -- NiCE</title>
 <style>
   /* -- NiCE BRAND TOKENS -- */
   :root {
@@ -447,7 +447,7 @@
       </svg>
     </div>
     <div class="topbar-divider"></div>
-    <div class="topbar-title">IT Billing Dashboard</div>
+    <div class="topbar-title">IT Dashboard</div>
   </div>
   <div style="display:flex;gap:10px;align-items:center">
     <button id="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;background:transparent;border:1.5px solid var(--border-input);border-radius:50%;cursor:pointer;transition:all 0.15s;color:var(--text-primary)" onmouseover="this.style.borderColor='var(--nice-blue)';this.style.color='var(--nice-blue)'" onmouseout="this.style.borderColor='var(--border-input)';this.style.color='var(--text-primary)'">
@@ -543,9 +543,7 @@
     <!-- Table -->
     <div class="table-card">
       <div class="table-top">
-        <div class="card-title">
-          <span id="release-heading-text" style="font-size:14px;font-weight:400;color:var(--topbar-title);font-family:var(--font)"></span>
-        </div>
+        <div class="card-title"></div>
         <span class="table-range" id="table-range"></span>
       </div>
       <div class="table-wrap">
@@ -960,10 +958,7 @@ function loadCSVText(csvText, sourceName) {
     document.getElementById('dashboard').style.display = 'block';
     document.getElementById('filters-bar').style.display = 'flex';
     document.getElementById('tab-bar').style.display = 'flex';
-    // Release heading: "September 2026 Release"
-    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-    const now2 = new Date();
-    document.getElementById('release-heading-text').textContent = months[now2.getMonth()] + ' ' + now2.getFullYear() + ' Release';
+
     buildFilters();
     applyFilters();
   } catch(err) {
@@ -1001,8 +996,8 @@ async function fetchFromGitHub() {
     const msg = 'Load failed: ' + err.message + ' -- open DevTools Console (F12) for details';
     document.getElementById('load-label').textContent = msg;
     document.getElementById('empty-state').style.display = 'block';
-    console.error('[IT Billing Dashboard] Fetch error:', err);
-    console.error('[IT Billing Dashboard] URL attempted:', DATA_URL);
+    console.error('[IT Dashboard] Fetch error:', err);
+    console.error('[IT Dashboard] URL attempted:', DATA_URL);
   }
 }
 
