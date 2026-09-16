@@ -659,7 +659,7 @@ function resolveBusinessOwner(r, cols) {
 
 // Default sort by Issue # on load
 function defaultSort(cols) {
-  if (!sortCol && cols.key) { sortCol = cols.key; sortDir = 1; }
+  if (!sortCol) { sortCol = 'Fix versions'; sortDir = 1; }
 }
 
 function issueKeySort(a, b, col, dir) {
@@ -1367,10 +1367,21 @@ function renderTable() {
 
   const total = rows.length;
 
+  // Map spec keys to the actual row key used for sorting
+  const SORT_KEY = {
+    fixVersions:  'Fix versions',
+    releaseNotes: 'Release Notes',
+    comment:      'Comment',
+    assignee:     cols.assignee || cols.analysisOwner || cols.baAssignee,
+  };
+  function sortKeyFor(spec) {
+    return SORT_KEY[spec.key] || cols[spec.key] || null;
+  }
+
   document.getElementById('table-head').innerHTML = active.map(spec => {
-    const csvCol = spec.key === 'assignee' ? (cols.assignee || cols.analysisOwner || cols.baAssignee) : cols[spec.key];
-    const arrow = sortCol===csvCol ? (sortDir>0?' ^':' v') : '';
-    return `<th onclick="setSort('${csvCol}')">${spec.label}${arrow}</th>`;
+    const sk = sortKeyFor(spec);
+    const arrow = sk && sortCol===sk ? (sortDir>0?' ^':' v') : '';
+    return `<th onclick="setSort('${sk}')">${spec.label}${arrow}</th>`;
   }).join('');
 
   document.getElementById('table-body').innerHTML = rows.map(r => {
